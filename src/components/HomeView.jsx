@@ -93,13 +93,7 @@ export default function HomeView({ lang, onNavigate }) {
 
   return (
     <div 
-      className="space-y-10 max-w-6xl mx-auto p-6 sm:p-10 rounded-3xl relative border border-slate-800 shadow-2xl animate-fade-in"
-      style={{ 
-        backgroundImage: "linear-gradient(to bottom, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.94)), url('/farmer-hero-bg.jpg')", 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center',
-        backgroundAttachment: 'local'
-      }}
+      className="space-y-10 max-w-6xl mx-auto p-6 sm:p-10 rounded-3xl relative border border-slate-800/80 bg-slate-900/40 backdrop-blur-md shadow-2xl animate-fade-in"
     >
       
       {/* Premium Hero Section */}
