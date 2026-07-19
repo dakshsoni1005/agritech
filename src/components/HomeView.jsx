@@ -92,10 +92,18 @@ export default function HomeView({ lang, onNavigate }) {
       ];
 
   return (
-    <div className="space-y-10 max-w-6xl mx-auto animate-fade-in">
+    <div 
+      className="space-y-10 max-w-6xl mx-auto p-6 sm:p-10 rounded-3xl relative border border-slate-800 shadow-2xl animate-fade-in"
+      style={{ 
+        backgroundImage: "linear-gradient(to bottom, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.94)), url('/farmer-hero-bg.jpg')", 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        backgroundAttachment: 'local'
+      }}
+    >
       
       {/* Premium Hero Section */}
-      <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-xl">
+      <div className="bg-slate-950/25 backdrop-blur-md border border-white/5 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-xl">
         
         {/* Glow Details */}
         <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none select-none" />
@@ -103,7 +111,7 @@ export default function HomeView({ lang, onNavigate }) {
 
         <div className="max-w-3xl space-y-6 relative z-10">
           <div className="flex items-center space-x-2.5">
-            <span className="bg-emerald-600/15 text-emerald-500 text-[10px] uppercase font-black tracking-widest px-3 py-1 rounded-full border border-emerald-500/20">
+            <span className="bg-emerald-500/10 backdrop-blur-md text-emerald-400 text-[10px] uppercase font-black tracking-widest px-3 py-1.5 rounded-full border border-emerald-500/30">
               {lang === 'gu' ? 'ગુજરાત કૃષિ એઆઈ પ્લેટફોર્મ' : 'Gujarat Agro AI Platform'}
             </span>
           </div>
@@ -111,35 +119,35 @@ export default function HomeView({ lang, onNavigate }) {
           <h1 className="text-3xl sm:text-5xl font-black text-slate-100 tracking-tight leading-tight sm:leading-none">
             {lang === 'gu' ? (
               <>
-                એઆઈ તકનીક દ્વારા <span className="text-emerald-500">કૃષિ અને ખેડૂતોનું</span> સશક્તિકરણ
+                એઆઈ તકનીક દ્વારા <span className="text-emerald-450">કૃષિ અને ખેડૂતોનું</span> સશક્તિકરણ
               </>
             ) : (
               <>
-                Empowering <span className="text-emerald-500">Agriculture</span> with Smart AI Technology
+                Empowering <span className="text-emerald-450">Agriculture</span> with Smart AI Technology
               </>
             )}
           </h1>
 
-          <p className="text-sm sm:text-lg text-slate-355 font-medium leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-lg text-slate-205 font-medium leading-relaxed max-w-2xl">
             {lang === 'gu'
               ? 'તમારી જમીનનો રિપોર્ટ અને પ્રદેશ પસંદ કરો, સ્માર્ટ પાક ભલામણો મેળવો, નફાની ગણતરી કરો અને તમામ મુખ્ય સરકારી યોજનાઓનો સીધો લાભ લો.'
               : 'Analyze soil variables, receive regional crop recommendations, calculate custom NPK fertilizer demands, and access official state subsidies.'}
           </p>
 
           <div className="pt-3 flex flex-wrap gap-4">
-            {/* Primary CTA Sowing Wizard */}
+            {/* Primary CTA Sowing Wizard - Glass Button Effect */}
             <button
               onClick={() => onNavigate('recommendation')}
-              className="flex items-center space-x-2 px-6.5 py-4.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm tracking-wide shadow-lg shadow-emerald-950/20 hover:scale-[1.02] transition-all duration-300 cursor-pointer border border-emerald-500"
+              className="flex items-center space-x-2 px-6.5 py-4.5 rounded-2xl bg-emerald-600/30 backdrop-blur-md hover:bg-emerald-500 border border-emerald-500/50 hover:border-emerald-400 text-white font-black text-sm tracking-wide shadow-lg shadow-emerald-950/20 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
             >
               <span>{lang === 'gu' ? 'એઆઈ પાક સલાહ મેળવો' : 'Get AI Sowing Advice'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            {/* Secondary CTA Database */}
+            {/* Secondary CTA Database - Glass Button Effect */}
             <button
               onClick={() => onNavigate('database')}
-              className="flex items-center space-x-2 px-6.5 py-4.5 rounded-2xl bg-slate-955 hover:bg-slate-950 text-slate-205 hover:text-emerald-500 border border-slate-850 hover:border-emerald-500/40 font-black text-sm tracking-wide transition-all duration-300 cursor-pointer shadow-md"
+              className="flex items-center space-x-2 px-6.5 py-4.5 rounded-2xl bg-slate-900/30 backdrop-blur-md hover:bg-slate-900/70 border border-white/10 hover:border-emerald-500/40 text-slate-100 hover:text-emerald-450 font-black text-sm tracking-wide transition-all duration-300 cursor-pointer shadow-md"
             >
               <span>{lang === 'gu' ? 'પાક માહિતી કોષ જુઓ' : 'Explore Crop Profiles'}</span>
             </button>
@@ -153,7 +161,7 @@ export default function HomeView({ lang, onNavigate }) {
         
         {/* Left 2 Cols: Main Services Grid */}
         <div className="lg:col-span-2 space-y-5">
-          <h3 className="text-base sm:text-lg font-black text-slate-100 tracking-tight flex items-center space-x-2">
+          <h3 className="text-base sm:text-lg font-black text-slate-100 tracking-tight flex items-center space-x-2 px-1">
             <Sprout className="w-5 h-5 text-emerald-500 animate-pulse" />
             <span>{lang === 'gu' ? 'કૃષિ સેવાઓ અને સાધનો' : 'Available Services & Advisors'}</span>
           </h3>
@@ -163,12 +171,12 @@ export default function HomeView({ lang, onNavigate }) {
               <div
                 key={feat.id}
                 onClick={() => onNavigate(feat.id)}
-                className={`bg-slate-900/60 border ${feat.color} rounded-3xl p-5.5 shadow-md cursor-pointer hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between group`}
+                className={`bg-slate-950/30 backdrop-blur-md border ${feat.color} rounded-3xl p-5.5 shadow-md cursor-pointer hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between group`}
               >
                 <div className="space-y-3.5">
                   {/* Icon & Badge */}
                   <div className="flex items-center justify-between">
-                    <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-850 group-hover:border-emerald-500/20 transition-all duration-300">
+                    <div className="p-2.5 bg-slate-955 rounded-xl border border-slate-850 group-hover:border-emerald-500/20 transition-all duration-300">
                       {feat.icon}
                     </div>
                     <span className="bg-slate-955 text-emerald-500 border border-slate-850 text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full whitespace-nowrap">
@@ -181,16 +189,18 @@ export default function HomeView({ lang, onNavigate }) {
                     <h4 className="text-base font-black text-slate-100 group-hover:text-emerald-450 transition-colors duration-300">
                       {lang === 'gu' ? feat.titleGu : feat.titleEn}
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-350 font-medium leading-relaxed">
                       {lang === 'gu' ? feat.descGu : feat.descEn}
                     </p>
                   </div>
                 </div>
 
-                {/* Arrow Go CTA */}
+                {/* Arrow Go CTA - Glass Button Sub-element */}
                 <div className="pt-4 mt-4 border-t border-slate-855 text-[10px] font-black text-emerald-500 uppercase tracking-widest flex items-center justify-between">
                   <span>{lang === 'gu' ? 'મોડ્યુલ ઓપન કરો' : 'Launch Module'}</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <div className="w-7 h-7 rounded-lg bg-slate-950/40 border border-white/5 group-hover:border-emerald-500/30 flex items-center justify-center transition-all duration-300">
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -199,15 +209,15 @@ export default function HomeView({ lang, onNavigate }) {
 
         {/* Right 1 Col: Seasonal Farming Tips & Advisories */}
         <div className="space-y-5">
-          <h3 className="text-base sm:text-lg font-black text-slate-100 tracking-tight flex items-center space-x-2">
+          <h3 className="text-base sm:text-lg font-black text-slate-100 tracking-tight flex items-center space-x-2 px-1">
             <CloudSun className="w-5 h-5 text-amber-500 animate-pulse" />
             <span>{lang === 'gu' ? 'ચાલુ માસની કૃષિ સલાહ' : 'Monthly Crop Advisories'}</span>
           </h3>
 
-          <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-5.5 shadow-md space-y-4">
+          <div className="bg-slate-955/20 backdrop-blur-md border border-slate-800 rounded-3xl p-5.5 shadow-md space-y-4">
             
             {/* Header Tip badge */}
-            <div className="flex items-center space-x-2.5 bg-slate-955 p-3 rounded-2xl border border-slate-850">
+            <div className="flex items-center space-x-2.5 bg-slate-950/40 border border-slate-850 p-3 rounded-2xl">
               <Award className="w-5 h-5 text-amber-500 shrink-0" />
               <div>
                 <span className="text-[10px] text-slate-450 uppercase font-black tracking-wider block">Farming Tip</span>
@@ -223,7 +233,7 @@ export default function HomeView({ lang, onNavigate }) {
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
                     <span>{tip.title}</span>
                   </h4>
-                  <p className="text-xs text-slate-400 font-medium leading-relaxed pl-3">
+                  <p className="text-xs text-slate-350 font-medium leading-relaxed pl-3">
                     {tip.desc}
                   </p>
                 </div>
