@@ -20,7 +20,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,500 - ₹8,500 per quintal',
     estimatedProfitRange: '₹85,000 - ₹1,30,000 per hectare',
     suitableCompanionCrops: 'Bajra, Pigeon Pea (Toor), Cotton, Sorghum',
-    imageUrl: '/magfali.jpg',
+    imageUrl: '/magfali_new.png',
     description: 'Groundnut is the flagship Kharif oilseed crop of Saurashtra. Highly rewarding under medium black soil.'
   },
   {
