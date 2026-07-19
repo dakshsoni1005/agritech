@@ -20,10 +20,10 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
               <Menu className="w-5.5 h-5.5 text-emerald-500" />
             </button>
 
-            {/* Back Button (Only visible if NOT on home page / recommendation tab) */}
-            {activeTab !== 'recommendation' && (
+            {/* Back Button (Only visible if NOT on home page) */}
+            {activeTab !== 'home' && (
               <button
-                onClick={() => setActiveTab('recommendation')}
+                onClick={() => setActiveTab('home')}
                 className="flex items-center justify-center w-11 h-11 rounded-xl bg-slate-900 hover:bg-slate-850 border border-slate-850 hover:border-emerald-500/40 text-slate-200 transition-all duration-300 shadow-md cursor-pointer shrink-0 animate-scale-up"
                 title="Go Back / પાછા જાઓ"
               >
@@ -32,7 +32,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
             )}
 
             {/* Logo & Branding (Hidden on desktop because static left sidebar already shows it) */}
-            <div className="lg:hidden flex items-center space-x-2.5 cursor-pointer group" onClick={() => setActiveTab('recommendation')}>
+            <div className="lg:hidden flex items-center space-x-2.5 cursor-pointer group" onClick={() => setActiveTab('home')}>
               <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-850 flex items-center justify-center transition-all duration-300 group-hover:border-emerald-500/40">
                 <Sprout className="w-5.5 h-5.5 text-emerald-500 group-hover:rotate-12 transition-transform duration-300" />
               </div>
@@ -47,6 +47,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
 
             {/* Desktop Page Title (Shows on desktop next to back button if active) */}
             <div className="hidden lg:block font-black text-slate-100 text-lg tracking-tight">
+              {activeTab === 'home' && (lang === 'gu' ? 'મુખ્ય કૃષિ એઆઈ પોર્ટલ' : 'Krishi AI Portal')}
               {activeTab === 'recommendation' && (lang === 'gu' ? 'મુખ્ય પાક સલાહકાર ડેશબોર્ડ' : 'AI Crop Advisory Dashboard')}
               {activeTab === 'database' && (lang === 'gu' ? 'ગુજરાત પાક માહિતી કોષ' : 'Gujarat Crop Database')}
               {activeTab === 'regions' && (lang === 'gu' ? 'હવામાન અને જમીન માહિતી' : 'Agro-Climatic Soil Guide')}
@@ -60,6 +61,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
             
             {/* Active page indicator badge (Shown on mobile for page context) */}
             <span className="lg:hidden bg-slate-900 text-emerald-500 text-[10px] uppercase font-black tracking-widest px-3 py-1.5 rounded-xl border border-slate-850 transition-all duration-300">
+              {activeTab === 'home' && (lang === 'gu' ? 'હોમ' : 'Home')}
               {activeTab === 'recommendation' && (lang === 'gu' ? 'એઆઈ પાક' : 'AI Rec')}
               {activeTab === 'database' && (lang === 'gu' ? 'માહિતી' : 'Database')}
               {activeTab === 'regions' && (lang === 'gu' ? 'જમીન' : 'Insights')}

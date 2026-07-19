@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sprout, Database, MapPin, Calculator, Sparkles, X, Link2 } from 'lucide-react';
+import { Sprout, Database, MapPin, Calculator, Sparkles, X, Link2, Home } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab, lang, onItemClick, onClose }) {
   const handleNavClick = (tab) => {
@@ -41,6 +41,18 @@ export default function Sidebar({ activeTab, setActiveTab, lang, onItemClick, on
 
         {/* Sidebar Vertical Tabs */}
         <nav className="p-4 space-y-2.5">
+          <button
+            onClick={() => handleNavClick('home')}
+            className={`w-full flex items-center space-x-3.5 px-4 py-3.5 rounded-2xl text-sm font-extrabold transition-all duration-300 group cursor-pointer ${
+              activeTab === 'home'
+                ? 'bg-emerald-600 text-white shadow-md shadow-emerald-950/20'
+                : 'text-slate-300 hover:text-emerald-500 bg-slate-955 hover:bg-slate-950 border border-slate-850 hover:border-emerald-555/20'
+            }`}
+          >
+            <Home className="w-4.5 h-4.5 text-emerald-500 group-hover:scale-110 transition-transform" />
+            <span>{lang === 'gu' ? 'હોમ પેજ' : 'Home'}</span>
+          </button>
+
           <button
             onClick={() => handleNavClick('recommendation')}
             className={`w-full flex items-center space-x-3.5 px-4 py-3.5 rounded-2xl text-sm font-extrabold transition-all duration-300 group cursor-pointer ${

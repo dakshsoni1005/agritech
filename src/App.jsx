@@ -8,11 +8,12 @@ import CropDetailModal from './components/CropDetailModal';
 import RegionalInsights from './components/RegionalInsights';
 import ProfitCalculator from './components/ProfitCalculator';
 import GovLinksView from './components/GovLinksView';
+import HomeView from './components/HomeView';
 import Footer from './components/Footer';
 import { recommendCrops } from './utils/recommendationEngine';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('recommendation');
+  const [activeTab, setActiveTab] = useState('home');
   const [lang, setLang] = useState('gu'); // Default to Gujarati
   const [recommendationResult, setRecommendationResult] = useState(null);
   const [selectedModalCrop, setSelectedModalCrop] = useState(null);
@@ -72,6 +73,18 @@ export default function App() {
         {/* Main Content Area */}
         <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           
+          {activeTab === 'home' && (
+            <HomeView 
+              lang={lang}
+              onNavigate={(tab) => {
+                setActiveTab(tab);
+                if (tab === 'recommendation') {
+                  setRecommendationResult(null);
+                }
+              }}
+            />
+          )}
+
           {activeTab === 'recommendation' && (
             <div>
               {!recommendationResult ? (
@@ -94,28 +107,28 @@ export default function App() {
             <CropDatabaseView
               onSelectCrop={(crop) => setSelectedModalCrop(crop)}
               lang={lang}
-              onBack={() => setActiveTab('recommendation')}
+              onBack={() => setActiveTab('home')}
             />
           )}
 
           {activeTab === 'regions' && (
             <RegionalInsights 
               lang={lang} 
-              onBack={() => setActiveTab('recommendation')}
+              onBack={() => setActiveTab('home')}
             />
           )}
 
           {activeTab === 'calculator' && (
             <ProfitCalculator 
               lang={lang} 
-              onBack={() => setActiveTab('recommendation')}
+              onBack={() => setActiveTab('home')}
             />
           )}
 
           {activeTab === 'gov' && (
             <GovLinksView 
               lang={lang} 
-              onBack={() => setActiveTab('recommendation')}
+              onBack={() => setActiveTab('home')}
             />
           )}
 
