@@ -260,7 +260,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹800 - ₹1,60,000 per ton (₹12 - ₹22 per kg)',
     estimatedProfitRange: '₹1,50,000 - ₹2,80,000 per hectare',
     suitableCompanionCrops: 'Followed by Summer Bajra, Sesame or Groundnut.',
-    imageUrl: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/images.jpeg',
     description: 'Deesa (Banaskantha) is famous as the Potato Capital of Gujarat. High yield loamy soil crop.'
   },
   {
@@ -284,7 +284,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,300 - ₹3,200 per quintal (₹460 - ₹640 per 20kg)',
     estimatedProfitRange: '₹70,000 - ₹1,20,000 per hectare',
     suitableCompanionCrops: 'Followed by Rabi Wheat, Gram, Mustard or Sugarcane.',
-    imageUrl: 'https://images.unsplash.com/photo-1536657464919-892534f60d6e?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/images (1).jpeg',
     description: 'Principal Kharif staple in heavy rainfall river basins of Kheda, Anand & South Gujarat.'
   },
   {
@@ -308,7 +308,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,200 - ₹6,800 per quintal (₹1,040 - ₹1,360 per 20kg)',
     estimatedProfitRange: '₹65,000 - ₹1,05,000 per hectare',
     suitableCompanionCrops: 'Mustard, Safflower, Wheat intercropping. Fixes atmospheric nitrogen for next season.',
-    imageUrl: 'https://images.unsplash.com/photo-1515543904379-3d757afe72e3?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/20210309_152815.jpg',
     description: 'Dominant Rabi pulse crop. Low water requirement with nitrogen fixing soil benefits.'
   },
   {
@@ -332,7 +332,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹80 - ₹150 per kg (Fresh Barhee Kharek)',
     estimatedProfitRange: '₹6,000,000 - ₹12,000,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Pomegranate, Dragon Fruit or Fodder Grass in early years.',
-    imageUrl: 'https://images.unsplash.com/photo-1543332164-6e82f355badc?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/71K7lXIc3mL._AC_UF1000,1000_QL80_.jpg',
     description: 'Gold mine crop of Kachchh. Elite tissue culture Barhee dates command high export price.'
   },
   {
@@ -356,7 +356,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹11,000 - ₹15,000 per quintal (₹2,200 - ₹3,000 per 20kg)',
     estimatedProfitRange: '₹75,000 - ₹1,20,000 per hectare',
     suitableCompanionCrops: 'Intercrop with Groundnut or Cotton. Rotation with Wheat/Gram in winter.',
-    imageUrl: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/images (2).jpeg',
     description: 'High price short-duration oilseed. Summer Til cultivation yields high profit in Saurashtra.'
   }
 ];
