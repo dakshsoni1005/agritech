@@ -7,6 +7,7 @@ import CropDatabaseView from './components/CropDatabaseView';
 import CropDetailModal from './components/CropDetailModal';
 import RegionalInsights from './components/RegionalInsights';
 import ProfitCalculator from './components/ProfitCalculator';
+import GovLinksView from './components/GovLinksView';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 import { recommendCrops } from './utils/recommendationEngine';
@@ -107,6 +108,13 @@ export default function App() {
 
           {activeTab === 'calculator' && (
             <ProfitCalculator 
+              lang={lang} 
+              onBack={() => setActiveTab('recommendation')}
+            />
+          )}
+
+          {activeTab === 'gov' && (
+            <GovLinksView 
               lang={lang} 
               onBack={() => setActiveTab('recommendation')}
             />

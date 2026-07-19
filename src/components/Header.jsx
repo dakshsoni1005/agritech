@@ -51,6 +51,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
               {activeTab === 'database' && (lang === 'gu' ? 'ગુજરાત પાક માહિતી કોષ' : 'Gujarat Crop Database')}
               {activeTab === 'regions' && (lang === 'gu' ? 'હવામાન અને જમીન માહિતી' : 'Agro-Climatic Soil Guide')}
               {activeTab === 'calculator' && (lang === 'gu' ? 'ઉત્પાદન અને નફો અંદાજક' : 'Yield & Financial Calculator')}
+              {activeTab === 'gov' && (lang === 'gu' ? 'સરકારી કૃષિ પોર્ટલ ડાયરેક્ટરી' : 'Government Portals Directory')}
             </div>
           </div>
 
@@ -63,6 +64,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
               {activeTab === 'database' && (lang === 'gu' ? 'માહિતી' : 'Database')}
               {activeTab === 'regions' && (lang === 'gu' ? 'જમીન' : 'Insights')}
               {activeTab === 'calculator' && (lang === 'gu' ? 'નફો' : 'Profit')}
+              {activeTab === 'gov' && (lang === 'gu' ? 'પોર્ટલ' : 'Gov Links')}
             </span>
 
             {/* Theme Toggle Button */}
