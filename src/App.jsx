@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import RecommendationWizard from './components/RecommendationWizard';
 import RecommendationResults from './components/RecommendationResults';
 import CropDatabaseView from './components/CropDatabaseView';
@@ -42,7 +41,7 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen text-slate-100 flex font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
+      className="min-h-screen text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
       style={{
         backgroundImage: "linear-gradient(to bottom, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.9)), url('/home_bg.jpg')",
         backgroundSize: 'cover',
@@ -51,16 +50,7 @@ export default function App() {
       }}
     >
       
-      {/* Persistent Left Sidebar (Icon dock on Mobile/Tablet, Full list on Desktop) */}
-      <aside className="flex w-16 lg:w-80 h-screen sticky top-0 border-r border-slate-900/60 bg-slate-900/40 backdrop-blur-md flex-col shrink-0 transition-all duration-300 z-30">
-        <Sidebar 
-          activeTab={activeTab} 
-          setActiveTab={setActiveTab} 
-          lang={lang} 
-        />
-      </aside>
-
-      {/* Main Right Column (holds header and main container layout) */}
+      {/* Main Column (holds header and main container layout) */}
       <div className="flex-1 flex flex-col min-w-0">
         
         {/* Navigation Header */}
