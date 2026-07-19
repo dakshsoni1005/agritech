@@ -20,7 +20,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,500 - ₹8,500 per quintal',
     estimatedProfitRange: '₹85,000 - ₹1,30,000 per hectare',
     suitableCompanionCrops: 'Bajra, Pigeon Pea (Toor), Cotton, Sorghum',
-    imageUrl: '/51nbI0GadZL.jpg',
+    imageUrl: '/magfali.jpg',
     description: 'Groundnut is the flagship Kharif oilseed crop of Saurashtra. Highly rewarding under medium black soil.'
   },
   {
@@ -212,7 +212,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹9,000 - ₹14,000 per quintal',
     estimatedProfitRange: '₹1,00,000 - ₹1,80,000 per hectare',
     suitableCompanionCrops: 'Garlic or Onion borders. Crop rotation with summer bajra.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/tobacco.png',
     description: 'A critical commercial crop of Anand and Kheda (Charotar region), processed for bidi and chewing.'
   },
   {
@@ -284,7 +284,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,100 - ₹2,800 per quintal',
     estimatedProfitRange: '₹50,000 - ₹85,000 per hectare',
     suitableCompanionCrops: 'Urad, Moong, Cowpea intercropping. Rotation with Gram/Chickpea.',
-    imageUrl: 'https://images.unsplash.com/photo-1551754625-70c90487530d?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/maize.jpg',
     description: 'Staple grain crop for the hilly tribal belts. Yields nutritious grain and silage fodder.'
   },
   {
@@ -308,7 +308,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,805 - ₹3,500 per quintal',
     estimatedProfitRange: '₹40,000 - ₹70,000 per hectare',
     suitableCompanionCrops: 'Pigeon Pea, Cowpea, Green Gram. Highly useful as green fodder for cattle.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/jowar.png',
     description: 'Hardy cereal crop serving double purpose: food grain for humans and dry fodder (Karbi) for cattle.'
   },
   {
@@ -380,7 +380,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹7,000 - ₹8,800 per quintal',
     estimatedProfitRange: '₹55,000 - ₹95,000 per hectare',
     suitableCompanionCrops: 'Castor, Sugarcane, Cotton intercropping. Quick crop rotation.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/moong.jpg',
     description: 'Short duration summer/monsoon pulse. Rich in proteins and improves soil structure.'
   },
   {
