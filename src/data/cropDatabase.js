@@ -20,7 +20,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,500 - ₹8,500 per quintal (₹1,300 - ₹1,700 per 20kg/Man)',
     estimatedProfitRange: '₹85,000 - ₹1,30,000 per hectare',
     suitableCompanionCrops: 'Bajra, Pigeon Pea (Toor), Cotton, Sorghum (Crop rotation with Wheat/Gram in Rabi)',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810694-b5b37304c041?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/1-18.jpg',
     description: 'Groundnut is the flagship Kharif oilseed crop of Saurashtra. Highly rewarding under medium black soil with proper drainage.'
   },
   {
@@ -44,7 +44,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹7,000 - ₹9,200 per quintal (₹1,400 - ₹1,840 per 20kg)',
     estimatedProfitRange: '₹95,000 - ₹1,50,000 per hectare',
     suitableCompanionCrops: 'Pigeon pea (Toor) border crop, Cowpea. Rotation with Groundnut, Wheat, or Sesame.',
-    imageUrl: 'https://images.unsplash.com/photo-1606041008023-472dfb5e530f?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/43-1kapas-seedsf-bdsresolve-original-imagrs4nwmmbdymk.webp',
     description: 'Golden Fibre crop of Gujarat. Thrives in volcanic black soils with micro-irrigation systems.'
   },
   {
@@ -68,7 +68,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹18,000 - ₹28,000 per quintal (₹3,600 - ₹5,600 per 20kg)',
     estimatedProfitRange: '₹1,10,000 - ₹2,20,000 per hectare',
     suitableCompanionCrops: 'Mustard border crop. Excellent rotation after Pearl Millet (Bajra) or Sesame.',
-    imageUrl: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/51h+-pjGDuL._AC_UF894,1000_QL80_.jpg',
     description: 'High-value spice cash crop of North Gujarat & Saurashtra. Requires cool, dry winter weather.'
   },
   {
@@ -92,7 +92,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,800 - ₹7,200 per quintal (₹1,160 - ₹1,440 per 20kg)',
     estimatedProfitRange: '₹90,000 - ₹1,40,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Mung bean, Cowpea, or Sesame in early growth stage.',
-    imageUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/714xCG6CxKL._AC_UF1000,1000_QL80_.jpg',
     description: 'Gujarat is the world leader in Castor production. Hardy drought-tolerant commercial crop.'
   },
   {
@@ -116,7 +116,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,600 - ₹3,600 per quintal (₹520 - ₹720 per 20kg)',
     estimatedProfitRange: '₹65,000 - ₹1,05,000 per hectare',
     suitableCompanionCrops: 'Mustard or Chickpea strip cropping. Excellent rotation after Paddy or Groundnut.',
-    imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/51nbI0GadZL.jpg',
     description: 'Staple Rabi crop. Bhalia durum wheat grown rainfed in Bhal tract; Sharbati under irrigation across Gujarat.'
   },
   {
@@ -140,7 +140,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,200 - ₹6,500 per quintal (₹1,040 - ₹1,300 per 20kg)',
     estimatedProfitRange: '₹65,000 - ₹98,000 per hectare',
     suitableCompanionCrops: 'Wheat, Gram. Excellent green manure crop.',
-    imageUrl: 'https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/raydo_1584513683.jpg',
     description: 'Major low-water Rabi oilseed of North Gujarat. High return with low input costs.'
   },
   {
