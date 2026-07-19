@@ -668,7 +668,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹25 - ₹45 per kg',
     estimatedProfitRange: '₹2,00,000 - ₹3,50,000 per hectare',
     suitableCompanionCrops: 'Mango, Guava, Vegetables in early non-bearing years.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/chikoo.png',
     description: 'Flagship orchard fruit of coastal South Gujarat. Kalipatti cultivar is famous for high sweetness.'
   },
   {
@@ -692,7 +692,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹10 - ₹22 per kg',
     estimatedProfitRange: '₹2,50,000 - ₹5,00,000 per hectare',
     suitableCompanionCrops: 'Ginger or Turmeric intercropped in early months.',
-    imageUrl: 'https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/papaya.jpg',
     description: 'Quick-growing fruit crop with high cash recovery. Madhu Bindu variety is highly popular locally.'
   },
   {
@@ -716,7 +716,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹70 - ₹130 per kg',
     estimatedProfitRange: '₹4,00,000 - ₹8,00,000 per hectare',
     suitableCompanionCrops: 'Pulses or leafy vegetables in early 3 years of growth.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/pomegranate.jpg',
     description: 'High value desert fruit crop. Bhagwa variety of Kachchh commands premium national and export prices.'
   },
   {
@@ -788,7 +788,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹8 - ₹25 per kg',
     estimatedProfitRange: '₹1,20,000 - ₹2,80,000 per hectare',
     suitableCompanionCrops: 'Marigold border cropping, Beans. Rotation with legumes.',
-    imageUrl: 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/tomato.png',
     description: 'Major vegetable cash crop. Highly responsive to staking support and balanced NPK fertigation.'
   },
   {
@@ -812,7 +812,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹12 - ₹30 per kg',
     estimatedProfitRange: '₹1,10,000 - ₹2,20,000 per hectare',
     suitableCompanionCrops: 'Coriander, Onion, Garlic. Long bearing crop yields high returns.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/brinjal.jpg',
     description: 'Resilient and popular vegetable grown throughout the year across Gujarat plains.'
   },
   {
