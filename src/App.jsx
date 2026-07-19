@@ -80,15 +80,22 @@ export default function App() {
           <CropDatabaseView
             onSelectCrop={(crop) => setSelectedModalCrop(crop)}
             lang={lang}
+            onBack={() => setActiveTab('recommendation')}
           />
         )}
 
         {activeTab === 'regions' && (
-          <RegionalInsights lang={lang} />
+          <RegionalInsights 
+            lang={lang} 
+            onBack={() => setActiveTab('recommendation')}
+          />
         )}
 
         {activeTab === 'calculator' && (
-          <ProfitCalculator lang={lang} />
+          <ProfitCalculator 
+            lang={lang} 
+            onBack={() => setActiveTab('recommendation')}
+          />
         )}
 
       </main>

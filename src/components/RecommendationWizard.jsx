@@ -177,7 +177,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
               <select
                 value={district}
                 onChange={(e) => setDistrict(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
               >
                 {availableDistricts.map((d) => (
                   <option key={d.name} value={d.name} className="bg-slate-950">
@@ -194,7 +194,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
               <select
                 value={taluka}
                 onChange={(e) => setTaluka(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
               >
                 {availableTalukas.map((t) => (
                   <option key={t} value={t} className="bg-slate-950">
@@ -214,7 +214,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
               <select
                 value={soilType}
                 onChange={(e) => setSoilType(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
               >
                 {SOIL_TYPES_LIST.map((st) => (
                   <option key={st.id} value={st.name} className="bg-slate-950">
@@ -231,7 +231,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
               <select
                 value={currentMonth}
                 onChange={(e) => setCurrentMonth(parseInt(e.target.value, 10))}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
               >
                 {MONTHS_LIST.map((m) => (
                   <option key={m.value} value={m.value} className="bg-slate-950">
@@ -328,7 +328,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   step="0.25"
                   value={farmSize}
                   onChange={(e) => setFarmSize(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3 text-white font-extrabold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 text-sm"
+                  className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4.5 py-3 text-slate-100 font-extrabold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 text-sm"
                 />
                 <select
                   value={unit}
@@ -349,7 +349,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
               <select
                 value={previousCrop}
                 onChange={(e) => setPreviousCrop(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
               >
                 <option value="Cotton" className="bg-slate-950">Cotton (કપાસ)</option>
                 <option value="Groundnut" className="bg-slate-950">Groundnut (મગફળી)</option>

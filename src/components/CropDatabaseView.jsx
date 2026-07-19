@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { CROP_DATABASE } from '../data/cropDatabase';
 import { GUJARAT_REGIONS } from '../data/gujaratRegions';
-import { Search, Sprout, ArrowUpRight } from 'lucide-react';
+import { Search, Sprout, ArrowUpRight, ArrowLeft } from 'lucide-react';
 
-export default function CropDatabaseView({ onSelectCrop, lang }) {
+export default function CropDatabaseView({ onSelectCrop, lang, onBack }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegionFilter, setSelectedRegionFilter] = useState('All');
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState('All');
@@ -29,8 +29,19 @@ export default function CropDatabaseView({ onSelectCrop, lang }) {
   });
 
   return (
-    <div className="space-y-8 max-w-6xl mx-auto animate-fade-in">
+    <div className="space-y-6 max-w-6xl mx-auto animate-fade-in">
       
+      {/* Back Button */}
+      <div className="flex justify-start">
+        <button
+          onClick={onBack}
+          className="flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-300 hover:text-emerald-500 transition-all duration-300 font-extrabold text-xs tracking-wider uppercase cursor-pointer"
+        >
+          <ArrowLeft className="w-4 h-4 text-emerald-500" />
+          <span>{lang === 'gu' ? 'પાછા જાઓ (Back)' : 'Back'}</span>
+        </button>
+      </div>
+
       {/* Top Control Panel (30% secondary card background) */}
       <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
         
