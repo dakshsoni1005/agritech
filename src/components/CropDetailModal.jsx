@@ -35,7 +35,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
             <span className="bg-slate-950/90 text-emerald-500 border border-slate-850 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-2">
               {crop.category}
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-100 tracking-tight">
               {crop.cropName} <span className="text-emerald-500 font-extrabold">({crop.gujaratiName})</span>
             </h2>
           </div>
@@ -95,7 +95,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
                   <span className="text-[10px] text-slate-455 font-bold uppercase block">
                     Field 5 • Ideal Temp (તાપમાન)
                   </span>
-                  <span className="text-sm sm:text-base font-extrabold text-white">{crop.idealTempRange}</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100">{crop.idealTempRange}</span>
                 </div>
               </div>
 
@@ -108,7 +108,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
                   <span className="text-[10px] text-slate-455 font-bold uppercase block">
                     Field 6 • Ideal Rainfall (વરસાદ દર)
                   </span>
-                  <span className="text-sm sm:text-base font-extrabold text-white">{crop.idealRainfallRange}</span>
+                  <span className="text-sm sm:text-base font-extrabold text-slate-100">{crop.idealRainfallRange}</span>
                 </div>
               </div>
 
@@ -182,7 +182,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
                 <span className="text-[10px] text-slate-455 font-bold uppercase block mb-1">
                   Field 12 • Average Yield
                 </span>
-                <span className="text-base sm:text-lg font-black text-white">{crop.averageYield}</span>
+                <span className="text-base sm:text-lg font-black text-slate-100">{crop.averageYield}</span>
               </div>
 
               {/* Field 15: Estimated Cultivation Cost */}
@@ -257,7 +257,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
         <div className="p-4.5 bg-slate-950 border-t border-slate-850 flex justify-end">
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs tracking-wider uppercase border border-slate-850 hover:border-slate-800 transition-all duration-300 cursor-pointer"
+            className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-100 font-extrabold text-xs tracking-wider uppercase border border-slate-850 hover:border-slate-800 transition-all duration-300 cursor-pointer"
           >
             {lang === 'gu' ? 'બંધ કરો (Close)' : 'Close Advisory'}
           </button>

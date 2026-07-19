@@ -36,7 +36,7 @@ export default function ProfitCalculator({ lang }) {
           <div className="p-2.5 bg-slate-950 rounded-xl text-emerald-500 border border-slate-850">
             <Calculator className="w-6 h-6 animate-pulse" />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-100 tracking-tight">
             {lang === 'gu' ? 'નફો અને ખાતર અંદાજક' : 'Smart Yield & Financial Estimator'}
           </h2>
         </div>
@@ -51,7 +51,7 @@ export default function ProfitCalculator({ lang }) {
         
         {/* Input Form Panel (30% secondary card background) */}
         <div className="md:col-span-5 bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 shadow-md space-y-6">
-          <h3 className="text-base font-black text-white border-b border-slate-850 pb-3.5 flex items-center space-x-2">
+          <h3 className="text-base font-black text-slate-100 border-b border-slate-850 pb-3.5 flex items-center space-x-2">
             <Sparkles className="w-4 h-4 text-emerald-555" />
             <span>{lang === 'gu' ? '૧. પાક અને જમીન ક્ષેત્રફળ' : '1. Choose Crop & Farm Area'}</span>
           </h3>
@@ -64,7 +64,7 @@ export default function ProfitCalculator({ lang }) {
             <select
               value={selectedCropId}
               onChange={(e) => setSelectedCropId(e.target.value)}
-              className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 font-bold text-sm cursor-pointer"
+              className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 font-bold text-sm cursor-pointer"
             >
               {CROP_DATABASE.map((c) => (
                 <option key={c.id} value={c.id} className="bg-slate-950">
@@ -86,7 +86,7 @@ export default function ProfitCalculator({ lang }) {
                 step="0.25"
                 value={farmSize}
                 onChange={(e) => setFarmSize(parseFloat(e.target.value) || 1)}
-                className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4.5 py-3 text-white font-extrabold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm"
+                className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4.5 py-3 text-slate-100 font-extrabold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm"
               />
               <select
                 value={unit}
@@ -111,7 +111,7 @@ export default function ProfitCalculator({ lang }) {
               <span className="text-[10px] font-extrabold text-amber-500 uppercase tracking-wider block">
                 {lang === 'gu' ? 'બિયારણ જરૂરિયાત:' : 'Seed Required:'}
               </span>
-              <p className="text-sm font-black text-white mt-0.5">
+              <p className="text-sm font-black text-slate-100 mt-0.5">
                 {selectedCrop.seedRate}
               </p>
             </div>

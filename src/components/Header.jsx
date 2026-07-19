@@ -3,7 +3,7 @@ import { Sprout, Database, MapPin, Calculator, Globe, Sparkles, Sun, Moon } from
 
 export default function Header({ activeTab, setActiveTab, lang, setLang, theme, setTheme }) {
   return (
-    <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 text-white shadow-lg">
+    <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-900 text-slate-100 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           

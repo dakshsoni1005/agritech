@@ -36,7 +36,7 @@ export default function CropDatabaseView({ onSelectCrop, lang }) {
         
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100 tracking-tight">
               {lang === 'gu' ? 'ગુજરાત પાક માહિતી કોષ' : 'Gujarat Smart Crop Database'}
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 font-semibold">
@@ -62,7 +62,7 @@ export default function CropDatabaseView({ onSelectCrop, lang }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={lang === 'gu' ? 'પાકનું નામ અથવા ગુજરાતી નામ શોધો (મગફળી, જીરું, Wheat)...' : 'Search by crop name or Gujarati name...'}
-              className="w-full bg-slate-955 border border-slate-850 rounded-2xl pl-12 pr-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm font-semibold transition-all duration-300"
+              className="w-full bg-slate-955 border border-slate-850 rounded-2xl pl-12 pr-4 py-3.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm font-semibold transition-all duration-300"
             />
           </div>
 
@@ -71,7 +71,7 @@ export default function CropDatabaseView({ onSelectCrop, lang }) {
             <select
               value={selectedRegionFilter}
               onChange={(e) => setSelectedRegionFilter(e.target.value)}
-              className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm font-semibold transition-all duration-300 cursor-pointer"
+              className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm font-semibold transition-all duration-300 cursor-pointer"
             >
               <option value="All" className="bg-slate-950">{lang === 'gu' ? 'બધા પ્રદેશો (All Regions)' : 'All Regions'}</option>
               {GUJARAT_REGIONS.map((r) => (
@@ -87,7 +87,7 @@ export default function CropDatabaseView({ onSelectCrop, lang }) {
             <select
               value={selectedCategoryFilter}
               onChange={(e) => setSelectedCategoryFilter(e.target.value)}
-              className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm font-semibold transition-all duration-300 cursor-pointer"
+              className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm font-semibold transition-all duration-300 cursor-pointer"
             >
               {categories.map((c) => (
                 <option key={c} value={c} className="bg-slate-950">
@@ -105,7 +105,7 @@ export default function CropDatabaseView({ onSelectCrop, lang }) {
       {filteredCrops.length === 0 ? (
         <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-16 text-center text-slate-400 space-y-4">
           <Sprout className="w-16 h-16 text-slate-700 mx-auto animate-pulse" />
-          <h3 className="text-lg font-black text-white">{lang === 'gu' ? 'કોઈ પાક મળ્યો નહીં' : 'No Crops Found'}</h3>
+          <h3 className="text-lg font-black text-slate-100">{lang === 'gu' ? 'કોઈ પાક મળ્યો નહીં' : 'No Crops Found'}</h3>
           <p className="text-xs text-slate-500 font-bold">{lang === 'gu' ? 'તમારા સર્ચ અથવા ફિલ્ટર સુધારીને ફરી પ્રયાસ કરો.' : 'Please refine your search parameters and try again.'}</p>
         </div>
       ) : (
@@ -131,7 +131,7 @@ export default function CropDatabaseView({ onSelectCrop, lang }) {
                 </span>
 
                 <div className="absolute bottom-3.5 left-3.5 right-3.5">
-                  <h3 className="text-xl font-black text-white drop-shadow-md">
+                  <h3 className="text-xl font-black text-slate-100 drop-shadow-md">
                     {crop.cropName} <span className="text-amber-500 font-extrabold text-base">({crop.gujaratiName})</span>
                   </h3>
                 </div>

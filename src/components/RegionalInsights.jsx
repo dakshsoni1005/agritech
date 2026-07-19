@@ -11,7 +11,7 @@ export default function RegionalInsights({ lang }) {
       
       {/* Header Banner (30% secondary card background) */}
       <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
-        <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-black text-slate-100 tracking-tight">
           {lang === 'gu' ? 'કૃષિ હવામાન પ્રદેશો અને જમીન માર્ગદર્શિકા' : 'Gujarat Agro-Climatic Regions & Soil Guide'}
         </h2>
         <p className="text-xs sm:text-sm text-slate-400 mt-1 font-semibold">
@@ -57,7 +57,7 @@ export default function RegionalInsights({ lang }) {
                   boxShadow: `0 0 10px ${activeRegion.color}60`
                 }}
               />
-              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-100 tracking-tight">
                 {lang === 'gu' ? activeRegion.nameGu : activeRegion.name}
               </h3>
             </div>
@@ -114,7 +114,7 @@ export default function RegionalInsights({ lang }) {
             {activeRegion.districts.map((dist) => (
               <div key={dist.name} className="bg-slate-955 p-4.5 rounded-2xl border border-slate-850 flex flex-col justify-between group">
                 <div className="flex items-center justify-between mb-3">
-                  <h5 className="font-extrabold text-white text-base">
+                  <h5 className="font-extrabold text-slate-100 text-base">
                     {dist.name} <span className="text-amber-500 font-bold text-sm">({dist.nameGu})</span>
                   </h5>
                   <span className="text-[10px] bg-slate-900 border border-slate-850 px-2 py-0.5 rounded text-slate-400 font-bold">

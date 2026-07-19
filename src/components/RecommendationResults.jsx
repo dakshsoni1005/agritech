@@ -81,7 +81,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
               </svg>
-              <div className="absolute text-[10px] font-black text-white">{confidence}%</div>
+              <div className="absolute text-[10px] font-black text-slate-100">{confidence}%</div>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
                   <TrendingUp className="w-4 h-4 text-emerald-500" />
                   <span>{lang === 'gu' ? 'અંદાજિત ઉત્પાદન' : 'Expected Yield'}</span>
                 </div>
-                <div className="text-base sm:text-lg font-black text-white">
+                <div className="text-base sm:text-lg font-black text-slate-100">
                   {expectedYield}
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-85" />
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                <span className="text-[10px] font-bold text-white bg-slate-950/80 border border-slate-850 px-2.5 py-1 rounded-lg">
+                <span className="text-[10px] font-bold text-slate-100 bg-slate-950/80 border border-slate-850 px-2.5 py-1 rounded-lg">
                   {crop.gujaratiName}
                 </span>
                 <span className="text-[10px] font-bold text-emerald-450 bg-slate-950/80 border border-slate-850 px-2.5 py-1 rounded-lg">
@@ -165,7 +165,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
 
             <button
               onClick={() => onViewCropDetails(crop)}
-              className="w-full py-3.5 px-4 rounded-2xl bg-slate-950 hover:bg-slate-850 text-white font-extrabold text-xs tracking-wider uppercase border border-slate-850 hover:border-slate-800 transition-all duration-300 shadow-md flex items-center justify-center space-x-2 cursor-pointer"
+              className="w-full py-3.5 px-4 rounded-2xl bg-slate-950 hover:bg-slate-850 text-slate-100 font-extrabold text-xs tracking-wider uppercase border border-slate-850 hover:border-slate-800 transition-all duration-300 shadow-md flex items-center justify-center space-x-2 cursor-pointer"
             >
               <FileText className="w-4 h-4 text-emerald-500" />
               <span>{lang === 'gu' ? 'પાકની ૧૮ તકનીકી વિગતો જુઓ' : 'View Full 18-Field Crop Advisory'}</span>
@@ -188,7 +188,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
 
       {/* AI Decision Factor Breakdown */}
       <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-md space-y-4">
-        <h3 className="text-base font-black text-white flex items-center space-x-2 border-b border-slate-850 pb-3">
+        <h3 className="text-base font-black text-slate-100 flex items-center space-x-2 border-b border-slate-850 pb-3">
           <CheckCircle2 className="w-5 h-5 text-emerald-500" />
           <span>{lang === 'gu' ? 'એઆઈ વિશ્લેષણના મુખ્ય પાસાઓ' : 'AI Suitability Breakdown'}</span>
         </h3>
@@ -209,7 +209,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
         
         {/* Secondary Alternatives */}
         <div className="md:col-span-7 bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-md space-y-4">
-          <h3 className="text-base font-black text-white flex items-center space-x-2 border-b border-slate-850 pb-3">
+          <h3 className="text-base font-black text-slate-100 flex items-center space-x-2 border-b border-slate-850 pb-3">
             <Award className="w-5 h-5 text-amber-500" />
             <span>{lang === 'gu' ? 'વૈકલ્પિક પાક ભલામણો' : 'Secondary Recommended Alternatives'}</span>
           </h3>
@@ -228,7 +228,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
                     className="w-12 h-12 rounded-xl object-cover border border-slate-850"
                   />
                   <div>
-                    <h4 className="text-sm font-extrabold text-white group-hover:text-emerald-500 transition-colors duration-300">
+                    <h4 className="text-sm font-extrabold text-slate-100 group-hover:text-emerald-500 transition-colors duration-300">
                       {item.crop.cropName} ({item.crop.gujaratiName})
                     </h4>
                     <p className="text-[10px] text-slate-455 font-bold">
@@ -255,7 +255,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
 
         {/* Companion & Rotation Advice */}
         <div className="md:col-span-5 bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-md space-y-4">
-          <h3 className="text-base font-black text-white flex items-center space-x-2 border-b border-slate-850 pb-3">
+          <h3 className="text-base font-black text-slate-100 flex items-center space-x-2 border-b border-slate-850 pb-3">
             <RotateCcw className="w-5 h-5 text-sky-400" />
             <span>{lang === 'gu' ? 'પાક ફેરબદલી અને આંતરપાક' : 'Companion & Rotation Crops'}</span>
           </h3>

@@ -8,7 +8,7 @@ export default function Footer({ lang }) {
         
         <div className="flex items-center justify-center space-x-2">
           <Sprout className="w-5 h-5 text-emerald-400" />
-          <span className="font-extrabold text-white text-base">
+          <span className="font-extrabold text-slate-100 text-base">
             {lang === 'gu' ? 'ગુજરાત કૃષિ એઆઈ પ્લેટફોર્મ' : 'Gujarat Krishi Advisory AI'}
           </span>
         </div>

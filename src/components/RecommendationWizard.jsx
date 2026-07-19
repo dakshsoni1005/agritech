@@ -64,7 +64,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           <span>{lang === 'gu' ? 'ગુજરાત કૃષિ મિશન ૨૦૨૬' : 'Gujarat Agri Mission 2026'}</span>
         </div>
         
-        <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
+        <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-slate-100">
           {lang === 'gu' ? (
             <>
               ખેતીને બનાવો સ્માાર્ટ અને નફાકારક <br />
@@ -111,7 +111,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
             <Sparkles className="w-6 h-6 animate-pulse" />
           </div>
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black text-slate-100 tracking-tight">
               {lang === 'gu' ? 'પાક સલાહ વિઝાર્ડ' : 'Crop Advisory Form'}
             </h2>
             <p className="text-xs text-slate-450 mt-0.5 font-bold">
@@ -154,7 +154,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                       }}
                     />
                     <div>
-                      <span className="font-extrabold text-sm sm:text-base text-white block tracking-tight leading-tight mb-0.5">
+                      <span className="font-extrabold text-sm sm:text-base text-slate-100 block tracking-tight leading-tight mb-0.5">
                         {lang === 'gu' ? reg.nameGu : reg.name}
                       </span>
                       <span className="text-[10px] opacity-75 block font-bold text-slate-450">
