@@ -461,26 +461,28 @@ export default function CropDatabaseView({ onSelectCrop, lang, onBack }) {
         </button>
       </div>
 
-      {/* Header Introduction Card */}
-      <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
-        <h2 className="text-2xl sm:text-3xl font-black text-slate-105 tracking-tight flex items-center space-x-2">
-          <span>{lang === 'gu' ? 'ગુજરાતના મુખ્ય પાકો' : 'Major Crops of Gujarat'}</span>
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-400 mt-2 font-semibold leading-relaxed">
-          {lang === 'gu'
-            ? 'ગુજરાત વૈવિધ્યસભર કૃષિ-હવામાન ઝોન અને સમૃદ્ધ જમીન ક્ષેત્ર ધરાવતું અગ્રેસર રાજ્ય છે. અહીં રોકડિયા પાક, અનાજ, કઠોળ, મસાલા, બાગાયતી ફળો અને ઔષધીય વનસ્પતિઓની મોટા પાયે ખેતી થાય છે.'
-            : 'Gujarat stands as one of India\'s leading agricultural hubs with diverse agro-climatic zones supporting commercial cash crops, staple food grains, pulses, seed spices, horticulture, and floriculture.'}
-        </p>
+      {/* Header Introduction Card & Compact Search Bar */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-900/60 backdrop-blur-md border border-slate-805/80 rounded-3xl p-6 shadow-xl">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-100 tracking-tight flex items-center space-x-2">
+            <span>{lang === 'gu' ? 'ગુજરાતના મુખ્ય પાકો' : 'Major Crops of Gujarat'}</span>
+          </h2>
+          <p className="text-xs text-slate-400 mt-1 font-semibold leading-relaxed max-w-xl">
+            {lang === 'gu'
+              ? 'ગુજરાતના વિવિધ કૃષિ-હવામાન ઝોનના અતિ મહત્વના રોકડિયા, તેલીબિયાં, અનાજ અને બાગાયતી પાકોનો ડેટાબેઝ.'
+              : 'Complete database of cash, grain, pulse, spice, and horticulture crops across Gujarat.'}
+          </p>
+        </div>
 
-        {/* Global Search Bar */}
-        <div className="mt-6 pt-6 border-t border-slate-855 flex items-center relative">
-          <Search className="w-5 h-5 text-emerald-500 absolute left-4" />
+        {/* Compact Professional Search Input (60:30:10 rule) */}
+        <div className="relative w-full md:w-80 shrink-0">
+          <Search className="w-4.5 h-4.5 text-emerald-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder={lang === 'gu' ? 'પાકનું નામ અથવા ઋતુ સર્ચ કરો (મગફળી, Cumin, Rabi, Kharif)...' : 'Search crop by name, region or tag (Cotton, Rabi, Pulse)...'}
-            className="w-full bg-slate-955 border border-slate-850 rounded-2xl pl-12 pr-4 py-3.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm font-semibold transition-all duration-300 shadow-inner"
+            placeholder={lang === 'gu' ? 'પાકનું નામ અથવા ઋતુ સર્ચ કરો...' : 'Search crop by name, season...'}
+            className="w-full bg-slate-955 border border-slate-850 rounded-xl pl-10 pr-4 py-2.5 text-xs font-semibold text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 shadow-inner"
           />
         </div>
       </div>
