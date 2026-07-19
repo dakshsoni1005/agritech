@@ -370,7 +370,8 @@ export default function CropDatabaseView({ onSelectCrop, lang, onBack }) {
     // Attempt to match the exact name in CROP_DATABASE to load NPK & chemical stats
     const matchedCrop = CROP_DATABASE.find(
       (c) => c.cropName.toLowerCase() === cropName.toLowerCase() || 
-             c.cropName.toLowerCase().includes(cropName.toLowerCase())
+             c.cropName.toLowerCase().includes(cropName.toLowerCase()) ||
+             cropName.toLowerCase().includes(c.cropName.toLowerCase())
     );
 
     if (matchedCrop) {
@@ -440,7 +441,8 @@ export default function CropDatabaseView({ onSelectCrop, lang, onBack }) {
   const getCropImage = (cropName) => {
     const matched = CROP_DATABASE.find(
       (c) => c.cropName.toLowerCase() === cropName.toLowerCase() || 
-             c.cropName.toLowerCase().includes(cropName.toLowerCase())
+             c.cropName.toLowerCase().includes(cropName.toLowerCase()) ||
+             cropName.toLowerCase().includes(c.cropName.toLowerCase())
     );
     return matched ? matched.imageUrl : 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80';
   };
