@@ -332,7 +332,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹7,500 - ₹9,500 per quintal',
     estimatedProfitRange: '₹80,000 - ₹1,40,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Cotton, Groundnut or Sesame. Excellent soil nitrogen fixer.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/tur.jpg',
     description: 'Long duration Kharif pulse crop. Flagship protein source in standard Gujarati dal diets.'
   },
   {
@@ -404,7 +404,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,800 - ₹8,200 per quintal',
     estimatedProfitRange: '₹40,000 - ₹75,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Maize or Sorghum. High nitrogen fixing capacity.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/urad.jpg',
     description: 'Important monsoon pulse crop. Highly demanded for papad and dal processing units.'
   },
   {
@@ -428,7 +428,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,500 - ₹8,000 per quintal',
     estimatedProfitRange: '₹30,000 - ₹50,000 per hectare',
     suitableCompanionCrops: 'Pearl millet (Bajra), Sesame. Best crop for extreme dry zones.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/moth.jpg',
     description: 'Most drought-resistant kharif pulse of arid deserts. High soil binding properties.'
   },
   {
@@ -452,7 +452,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,500 - ₹7,000 per quintal',
     estimatedProfitRange: '₹45,000 - ₹75,005 per hectare',
     suitableCompanionCrops: 'Maize, Sorghum, Pearl Millet. Multi-purpose pulse, vegetable and fodder.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/cowpea.jpg',
     description: 'Fast growing pulse serving as green vegetable, dry seed, and organic soil cover.'
   },
   {
@@ -500,7 +500,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,500 - ₹8,500 per quintal',
     estimatedProfitRange: '₹60,000 - ₹1,00,000 per hectare',
     suitableCompanionCrops: 'Mustard or Chickpea strip cropping.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/coriander.jpg',
     description: 'Highly profitable winter spice crop grown extensively across the Saurashtra black soil belt.'
   },
   {
