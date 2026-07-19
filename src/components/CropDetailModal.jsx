@@ -20,10 +20,10 @@ export default function CropDetailModal({ crop, onClose, lang }) {
         }}
       >
         {/* Darkening overlay for readability */}
-        <div className="absolute inset-0 bg-slate-955/65 pointer-events-none z-0"></div>
+        <div className="absolute inset-0 bg-slate-955/35 pointer-events-none z-0"></div>
         
         {/* Modal Header */}
-        <div className="relative z-10 px-6 py-4.5 border-b border-white/10 bg-slate-950/70 backdrop-blur-md flex items-center justify-between shrink-0">
+        <div className="relative z-10 px-6 py-4.5 border-b border-white/10 bg-slate-950/45 backdrop-blur-md flex items-center justify-between shrink-0">
           <div className="flex items-center space-x-2.5">
             <Sprout className="w-5.5 h-5.5 text-emerald-500" />
             <span className="font-black text-slate-100 text-base tracking-tight">
@@ -43,7 +43,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
         <div className="relative z-10 flex-1 overflow-y-auto min-h-0 lg:flex lg:space-x-0">
           
           {/* Left Column: Image, Title, Description */}
-          <div className="lg:w-[38%] p-6 lg:p-8 space-y-5 border-b lg:border-b-0 lg:border-r border-white/10 shrink-0 bg-slate-950/60 backdrop-blur-lg lg:overflow-y-auto scrollbar-thin">
+          <div className="lg:w-[38%] p-6 lg:p-8 space-y-5 border-b lg:border-b-0 lg:border-r border-white/10 shrink-0 bg-slate-950/20 backdrop-blur-md lg:overflow-y-auto scrollbar-thin">
             
             {/* Crop Photo Container */}
             <div className="w-full aspect-[16/10] lg:aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-md relative group select-none">
@@ -63,10 +63,10 @@ export default function CropDetailModal({ crop, onClose, lang }) {
                 {crop.cropName} <span className="text-emerald-400 font-extrabold">({crop.gujaratiName})</span>
               </h2>
               <div className="flex items-center space-x-2">
-                <span className="text-[10px] bg-slate-950/60 text-slate-350 font-black border border-white/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
+                <span className="text-[10px] bg-slate-955/65 text-slate-300 font-black border border-white/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
                   {crop.category}
                 </span>
-                <span className="text-[10px] bg-slate-950/60 text-emerald-400 font-black border border-white/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
+                <span className="text-[10px] bg-slate-955/65 text-emerald-400 font-black border border-white/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider">
                   Gujarat MSP Suitability
                 </span>
               </div>
@@ -85,7 +85,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
           </div>
 
           {/* Right Column: Dynamic Parameters Grouped in 4 Cards */}
-          <div className="lg:w-[62%] p-6 lg:p-8 space-y-6 lg:overflow-y-auto scrollbar-thin bg-slate-955/40 backdrop-blur-md">
+          <div className="lg:w-[62%] p-6 lg:p-8 space-y-6 lg:overflow-y-auto scrollbar-thin bg-slate-955/15 backdrop-blur-sm">
             
             {/* CARD 1: Climate & Soil Suitability */}
             <div className="bg-slate-900/65 backdrop-blur-md p-5 rounded-2xl border border-white/10 space-y-4 shadow-lg">
@@ -180,7 +180,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
 
             {/* CARD 3: Market Economics */}
             <div className="bg-slate-900/65 backdrop-blur-md p-5 rounded-2xl border border-white/10 space-y-4 shadow-lg">
-              <h4 className="text-xs font-black text-slate-300 uppercase tracking-wider flex items-center space-x-2 border-b border-white/5 pb-2">
+              <h4 className="text-xs font-black text-slate-330 uppercase tracking-wider flex items-center space-x-2 border-b border-white/5 pb-2">
                 <DollarSign className="w-4 h-4 text-amber-500" />
                 <span>{lang === 'gu' ? '૩. ઉત્પાદન અને બજાર કિંમત' : '3. Economics & Market Price'}</span>
               </h4>
@@ -206,7 +206,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
               <div className="bg-emerald-950/40 backdrop-blur-md p-4 rounded-xl border border-emerald-500/20 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] text-emerald-400/90 font-black uppercase tracking-wider block">Estimated Profit Range (નફા ગણતરી)</span>
-                  <span className="text-lg sm:text-xl font-black text-amber-500 mt-0.5 block">{crop.estimatedProfitRange}</span>
+                  <span className="text-lg sm:text-xl font-black text-amber-550 mt-0.5 block">{crop.estimatedProfitRange}</span>
                 </div>
                 <Award className="w-8 h-8 text-amber-500 shrink-0" />
               </div>
@@ -248,7 +248,7 @@ export default function CropDetailModal({ crop, onClose, lang }) {
         </div>
 
         {/* Modal Footer */}
-        <div className="relative z-10 p-4.5 bg-slate-950/70 backdrop-blur-md border-t border-white/10 flex justify-end shrink-0 select-none">
+        <div className="relative z-10 p-4.5 bg-slate-950/45 backdrop-blur-md border-t border-white/10 flex justify-end shrink-0 select-none">
           <button
             onClick={onClose}
             className="px-6 py-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800/60 text-slate-100 font-extrabold text-xs tracking-wider uppercase border border-white/10 transition-all duration-300 cursor-pointer"

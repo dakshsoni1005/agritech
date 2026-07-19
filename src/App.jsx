@@ -44,7 +44,7 @@ export default function App() {
     <div 
       className="min-h-screen text-slate-100 flex font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
       style={{
-        backgroundImage: "linear-gradient(to bottom, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.96)), url('/farmer-hero-bg.jpg')",
+        backgroundImage: "linear-gradient(to bottom, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.9)), url('/home_bg.jpg')",
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center'
