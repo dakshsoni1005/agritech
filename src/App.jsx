@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import RecommendationWizard from './components/RecommendationWizard';
 import RecommendationResults from './components/RecommendationResults';
 import CropDatabaseView from './components/CropDatabaseView';
@@ -38,77 +39,91 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased">
+    <div className="min-h-screen bg-slate-955 text-slate-100 flex font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300">
       
-      {/* Navigation Header */}
-      <Header
-        activeTab={activeTab}
-        setActiveTab={(tab) => {
-          setActiveTab(tab);
-          if (tab === 'recommendation') {
-            // Keep recommendation results or return to wizard
-          }
-        }}
-        lang={lang}
-        setLang={setLang}
-        theme={theme}
-        setTheme={setTheme}
-      />
+      {/* Permanent Left Sidebar for Desktop (visible on lg screens and up) */}
+      <aside className="hidden lg:flex w-80 h-screen sticky top-0 border-r border-slate-900 bg-slate-900 flex-col shrink-0 transition-colors duration-300">
+        <Sidebar 
+          activeTab={activeTab} 
+          setActiveTab={setActiveTab} 
+          lang={lang} 
+        />
+      </aside>
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+      {/* Main Right Column (holds header and main container layout) */}
+      <div className="flex-1 flex flex-col min-w-0">
         
-        {activeTab === 'recommendation' && (
-          <div>
-            {!recommendationResult ? (
-              <RecommendationWizard
-                onSubmit={handleWizardSubmit}
-                lang={lang}
-              />
-            ) : (
-              <RecommendationResults
-                result={recommendationResult}
-                onReset={handleResetRecommendation}
-                onViewCropDetails={(crop) => setSelectedModalCrop(crop)}
-                lang={lang}
-              />
-            )}
-          </div>
-        )}
+        {/* Navigation Header */}
+        <Header
+          activeTab={activeTab}
+          setActiveTab={(tab) => {
+            setActiveTab(tab);
+            if (tab === 'recommendation') {
+              // Keep recommendation results or return to wizard
+            }
+          }}
+          lang={lang}
+          setLang={setLang}
+          theme={theme}
+          setTheme={setTheme}
+        />
 
-        {activeTab === 'database' && (
-          <CropDatabaseView
-            onSelectCrop={(crop) => setSelectedModalCrop(crop)}
-            lang={lang}
-            onBack={() => setActiveTab('recommendation')}
-          />
-        )}
+        {/* Main Content Area */}
+        <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+          
+          {activeTab === 'recommendation' && (
+            <div>
+              {!recommendationResult ? (
+                <RecommendationWizard
+                  onSubmit={handleWizardSubmit}
+                  lang={lang}
+                />
+              ) : (
+                <RecommendationResults
+                  result={recommendationResult}
+                  onReset={handleResetRecommendation}
+                  onViewCropDetails={(crop) => setSelectedModalCrop(crop)}
+                  lang={lang}
+                />
+              )}
+            </div>
+          )}
 
-        {activeTab === 'regions' && (
-          <RegionalInsights 
-            lang={lang} 
-            onBack={() => setActiveTab('recommendation')}
-          />
-        )}
+          {activeTab === 'database' && (
+            <CropDatabaseView
+              onSelectCrop={(crop) => setSelectedModalCrop(crop)}
+              lang={lang}
+              onBack={() => setActiveTab('recommendation')}
+            />
+          )}
 
-        {activeTab === 'calculator' && (
-          <ProfitCalculator 
-            lang={lang} 
-            onBack={() => setActiveTab('recommendation')}
-          />
-        )}
+          {activeTab === 'regions' && (
+            <RegionalInsights 
+              lang={lang} 
+              onBack={() => setActiveTab('recommendation')}
+            />
+          )}
 
-      </main>
+          {activeTab === 'calculator' && (
+            <ProfitCalculator 
+              lang={lang} 
+              onBack={() => setActiveTab('recommendation')}
+            />
+          )}
 
-      {/* 18-Field Detailed Advisory Modal */}
-      <CropDetailModal
-        crop={selectedModalCrop}
-        onClose={() => setSelectedModalCrop(null)}
-        lang={lang}
-      />
+        </main>
 
-      {/* Footer */}
-      <Footer lang={lang} />
+        {/* 18-Field Detailed Advisory Modal */}
+        <CropDetailModal
+          crop={selectedModalCrop}
+          onClose={() => setSelectedModalCrop(null)}
+          lang={lang}
+        />
+
+        {/* Footer */}
+        <Footer lang={lang} />
+
+      </div>
 
     </div>
   );
