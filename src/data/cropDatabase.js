@@ -740,7 +740,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹35 - ₹120 per kg',
     estimatedProfitRange: '₹2,50,000 - ₹5,00,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Cowpea, Moong or Marigold in young orchards.',
-    imageUrl: 'https://images.unsplash.com/photo-1590502593747-42a996133562?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/lemon.png',
     description: 'Commercial Kagzi Lime cultivation. Mehsana district is the major lemon producer hub in Gujarat.'
   },
   {
@@ -836,7 +836,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹20 - ₹55 per kg',
     estimatedProfitRange: '₹90,000 - ₹1,80,000 per hectare',
     suitableCompanionCrops: 'Radish or coriander sown as intercrop lines.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/okra.jpg',
     description: 'Highly popular short-duration vegetable. Summer crop yields excellent price benefits in city markets.'
   },
   {
@@ -860,7 +860,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹14,000 - ₹20,000 per quintal',
     estimatedProfitRange: '₹1,20,000 - ₹2,00,000 per hectare',
     suitableCompanionCrops: 'Mustard or Cumin border lines.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/isabgul.png',
     description: 'Highly valuable export-oriented medicinal crop. Gujarat is the leading global psyllium processor.'
   },
   {
@@ -884,7 +884,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹4,800 - ₹6,500 per quintal',
     estimatedProfitRange: '₹45,000 - ₹80,000 per hectare',
     suitableCompanionCrops: 'Pearl Millet, Sesame. Fixes nitrogen and produces commercial guar gum.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80'
+    imageUrl: '/guar.jpg'
   },
   {
     id: 'date_palm',
@@ -931,7 +931,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹30 - ₹90 per kg',
     estimatedProfitRange: '₹2,50,000 - ₹4,50,000 per hectare',
     suitableCompanionCrops: 'Planted as border/trap crop in cotton and vegetable fields to repel nematodes.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/marigold.jpg',
     description: 'Highly profitable floriculture crop. Widely vanned for temple garlanding and decorations.'
   }
 ];
