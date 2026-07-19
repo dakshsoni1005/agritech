@@ -20,7 +20,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,500 - ₹8,500 per quintal (₹1,300 - ₹1,700 per 20kg/Man)',
     estimatedProfitRange: '₹85,000 - ₹1,30,000 per hectare',
     suitableCompanionCrops: 'Bajra, Pigeon Pea (Toor), Cotton, Sorghum (Crop rotation with Wheat/Gram in Rabi)',
-    imageUrl: '/1-18.jpg',
+    imageUrl: '/51nbI0GadZL.jpg',
     description: 'Groundnut is the flagship Kharif oilseed crop of Saurashtra. Highly rewarding under medium black soil with proper drainage.'
   },
   {
@@ -92,7 +92,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,800 - ₹7,200 per quintal (₹1,160 - ₹1,440 per 20kg)',
     estimatedProfitRange: '₹90,000 - ₹1,40,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Mung bean, Cowpea, or Sesame in early growth stage.',
-    imageUrl: '/714xCG6CxKL._AC_UF1000,1000_QL80_.jpg',
+    imageUrl: '/1-18.jpg',
     description: 'Gujarat is the world leader in Castor production. Hardy drought-tolerant commercial crop.'
   },
   {
@@ -116,7 +116,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,600 - ₹3,600 per quintal (₹520 - ₹720 per 20kg)',
     estimatedProfitRange: '₹65,000 - ₹1,05,000 per hectare',
     suitableCompanionCrops: 'Mustard or Chickpea strip cropping. Excellent rotation after Paddy or Groundnut.',
-    imageUrl: '/51nbI0GadZL.jpg',
+    imageUrl: '/714xCG6CxKL._AC_UF1000,1000_QL80_.jpg',
     description: 'Staple Rabi crop. Bhalia durum wheat grown rainfed in Bhal tract; Sharbati under irrigation across Gujarat.'
   },
   {
