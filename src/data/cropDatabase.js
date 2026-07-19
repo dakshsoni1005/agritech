@@ -164,7 +164,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹3,200 - ₹3,800 per ton (FRP standard factory price)',
     estimatedProfitRange: '₹1,80,000 - ₹2,80,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Potato, Garlic, Wheat or Onion during first 3 months.',
-    imageUrl: 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/Sugarcane.webp',
     description: 'Dominant long-duration commercial crop in South Gujarat sugar mills belt.'
   },
   {
@@ -188,7 +188,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹60 - ₹120 per kg (Export & premium market price)',
     estimatedProfitRange: '₹3,500,000 - ₹7,000,000 per hectare (Established orchard)',
     suitableCompanionCrops: 'Intercropping with Groundnut, Pulses, Vegetables in young non-bearing orchard.',
-    imageUrl: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/kesar-keri.webp',
     description: 'GI-tagged pride fruit of Gujarat. World renowned Gir Kesar flavor and sweetness.'
   },
   {
@@ -212,7 +212,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,300 - ₹3,100 per quintal (₹460 - ₹620 per 20kg)',
     estimatedProfitRange: '₹45,000 - ₹75,000 per hectare',
     suitableCompanionCrops: 'Pigeon pea, Cowpea, Moth bean. Ideal crop for sandy low-rainfall zones.',
-    imageUrl: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/field-of-bajari-holcus-spicatus-C26YDE.jpg',
     description: 'Nutri-cereal staple crop. Thrives in arid sandy soil of North Gujarat & Kachchh.'
   },
   {
@@ -236,7 +236,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹12,000 - ₹18,000 per quintal (₹2,400 - ₹3,600 per 20kg)',
     estimatedProfitRange: '₹1,40,000 - ₹2,30,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Garlic, Mustard, or Coriander.',
-    imageUrl: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/variyali-News-1.webp',
     description: 'Export quality aromatic spice crop of Unjha (Mehsana) market hub.'
   },
   {
