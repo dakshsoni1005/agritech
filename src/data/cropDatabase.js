@@ -524,7 +524,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹8,000 - ₹15,000 per quintal (₹1,600 - ₹3,000 per 20kg)',
     estimatedProfitRange: '₹2,50,000 - ₹4,50,000 per hectare',
     suitableCompanionCrops: 'Intercropped in Sugarcane rows. Rotation with Groundnut or Sesame.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/garlic.png',
     description: 'Commercial spice crop with exceptional market value. Gondal (Saurashtra) is the major commercial trade hub.'
   },
   {
@@ -548,7 +548,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹1,500 - ₹2,800 per quintal',
     estimatedProfitRange: '₹1,20,000 - ₹2,50,000 per hectare',
     suitableCompanionCrops: 'Sugarcane intercrop. Excellent rotation after groundnut.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/onion.jpg',
     description: 'Major spice vegetable. Mahuva (Bhavnagar) is India\'s prime center for dehydrated white onions.'
   },
   {
@@ -572,7 +572,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,500 - ₹7,200 per quintal',
     estimatedProfitRange: '₹40,000 - ₹75,000 per hectare',
     suitableCompanionCrops: 'Mustard, Wheat. Fixes nitrogen, leaves soil rich in nitrates.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/fenugreek.png',
     description: 'Double benefit crop grown for high value seed spice and green leafy vegetable (Rabi).'
   },
   {
@@ -596,7 +596,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹12,000 - ₹22,000 per quintal (Dry red chillies)',
     estimatedProfitRange: '₹1,50,000 - ₹3,00,000 per hectare',
     suitableCompanionCrops: 'Marigold border crops to attract pests. Onion and garlic rotation.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/chilli.png',
     description: 'Commercial spice crop with high yield and processing demand. Thrives under drip systems.'
   },
   {
@@ -644,7 +644,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹12 - ₹20 per kg (Factory contract / mandi price)',
     estimatedProfitRange: '₹2,50,000 - ₹4,50,000 per hectare',
     suitableCompanionCrops: 'Cowpea or Moong intercropped in early stages. Crop rotation with paddy.',
-    imageUrl: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/banana.png',
     description: 'Fast-growing high-yield tropical cash crop. Central Gujarat banana belts lead nationally.'
   },
   {
