@@ -437,6 +437,14 @@ export default function CropDatabaseView({ onSelectCrop, lang, onBack }) {
     );
   };
 
+  const getCropImage = (cropName) => {
+    const matched = CROP_DATABASE.find(
+      (c) => c.cropName.toLowerCase() === cropName.toLowerCase() || 
+             c.cropName.toLowerCase().includes(cropName.toLowerCase())
+    );
+    return matched ? matched.imageUrl : 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80';
+  };
+
   return (
     <div className="space-y-6 max-w-6xl mx-auto animate-fade-in select-none">
       
@@ -495,41 +503,53 @@ export default function CropDatabaseView({ onSelectCrop, lang, onBack }) {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {matches.map((crop) => (
-                <div
-                  key={crop.name}
-                  onClick={() => handleCropClick(crop.name)}
-                  className="bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-5 shadow-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer space-y-4 group flex flex-col justify-between"
-                >
-                  <div className="space-y-2.5">
-                    <div className="flex justify-between items-start gap-2">
-                      <h4 className="font-black text-slate-100 text-lg leading-tight">
-                        {crop.name} <span className="text-amber-500 font-bold text-sm">({crop.nameGu})</span>
-                      </h4>
-                      <span className="text-[8px] bg-slate-955 border border-slate-850 px-2 py-0.5 rounded text-slate-455 font-bold uppercase tracking-wider shrink-0">
-                        {crop.categoryName}
-                      </span>
+              {matches.map((crop) => {
+                const cropImage = getCropImage(crop.name);
+                return (
+                  <div
+                    key={crop.name}
+                    onClick={() => handleCropClick(crop.name)}
+                    className="bg-slate-900/60 border border-slate-850/60 hover:border-emerald-500/50 rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer flex flex-col justify-between group"
+                  >
+                    <div className="relative h-32 w-full overflow-hidden">
+                      <img
+                        src={cropImage}
+                        alt={crop.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                     </div>
-                    <p className="text-xs text-slate-350 leading-relaxed font-semibold">
-                      {crop.description}
-                    </p>
+                    <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-start gap-2">
+                          <h4 className="font-black text-slate-100 text-base leading-tight">
+                            {crop.name} <span className="text-amber-500 font-bold text-sm">({crop.nameGu})</span>
+                          </h4>
+                          <span className="text-[8px] bg-slate-955 border border-slate-850 px-2 py-0.5 rounded text-slate-455 font-bold uppercase tracking-wider shrink-0">
+                            {crop.categoryName}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-350 leading-relaxed font-semibold line-clamp-2">
+                          {crop.description}
+                        </p>
+                      </div>
+                      <div className="space-y-3 pt-3 border-t border-slate-855/60">
+                        <div className="flex items-center space-x-1.5 text-[10px] font-bold text-slate-300">
+                          <MapPin className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                          <span className="truncate">{crop.regions}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {crop.tags.map(t => renderTagBadge(t))}
+                        </div>
+                        <div className="text-[10px] font-black text-emerald-500 group-hover:text-emerald-400 flex items-center justify-between mt-1">
+                          <span className="uppercase tracking-wider">{lang === 'gu' ? '૧૮ વિગતવાર ગણતરી જુઓ' : 'View Advisory Specs'}</span>
+                          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-
-                  <div className="space-y-3 pt-3 border-t border-slate-855/80">
-                    <div className="flex items-center space-x-1.5 text-[10px] font-bold text-slate-300">
-                      <MapPin className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                      <span>{crop.regions}</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1">
-                      {crop.tags.map(t => renderTagBadge(t))}
-                    </div>
-                    <div className="text-[10px] font-black text-emerald-500 group-hover:text-emerald-400 flex items-center justify-between mt-1">
-                      <span className="uppercase tracking-wider">{lang === 'gu' ? '૧૮ વિગતવાર ગણતરી જુઓ' : 'View Advisory Specs'}</span>
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
@@ -590,36 +610,48 @@ export default function CropDatabaseView({ onSelectCrop, lang, onBack }) {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {cat.crops.map((crop) => (
-                        <div
-                          key={crop.name}
-                          onClick={() => handleCropClick(crop.name)}
-                          className="bg-slate-900/60 border border-slate-850/60 hover:border-emerald-500/50 rounded-2xl p-5 shadow-md hover:scale-[1.02] transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-4 group"
-                        >
-                          <div className="space-y-2">
-                            <h4 className="font-black text-slate-100 text-base leading-tight">
-                              {crop.name} <span className="text-amber-500 font-bold text-sm">({crop.nameGu})</span>
-                            </h4>
-                            <p className="text-xs text-slate-350 leading-relaxed font-semibold">
-                              {crop.description}
-                            </p>
+                      {cat.crops.map((crop) => {
+                        const cropImage = getCropImage(crop.name);
+                        return (
+                          <div
+                            key={crop.name}
+                            onClick={() => handleCropClick(crop.name)}
+                            className="bg-slate-900/60 border border-slate-855 hover:border-emerald-500/50 rounded-2xl overflow-hidden shadow-md hover:scale-[1.02] transition-all duration-300 cursor-pointer flex flex-col justify-between group"
+                          >
+                            <div className="relative h-32 w-full overflow-hidden">
+                              <img
+                                src={cropImage}
+                                alt={crop.name}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-955/40 to-transparent" />
+                            </div>
+                            <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                              <div className="space-y-2">
+                                <h4 className="font-black text-slate-100 text-base leading-tight">
+                                  {crop.name} <span className="text-amber-500 font-bold text-sm">({crop.nameGu})</span>
+                                </h4>
+                                <p className="text-xs text-slate-350 leading-relaxed font-semibold line-clamp-2">
+                                  {crop.description}
+                                </p>
+                              </div>
+                              <div className="space-y-3 pt-3 border-t border-slate-855/60">
+                                <div className="flex items-center space-x-1.5 text-[10px] font-bold text-slate-300">
+                                  <MapPin className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                                  <span className="truncate">{crop.regions}</span>
+                                </div>
+                                <div className="flex flex-wrap gap-1">
+                                  {crop.tags.map(t => renderTagBadge(t))}
+                                </div>
+                                <div className="text-[10px] font-black text-emerald-500 group-hover:text-emerald-400 flex items-center justify-between mt-1">
+                                  <span className="uppercase tracking-wider">{lang === 'gu' ? '૧૮ વિગતવાર ગણતરી જુઓ' : 'View Advisory Specs'}</span>
+                                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                </div>
+                              </div>
+                            </div>
                           </div>
-
-                          <div className="space-y-3 pt-3 border-t border-slate-855/60">
-                            <div className="flex items-center space-x-1.5 text-[10px] font-bold text-slate-300">
-                              <MapPin className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                              <span>{crop.regions}</span>
-                            </div>
-                            <div className="flex flex-wrap gap-1">
-                              {crop.tags.map(t => renderTagBadge(t))}
-                            </div>
-                            <div className="text-[10px] font-black text-emerald-500 group-hover:text-emerald-400 flex items-center justify-between mt-1">
-                              <span className="uppercase tracking-wider">{lang === 'gu' ? '૧૮ વિગતવાર ગણતરી જુઓ' : 'View Advisory Specs'}</span>
-                              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
 
                   </div>
