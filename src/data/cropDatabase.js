@@ -20,7 +20,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹6,500 - ₹8,500 per quintal',
     estimatedProfitRange: '₹85,000 - ₹1,30,000 per hectare',
     suitableCompanionCrops: 'Bajra, Pigeon Pea (Toor), Cotton, Sorghum',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/51nbI0GadZL.jpg',
     description: 'Groundnut is the flagship Kharif oilseed crop of Saurashtra. Highly rewarding under medium black soil.'
   },
   {
@@ -44,7 +44,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹7,000 - ₹9,200 per quintal',
     estimatedProfitRange: '₹95,000 - ₹1,50,000 per hectare',
     suitableCompanionCrops: 'Pigeon pea (Toor) border crop, Cowpea. Rotation with Groundnut, Wheat, or Sesame.',
-    imageUrl: 'https://images.unsplash.com/photo-1594897030264-ab7d87efc473?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/43-1kapas-seedsf-bdsresolve-original-imagrs4nwmmbdymk.webp',
     description: 'Golden Fibre crop of Gujarat. Thrives in volcanic black soils with micro-irrigation systems.'
   },
   {
@@ -68,7 +68,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹18,000 - ₹28,000 per quintal',
     estimatedProfitRange: '₹1,10,000 - ₹2,20,000 per hectare',
     suitableCompanionCrops: 'Mustard border crop. Excellent rotation after Pearl Millet (Bajra) or Sesame.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/51h+-pjGDuL._AC_UF894,1000_QL80_.jpg',
     description: 'High-value spice cash crop of North Gujarat & Saurashtra. Requires cool, dry winter weather.'
   },
   {
@@ -92,7 +92,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,800 - ₹7,200 per quintal',
     estimatedProfitRange: '₹90,000 - ₹1,40,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Mung bean, Cowpea, or Sesame in early growth stage.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/1-18.jpg',
     description: 'Gujarat is the world leader in Castor production. Hardy drought-tolerant commercial crop.'
   },
   {
@@ -116,7 +116,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,600 - ₹3,600 per quintal',
     estimatedProfitRange: '₹65,000 - ₹1,05,000 per hectare',
     suitableCompanionCrops: 'Mustard or Chickpea strip cropping. Excellent rotation after Paddy or Groundnut.',
-    imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/714xCG6CxKL._AC_UF1000,1000_QL80_.jpg',
     description: 'Staple Rabi crop. Bhalia durum wheat grown rainfed in Bhal tract; Sharbati under irrigation.'
   },
   {
@@ -140,7 +140,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,200 - ₹6,500 per quintal',
     estimatedProfitRange: '₹65,000 - ₹98,000 per hectare',
     suitableCompanionCrops: 'Wheat, Gram. Excellent green manure crop.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/raydo_1584513683.jpg',
     description: 'Major low-water Rabi oilseed of North Gujarat. High return with low input costs.'
   },
   {
@@ -164,7 +164,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹3,200 - ₹3,800 per ton',
     estimatedProfitRange: '₹1,80,000 - ₹2,80,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Potato, Garlic, Wheat or Onion during first 3 months.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/Sugarcane.webp',
     description: 'Dominant long-duration commercial crop in South Gujarat sugar mills belt.'
   },
   {
@@ -188,7 +188,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹11,000 - ₹15,000 per quintal',
     estimatedProfitRange: '₹75,000 - ₹1,20,000 per hectare',
     suitableCompanionCrops: 'Intercrop with Groundnut or Cotton. Rotation with Wheat/Gram in winter.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/images (2).jpeg',
     description: 'High price short-duration oilseed. Summer Til cultivation yields high profit in Saurashtra.'
   },
   {
@@ -236,7 +236,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,300 - ₹3,200 per quintal',
     estimatedProfitRange: '₹70,000 - ₹1,20,000 per hectare',
     suitableCompanionCrops: 'Followed by Rabi Wheat, Gram, Mustard or Sugarcane.',
-    imageUrl: 'https://images.unsplash.com/photo-1536882240095-0379873feb4e?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/images (1).jpeg',
     description: 'Principal Kharif staple in heavy rainfall river basins of Kheda, Anand & South Gujarat.'
   },
   {
@@ -260,7 +260,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹2,300 - ₹3,100 per quintal',
     estimatedProfitRange: '₹45,000 - ₹75,000 per hectare',
     suitableCompanionCrops: 'Pigeon pea, Cowpea, Moth bean. Ideal crop for sandy low-rainfall zones.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/field-of-bajari-holcus-spicatus-C26YDE.jpg',
     description: 'Nutri-cereal staple crop. Thrives in arid sandy soil of North Gujarat & Kachchh.'
   },
   {
@@ -356,7 +356,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹5,200 - ₹6,800 per quintal',
     estimatedProfitRange: '₹65,000 - ₹1,05,000 per hectare',
     suitableCompanionCrops: 'Mustard, Safflower, Wheat intercropping. Improves soil health.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/20210309_152815.jpg',
     description: 'Dominant Rabi pulse crop. Low water requirement with nitrogen fixing soil benefits.'
   },
   {
@@ -476,7 +476,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹12,000 - ₹18,000 per quintal',
     estimatedProfitRange: '₹1,40,000 - ₹2,30,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Garlic, Mustard, or Coriander.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/variyali-News-1.webp',
     description: 'Export quality aromatic spice crop of Unjha (Mehsana) market hub.'
   },
   {
@@ -592,9 +592,9 @@ export const CROP_DATABASE = [
     averageYield: '2.0 - 2.5 tons dry chillies/hectare (or 15-20 tons green chillies)',
     commonDiseasesAndPests: 'Thrips & Mites (કોકડવો), Damping-off, Fruit Rot / Dieback',
     preventionMethods: 'Spray Diafenthiuron (1g/L) for thrips and leaf curl. Spray Azoxystrobin for fruit rot.',
-    estimatedCultivationCost: '₹55,000 - ₹75,000 per hectare',
+    estimatedCultivationCost: '₹55,000 - ₹75,005 per hectare',
     expectedMarketPrice: '₹12,000 - ₹22,000 per quintal (Dry red chillies)',
-    estimatedProfitRange: '₹1,50,000 - ₹3,000,000 per hectare',
+    estimatedProfitRange: '₹1,50,000 - ₹3,00,000 per hectare',
     suitableCompanionCrops: 'Marigold border crops to attract pests. Onion and garlic rotation.',
     imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
     description: 'Commercial spice crop with high yield and processing demand. Thrives under drip systems.'
@@ -620,7 +620,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹60 - ₹120 per kg',
     estimatedProfitRange: '₹3,50,000 - ₹7,00,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Groundnut, Pulses, Vegetables in young orchard.',
-    imageUrl: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/kesar-keri.webp',
     description: 'GI-tagged pride fruit of Gujarat. World renowned Gir Kesar flavor and sweetness.'
   },
   {
@@ -664,7 +664,7 @@ export const CROP_DATABASE = [
     averageYield: '12 - 15 tons/hectare (Established orchard)',
     commonDiseasesAndPests: 'Chikoo Bud Borer (કુડીનો વિંધક), Scale Insects, Sooty Mold',
     preventionMethods: 'Prune dead wood. Spray Profenophos (2ml/L) for bud borer. Apply copper oxychloride.',
-    estimatedCultivationCost: '₹40,000 - ₹55,000 per hectare annual maintenance',
+    estimatedCultivationCost: '₹40,005 - ₹55,000 per hectare annual maintenance',
     expectedMarketPrice: '₹25 - ₹45 per kg',
     estimatedProfitRange: '₹2,00,000 - ₹3,50,000 per hectare',
     suitableCompanionCrops: 'Mango, Guava, Vegetables in early non-bearing years.',
@@ -713,7 +713,7 @@ export const CROP_DATABASE = [
     commonDiseasesAndPests: 'Bacterial Blight / Telya (તેલીયો રોગ), Fruit Borer (દાડમનું પતંગિયું)',
     preventionMethods: 'Apply Streptocycline + Copper Oxychloride for Telya control. Bagging fruits.',
     estimatedCultivationCost: '₹80,000 - ₹1,10,000 per hectare annual maintenance',
-    expectedMarketPrice: '₹70 - ₹130 per kg (Bhagwa grade-A export rates)',
+    expectedMarketPrice: '₹70 - ₹130 per kg',
     estimatedProfitRange: '₹4,00,000 - ₹8,00,000 per hectare',
     suitableCompanionCrops: 'Pulses or leafy vegetables in early 3 years of growth.',
     imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
@@ -737,7 +737,7 @@ export const CROP_DATABASE = [
     commonDiseasesAndPests: 'Citrus Canker (લીંબુનો કેન્કર), Leaf Miner (કોતરણી ઈયળ), Lemon Butterfly, Psylla',
     preventionMethods: 'Spray Streptomycin sulfate (100ppm) for Canker. Spray Imidacloprid for Leaf Miner vector.',
     estimatedCultivationCost: '₹40,005 - ₹55,000 per hectare annual care',
-    expectedMarketPrice: '₹35 - ₹120 per kg (Prices skyrocket during peak summer)',
+    expectedMarketPrice: '₹35 - ₹120 per kg',
     estimatedProfitRange: '₹2,50,000 - ₹5,00,000 per hectare',
     suitableCompanionCrops: 'Intercropping with Cowpea, Moong or Marigold in young orchards.',
     imageUrl: 'https://images.unsplash.com/photo-1590502593747-42a996133562?auto=format&fit=crop&w=600&q=80',
@@ -764,7 +764,7 @@ export const CROP_DATABASE = [
     expectedMarketPrice: '₹12,000 - ₹22,000 per ton',
     estimatedProfitRange: '₹1,50,000 - ₹2,80,000 per hectare',
     suitableCompanionCrops: 'Followed by Summer Bajra, Sesame or Groundnut.',
-    imageUrl: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=600&q=80',
+    imageUrl: '/images.jpeg',
     description: 'Deesa (Banaskantha) is famous as the Potato Capital of Gujarat. High yield loamy soil crop.'
   },
   {
@@ -785,7 +785,7 @@ export const CROP_DATABASE = [
     commonDiseasesAndPests: 'Fruit Borer (ફળ કોરી ખાનાર ઈયળ), Leaf Curl Virus, Early Blight',
     preventionMethods: 'Install pheromone traps. Spray Imidacloprid for whitefly vector. Spray Copper Oxychloride for blight.',
     estimatedCultivationCost: '₹35,000 - ₹48,000 per hectare',
-    expectedMarketPrice: '₹8 - ₹25 per kg (Highly volatile season rates)',
+    expectedMarketPrice: '₹8 - ₹25 per kg',
     estimatedProfitRange: '₹1,20,000 - ₹2,80,000 per hectare',
     suitableCompanionCrops: 'Marigold border cropping, Beans. Rotation with legumes.',
     imageUrl: 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=600&q=80',
@@ -833,7 +833,7 @@ export const CROP_DATABASE = [
     commonDiseasesAndPests: 'Yellow Vein Mosaic Virus (YVMV), Fruit Borer, Jassids/Whitefly',
     preventionMethods: 'Sow YVMV-resistant varieties (Phule Vimla / Arka Anamika). Spray Dimethoate for vectors.',
     estimatedCultivationCost: '₹22,000 - ₹30,000 per hectare',
-    expectedMarketPrice: '₹20 - ₹55 per kg (Commands premium rates during summer)',
+    expectedMarketPrice: '₹20 - ₹55 per kg',
     estimatedProfitRange: '₹90,000 - ₹1,80,000 per hectare',
     suitableCompanionCrops: 'Radish or coriander sown as intercrop lines.',
     imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
@@ -846,13 +846,13 @@ export const CROP_DATABASE = [
     category: 'Medicinal / Industrial',
     suitableRegions: ['North Gujarat (Mehsana, Patan)', 'Kachchh'],
     suitableSoilTypes: ['Sandy Loam Soil', 'Goradu / Red Loamy Soil', 'Light desert soil'],
-    idealTempRange: '15°C - 26°C (Dry weather mandatory during maturity/harvest)',
-    idealRainfallRange: 'Low (150 - 300 mm; rains during harvest completely destroy crop)',
+    idealTempRange: '15°C - 26°C',
+    idealRainfallRange: 'Low (150 - 300 mm)',
     sowingMonths: ['October', 'November'],
     harvestMonths: ['February', 'March'],
     waterRequirement: 'Low (3-4 light irrigations. No water logging. Last watering 25 days before harvest)',
     fertilizerRecommendation: '30 kg N, 25 kg P2O5 per hectare',
-    seedRate: '6 - 8 kg/hectare (Mix with sand for uniform broadcasting)',
+    seedRate: '6 - 8 kg/hectare',
     averageYield: '1.2 - 1.6 tons/hectare',
     commonDiseasesAndPests: 'Downy Mildew (સુકારો), Aphids',
     preventionMethods: 'Seed treatment with Metalaxyl. Spray Copper Oxychloride for mildew.',
@@ -883,7 +883,32 @@ export const CROP_DATABASE = [
     estimatedCultivationCost: '₹15,000 - ₹20,000 per hectare',
     expectedMarketPrice: '₹4,800 - ₹6,500 per quintal',
     estimatedProfitRange: '₹45,000 - ₹80,000 per hectare',
-    suitableCompanionCrops: 'Pearl Millet, Sesame. Fixes nitrogen and produces commercial guar gum.'
+    suitableCompanionCrops: 'Pearl Millet, Sesame. Fixes nitrogen and produces commercial guar gum.',
+    imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 'date_palm',
+    cropName: 'Date Palm (Khajur)',
+    gujaratiName: 'ખજૂર (કચ્છ ખારેક)',
+    category: 'Horticulture / Arid Fruit',
+    suitableRegions: ['Kachchh', 'North Gujarat'],
+    suitableSoilTypes: ['Desert Sandy Soil', 'Coastal Saline Clay', 'Sandy Loam Soil'],
+    idealTempRange: '25°C - 45°C',
+    idealRainfallRange: 'Low (150-400 mm; tolerant to drought and saline groundwater)',
+    sowingMonths: ['June', 'July'],
+    harvestMonths: ['June', 'July'],
+    waterRequirement: 'Medium (Drip irrigation with brackish water tolerance)',
+    fertilizerRecommendation: '1.5 kg N, 0.75 kg P2O5, 1.5 kg K2O per bearing tree annually',
+    seedRate: '120 - 156 plants/hectare',
+    averageYield: '10.0 - 16.0 tons fresh doka dates/hectare',
+    commonDiseasesAndPests: 'Red Palm Weevil, Rhinoceros Beetle, Graphiola Leaf Spot',
+    preventionMethods: 'Pheromone traps for Red Palm Weevil. Pheromone lures & trunk injection if infected.',
+    estimatedCultivationCost: '₹1,20,000 per hectare annual care after 4th year',
+    expectedMarketPrice: '₹80 - ₹150 per kg',
+    estimatedProfitRange: '₹6,00,000 - ₹12,00,000 per hectare',
+    suitableCompanionCrops: 'Intercropping with Pomegranate, Dragon Fruit or Fodder Grass in early years.',
+    imageUrl: '/71K7lXIc3mL._AC_UF1000,1000_QL80_.jpg',
+    description: 'Gold mine crop of Kachchh. Elite tissue culture Barhee dates command high export price.'
   },
   {
     id: 'marigold',
@@ -903,7 +928,7 @@ export const CROP_DATABASE = [
     commonDiseasesAndPests: 'Damping-off, Collar Rot, Red Spider Mites, Bud Borer',
     preventionMethods: 'Nursery sterilization. Spray Dicofol or wettable Sulfur for spider mites.',
     estimatedCultivationCost: '₹35,000 - ₹45,000 per hectare',
-    expectedMarketPrice: '₹30 - ₹90 per kg (Prices surge during festive & wedding seasons)',
+    expectedMarketPrice: '₹30 - ₹90 per kg',
     estimatedProfitRange: '₹2,50,000 - ₹4,50,000 per hectare',
     suitableCompanionCrops: 'Planted as border/trap crop in cotton and vegetable fields to repel nematodes.',
     imageUrl: 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80',
