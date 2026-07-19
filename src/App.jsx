@@ -8,6 +8,7 @@ import CropDetailModal from './components/CropDetailModal';
 import RegionalInsights from './components/RegionalInsights';
 import ProfitCalculator from './components/ProfitCalculator';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 import { recommendCrops } from './utils/recommendationEngine';
 
 export default function App() {
@@ -124,6 +125,9 @@ export default function App() {
         <Footer lang={lang} />
 
       </div>
+
+      {/* Floating AI Chatbot Widget */}
+      <Chatbot lang={lang} />
 
     </div>
   );
