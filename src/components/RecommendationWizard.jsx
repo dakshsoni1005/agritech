@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GUJARAT_REGIONS, SOIL_TYPES_LIST, MONTHS_LIST } from '../data/gujaratRegions';
-import { Sparkles, MapPin, Thermometer, CloudRain, Droplets, Ruler, RotateCcw, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Sparkles, MapPin, Thermometer, CloudRain, Droplets, Ruler, RotateCcw, ArrowRight, Star } from 'lucide-react';
 
 export default function RecommendationWizard({ onSubmit, lang }) {
   const [selectedRegionId, setSelectedRegionId] = useState('saurashtra');
@@ -55,271 +55,332 @@ export default function RecommendationWizard({ onSubmit, lang }) {
   };
 
   return (
-    <div className="bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-emerald-950/20 max-w-4xl mx-auto">
+    <div className="space-y-10 animate-fade-in">
       
-      {/* Header Badge */}
-      <div className="flex items-center space-x-3 mb-6">
-        <div className="p-2.5 bg-emerald-500/10 rounded-2xl border border-emerald-500/30">
-          <Sparkles className="w-6 h-6 text-emerald-400" />
+      {/* Premium Hero Banner (60% dominant area) */}
+      <div className="relative text-center max-w-3xl mx-auto space-y-4 pt-4 pb-2">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-350 text-xs font-bold tracking-wide uppercase">
+          <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          <span>{lang === 'gu' ? 'ગુજરાત કૃષિ મિશન ૨૦૨૬' : 'Gujarat Agri Mission 2026'}</span>
         </div>
-        <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            {lang === 'gu' ? 'એઆઈ પાક ભલામણ સિસ્ટમ (AI Crop Advisory)' : 'AI Crop Recommendation Wizard'}
-          </h2>
-          <p className="text-sm text-slate-400">
-            {lang === 'gu'
-              ? 'તમારી જમીન, વાતાવરણ અને વિસ્તારની વિગતો આપો, એઆઈ મહત્તમ ઉત્પાદન આપતો પાક શોધી આપશે.'
-              : 'Provide your farm soil, climate & region details to get high-accuracy crop advice.'}
-          </p>
+        
+        <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
+          {lang === 'gu' ? (
+            <>
+              ખેતીને બનાવો સ્માાર્ટ અને નફાકારક <br />
+              <span className="text-emerald-500">
+                એઆઈ પાક ભલામણ સાથે
+              </span>
+            </>
+          ) : (
+            <>
+              Empower Your Farming with <br />
+              <span className="text-emerald-500">
+                AI Smart Recommendations
+              </span>
+            </>
+          )}
+        </h1>
+
+        <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto font-semibold leading-relaxed">
+          {lang === 'gu'
+            ? 'ગુજરાતના પ્રાદેશિક ભૌગોલિક હવામાન, જમીનની વિશેષતાઓ અને બજાર કિંમતોનું આધુનિક એઆઈ મોડલ દ્વારા પૃથક્કરણ કરી શ્રેષ્ઠ પાક પસંદગી મેળવો.'
+            : 'Get precision crop suitability guidance using multi-regional environmental intelligence, tailored soil profiling, and yield analytics.'}
+        </p>
+
+        {/* Info Badges */}
+        <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-[11px] font-bold text-slate-400">
+          <span className="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-850">
+            🌾 ૫+ કૃષિ પ્રદેશો
+          </span>
+          <span className="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-850">
+            🧪 ૧૮+ સલાહ માર્ગદર્શિકા
+          </span>
+          <span className="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-850">
+            📊 ચોખ્ખો નફો અંદાજ
+          </span>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Main Wizard Form Container (30% secondary structure background) */}
+      <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl max-w-4xl mx-auto">
         
-        {/* 1. Region Selector Cards */}
-        <div>
-          <label className="block text-xs uppercase tracking-wider font-semibold text-emerald-400 mb-3 flex items-center space-x-1">
-            <MapPin className="w-3.5 h-3.5" />
-            <span>{lang === 'gu' ? '૧. તમારો વિશિષ્ટ પ્રદેશ પસંદ કરો (Region)' : '1. Select Region'}</span>
-          </label>
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-            {GUJARAT_REGIONS.map((reg) => (
-              <button
-                key={reg.id}
-                type="button"
-                onClick={() => setSelectedRegionId(reg.id)}
-                className={`p-3.5 rounded-2xl border text-left transition-all relative overflow-hidden flex flex-col justify-between ${
-                  selectedRegionId === reg.id
-                    ? 'border-emerald-500 bg-emerald-950/40 text-white ring-2 ring-emerald-500/40 shadow-lg shadow-emerald-900/30'
-                    : 'border-slate-800 bg-slate-800/40 text-slate-400 hover:border-slate-700 hover:text-slate-200'
-                }`}
-              >
-                <div
-                  className="w-2 h-2 rounded-full mb-2"
-                  style={{ backgroundColor: reg.color }}
-                />
-                <span className="font-bold text-sm sm:text-base text-white block">
-                  {lang === 'gu' ? reg.nameGu : reg.name}
-                </span>
-                <span className="text-[11px] opacity-70 mt-1 block">
-                  {reg.districts.length} {lang === 'gu' ? 'જિલ્લાઓ' : 'Districts'}
-                </span>
-              </button>
-            ))}
+        {/* Step Title Badge */}
+        <div className="flex items-center space-x-3.5 mb-8 pb-6 border-b border-slate-850">
+          <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-emerald-500">
+            <Sparkles className="w-6 h-6 animate-pulse" />
+          </div>
+          <div>
+            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              {lang === 'gu' ? 'પાક સલાહ વિઝાર્ડ' : 'Crop Advisory Form'}
+            </h2>
+            <p className="text-xs text-slate-450 mt-0.5 font-bold">
+              {lang === 'gu'
+                ? 'જમીન, સરનામું, તાપમાન અને પિયતની વિગતો સચોટ પાક પસંદગી માટે ભરો.'
+                : 'Please fill in the fields below to trigger the recommendation algorithm.'}
+            </p>
           </div>
         </div>
 
-        {/* 2. District & Taluka Cascading Select */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2">
-              {lang === 'gu' ? 'જિલ્લો (District)' : 'District'}
+        <form onSubmit={handleSubmit} className="space-y-8">
+          
+          {/* 1. Region Selector Cards */}
+          <div className="space-y-4">
+            <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-450 flex items-center space-x-1.5">
+              <MapPin className="w-3.5 h-3.5 text-emerald-500" />
+              <span>{lang === 'gu' ? '૧. કૃષિ ભૌગોલિક પ્રદેશ' : '1. Select Agro-Region'}</span>
             </label>
-            <select
-              value={district}
-              onChange={(e) => setDistrict(e.target.value)}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all font-medium text-sm"
-            >
-              {availableDistricts.map((d) => (
-                <option key={d.name} value={d.name}>
-                  {d.name} ({d.nameGu})
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2">
-              {lang === 'gu' ? 'તાલુકો (Taluka)' : 'Taluka'}
-            </label>
-            <select
-              value={taluka}
-              onChange={(e) => setTaluka(e.target.value)}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all font-medium text-sm"
-            >
-              {availableTalukas.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {/* 3. Soil Type & Month */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2">
-              {lang === 'gu' ? 'જમીનનો પ્રકાર (Soil Type)' : 'Soil Type'}
-            </label>
-            <select
-              value={soilType}
-              onChange={(e) => setSoilType(e.target.value)}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all font-medium text-sm"
-            >
-              {SOIL_TYPES_LIST.map((st) => (
-                <option key={st.id} value={st.name}>
-                  {st.nameGu} ({st.name})
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2">
-              {lang === 'gu' ? 'વાવણીનો સમય / મહિનો (Current Month)' : 'Current Month'}
-            </label>
-            <select
-              value={currentMonth}
-              onChange={(e) => setCurrentMonth(parseInt(e.target.value, 10))}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all font-medium text-sm"
-            >
-              {MONTHS_LIST.map((m) => (
-                <option key={m.value} value={m.value}>
-                  {m.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {/* 4. Temperature, Rainfall, & Irrigation */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2 flex items-center space-x-1">
-              <Thermometer className="w-3.5 h-3.5 text-amber-400" />
-              <span>{lang === 'gu' ? 'તાપમાન (°C)' : 'Temperature (°C)'}</span>
-            </label>
-            <div className="flex items-center space-x-3 bg-slate-800 p-2.5 rounded-xl border border-slate-700">
-              <input
-                type="range"
-                min="10"
-                max="45"
-                value={temperature}
-                onChange={(e) => setTemperature(parseInt(e.target.value, 10))}
-                className="w-full accent-emerald-500 cursor-pointer"
-              />
-              <span className="text-sm font-bold text-amber-400 w-12 text-right">{temperature}°C</span>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3.5">
+              {GUJARAT_REGIONS.map((reg) => {
+                const isActive = selectedRegionId === reg.id;
+                return (
+                  <button
+                    key={reg.id}
+                    type="button"
+                    onClick={() => setSelectedRegionId(reg.id)}
+                    className={`p-4 rounded-2xl border text-left transition-all duration-300 relative overflow-hidden flex flex-col justify-between h-[105px] group cursor-pointer ${
+                      isActive
+                        ? 'border-emerald-500 bg-emerald-950/20 text-white ring-2 ring-emerald-500/20 scale-[1.02]'
+                        : 'border-slate-850 bg-slate-950/60 text-slate-400 hover:border-slate-800 hover:text-slate-200'
+                    }`}
+                  >
+                    {/* Circle Indicator */}
+                    <div
+                      className="w-2.5 h-2.5 rounded-full mb-3 transition-transform duration-300 group-hover:scale-125"
+                      style={{ 
+                        backgroundColor: reg.color,
+                        boxShadow: isActive ? `0 0 10px ${reg.color}80` : 'none'
+                      }}
+                    />
+                    <div>
+                      <span className="font-extrabold text-sm sm:text-base text-white block tracking-tight leading-tight mb-0.5">
+                        {lang === 'gu' ? reg.nameGu : reg.name}
+                      </span>
+                      <span className="text-[10px] opacity-75 block font-bold text-slate-450">
+                        {reg.districts.length} {lang === 'gu' ? 'જિલ્લાઓ' : 'Districts'}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2 flex items-center space-x-1">
-              <CloudRain className="w-3.5 h-3.5 text-sky-400" />
-              <span>{lang === 'gu' ? 'વરસાદ (mm/વર્ષ)' : 'Rainfall (mm)'}</span>
-            </label>
-            <div className="flex items-center space-x-3 bg-slate-800 p-2.5 rounded-xl border border-slate-700">
-              <input
-                type="range"
-                min="200"
-                max="2000"
-                step="50"
-                value={rainfall}
-                onChange={(e) => setRainfall(parseInt(e.target.value, 10))}
-                className="w-full accent-sky-500 cursor-pointer"
-              />
-              <span className="text-sm font-bold text-sky-400 w-16 text-right">{rainfall}mm</span>
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2 flex items-center space-x-1">
-              <Droplets className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{lang === 'gu' ? 'પિયત ઉપલબ્ધ છે? (Irrigation)' : 'Irrigation Available?'}</span>
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => setIrrigation('yes')}
-                className={`py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  irrigation === 'yes'
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50'
-                    : 'bg-slate-800 text-slate-400 border border-slate-700 hover:text-white'
-                }`}
-              >
-                {lang === 'gu' ? 'હા (Yes)' : 'Yes'}
-              </button>
-              <button
-                type="button"
-                onClick={() => setIrrigation('no')}
-                className={`py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  irrigation === 'no'
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50'
-                    : 'bg-slate-800 text-slate-400 border border-slate-700 hover:text-white'
-                }`}
-              >
-                {lang === 'gu' ? 'ના (No)' : 'No'}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* 5. Farm Size & Previous Crop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2 flex items-center space-x-1">
-              <Ruler className="w-3.5 h-3.5 text-indigo-400" />
-              <span>{lang === 'gu' ? 'જમીનનું ક્ષેત્રફળ (Farm Size)' : 'Farm Size'}</span>
-            </label>
-            <div className="flex space-x-2">
-              <input
-                type="number"
-                min="0.25"
-                max="100"
-                step="0.25"
-                value={farmSize}
-                onChange={(e) => setFarmSize(e.target.value)}
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold focus:outline-none focus:border-emerald-500"
-              />
+          {/* 2. District & Taluka Cascading Select */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-450">
+                {lang === 'gu' ? 'જિલ્લો (District)' : 'District'}
+              </label>
+              {/* Nested Input: 60% dominant color to create recession visual structure */}
               <select
-                value={unit}
-                onChange={(e) => setUnit(e.target.value)}
-                className="bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-emerald-400 font-bold text-xs uppercase focus:outline-none"
+                value={district}
+                onChange={(e) => setDistrict(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
               >
-                <option value="hectare">{lang === 'gu' ? 'હેક્ટર (Hectare)' : 'Hectare'}</option>
-                <option value="bigha">{lang === 'gu' ? 'વીઘા (Bigha)' : 'Bigha'}</option>
+                {availableDistricts.map((d) => (
+                  <option key={d.name} value={d.name} className="bg-slate-950">
+                    {d.name} ({d.nameGu})
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455">
+                {lang === 'gu' ? 'તાલુકો (Taluka)' : 'Taluka'}
+              </label>
+              <select
+                value={taluka}
+                onChange={(e) => setTaluka(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+              >
+                {availableTalukas.map((t) => (
+                  <option key={t} value={t} className="bg-slate-950">
+                    {t}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
 
-          <div>
-            <label className="block text-xs uppercase tracking-wider font-semibold text-slate-300 mb-2 flex items-center space-x-1">
-              <RotateCcw className="w-3.5 h-3.5 text-amber-400" />
-              <span>{lang === 'gu' ? 'અગાઉ લીધેલ પાક (Previous Crop)' : 'Previous Crop'}</span>
-            </label>
-            <select
-              value={previousCrop}
-              onChange={(e) => setPreviousCrop(e.target.value)}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-emerald-500 transition-all font-medium text-sm"
-            >
-              <option value="Cotton">Cotton (કપાસ)</option>
-              <option value="Groundnut">Groundnut (મગફળી)</option>
-              <option value="Wheat">Wheat (ઘઉં)</option>
-              <option value="Cumin">Cumin (જીરું)</option>
-              <option value="Bajra">Bajra (બાજરી)</option>
-              <option value="Castor">Castor (એરંડા)</option>
-              <option value="Mustard">Mustard (રાયડો)</option>
-              <option value="Paddy">Paddy (ડાંગર)</option>
-              <option value="fallow">Fallow / પડતર (કોઈ નહીં)</option>
-            </select>
+          {/* 3. Soil Type & Month */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455">
+                {lang === 'gu' ? 'જમીનનો પ્રકાર (Soil Type)' : 'Soil Type'}
+              </label>
+              <select
+                value={soilType}
+                onChange={(e) => setSoilType(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+              >
+                {SOIL_TYPES_LIST.map((st) => (
+                  <option key={st.id} value={st.name} className="bg-slate-950">
+                    {st.nameGu} ({st.name})
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455">
+                {lang === 'gu' ? 'વાવણીનો મહિનો (Sowing Month)' : 'Sowing Month'}
+              </label>
+              <select
+                value={currentMonth}
+                onChange={(e) => setCurrentMonth(parseInt(e.target.value, 10))}
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+              >
+                {MONTHS_LIST.map((m) => (
+                  <option key={m.value} value={m.value} className="bg-slate-950">
+                    {m.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-        </div>
 
-        {/* Submit CTA Button */}
-        <div className="pt-2">
-          <button
-            type="submit"
-            className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-base sm:text-lg tracking-wide shadow-xl shadow-emerald-950/60 hover:shadow-emerald-500/20 transform hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-3 group"
-          >
-            <Sparkles className="w-5 h-5 text-amber-300 group-hover:rotate-12 transition-transform" />
-            <span>
-              {lang === 'gu' ? 'એઆઈ પાક ભલામણ અને અંદાજ મેળવો' : 'Generate AI Crop Recommendation'}
-            </span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
+          {/* 4. Temperature, Rainfall, & Irrigation */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
+                <Thermometer className="w-3.5 h-3.5 text-amber-500" />
+                <span>{lang === 'gu' ? 'તાપમાન (°C)' : 'Temperature (°C)'}</span>
+              </label>
+              <div className="flex items-center space-x-3 bg-slate-950 p-3 rounded-2xl border border-slate-850">
+                <input
+                  type="range"
+                  min="10"
+                  max="45"
+                  value={temperature}
+                  onChange={(e) => setTemperature(parseInt(e.target.value, 10))}
+                  className="w-full cursor-pointer"
+                />
+                <span className="text-sm font-black text-amber-500 w-12 text-right">{temperature}°C</span>
+              </div>
+            </div>
 
-      </form>
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
+                <CloudRain className="w-3.5 h-3.5 text-sky-400" />
+                <span>{lang === 'gu' ? 'વરસાદ (mm/વર્ષ)' : 'Annual Rainfall (mm)'}</span>
+              </label>
+              <div className="flex items-center space-x-3 bg-slate-950 p-3 rounded-2xl border border-slate-850">
+                <input
+                  type="range"
+                  min="200"
+                  max="2000"
+                  step="50"
+                  value={rainfall}
+                  onChange={(e) => setRainfall(parseInt(e.target.value, 10))}
+                  className="w-full accent-sky cursor-pointer"
+                />
+                <span className="text-sm font-black text-sky-400 w-16 text-right">{rainfall}mm</span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
+                <Droplets className="w-3.5 h-3.5 text-emerald-500" />
+                <span>{lang === 'gu' ? 'પિયતની સુવિધા? (Irrigation)' : 'Irrigation Facility?'}</span>
+              </label>
+              <div className="grid grid-cols-2 gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setIrrigation('yes')}
+                  className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-300 cursor-pointer ${
+                    irrigation === 'yes'
+                      ? 'bg-emerald-600 text-white shadow-md'
+                      : 'bg-slate-950 text-slate-400 border border-slate-850 hover:text-slate-200'
+                  }`}
+                >
+                  {lang === 'gu' ? 'હા (Yes)' : 'Yes'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIrrigation('no')}
+                  className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-300 cursor-pointer ${
+                    irrigation === 'no'
+                      ? 'bg-emerald-600 text-white shadow-md'
+                      : 'bg-slate-950 text-slate-400 border border-slate-850 hover:text-slate-200'
+                  }`}
+                >
+                  {lang === 'gu' ? 'ના (No)' : 'No'}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. Farm Size & Previous Crop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
+                <Ruler className="w-3.5 h-3.5 text-indigo-400" />
+                <span>{lang === 'gu' ? 'જમીનનું ક્ષેત્રફળ (Farm Size)' : 'Farm Size'}</span>
+              </label>
+              <div className="flex space-x-2">
+                <input
+                  type="number"
+                  min="0.25"
+                  max="100"
+                  step="0.25"
+                  value={farmSize}
+                  onChange={(e) => setFarmSize(e.target.value)}
+                  className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3 text-white font-extrabold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 text-sm"
+                />
+                <select
+                  value={unit}
+                  onChange={(e) => setUnit(e.target.value)}
+                  className="bg-slate-950 border border-slate-850 rounded-2xl px-4 py-3 text-emerald-400 font-extrabold text-xs uppercase focus:outline-none focus:border-emerald-500 cursor-pointer"
+                >
+                  <option value="hectare">{lang === 'gu' ? 'હેક્ટર (Ha)' : 'Hectare'}</option>
+                  <option value="bigha">{lang === 'gu' ? 'વીઘા (Bigha)' : 'Bigha'}</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
+                <RotateCcw className="w-3.5 h-3.5 text-amber-500" />
+                <span>{lang === 'gu' ? 'અગાઉ લીધેલ પાક (Previous Crop)' : 'Previous Crop'}</span>
+              </label>
+              <select
+                value={previousCrop}
+                onChange={(e) => setPreviousCrop(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-white focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+              >
+                <option value="Cotton" className="bg-slate-950">Cotton (કપાસ)</option>
+                <option value="Groundnut" className="bg-slate-950">Groundnut (મગફળી)</option>
+                <option value="Wheat" className="bg-slate-950">Wheat (ઘઉં)</option>
+                <option value="Cumin" className="bg-slate-950">Cumin (જીરું)</option>
+                <option value="Bajra" className="bg-slate-950">Bajra (બાજરી)</option>
+                <option value="Castor" className="bg-slate-950">Castor (એરંડા)</option>
+                <option value="Mustard" className="bg-slate-950">Mustard (રાયડો)</option>
+                <option value="Paddy" className="bg-slate-950">Paddy (ડાંગર)</option>
+                <option value="fallow" className="bg-slate-950">Fallow / પડતર (કોઈ નહીં)</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Submit CTA Button (10% Accent pop) */}
+          <div className="pt-4">
+            <button
+              type="submit"
+              className="w-full py-4.5 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-555 text-white font-black text-base sm:text-lg tracking-wide shadow-lg hover:shadow-emerald-950/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center space-x-3 group cursor-pointer"
+            >
+              <Sparkles className="w-5.5 h-5.5 text-white group-hover:rotate-12 transition-transform duration-300" />
+              <span>
+                {lang === 'gu' ? 'એઆઈ પાક ભલામણ અને અંદાજ મેળવો' : 'Generate AI Crop Recommendation'}
+              </span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
+          </div>
+
+        </form>
+      </div>
+
     </div>
   );
 }

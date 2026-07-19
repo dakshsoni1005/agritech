@@ -1,21 +1,154 @@
 @import "tailwindcss";
 
-@layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+/* Theme definitions mapped to variables for strict 60:30:10 ratio */
+:root {
+  /* Light theme variables */
+  --bg-dominant: #f8fafc;        /* slate-50 */
+  --bg-dominant-dark: #f1f5f9;   /* slate-100 */
+  --bg-secondary: #ffffff;       /* white */
+  --bg-secondary-dark: #f8fafc;  /* slate-50 */
+  --color-accent: #059669;       /* emerald-600 */
+  --color-accent-gold: #b45309;  /* amber-700 */
+  --border-secondary: rgba(0, 0, 0, 0.08);
+  --text-primary: #0f172a;       /* slate-900 */
+  --text-secondary: #334155;     /* slate-700 */
+  --text-tertiary: #475569;      /* slate-600 */
+}
+
+.dark {
+  /* Dark theme variables */
+  --bg-dominant: #020617;        /* slate-950 */
+  --bg-dominant-dark: #080c18;   /* ultra dark slate */
+  --bg-secondary: #0f172a;       /* slate-900 */
+  --bg-secondary-dark: #0b1319;  /* deep teal slate */
+  --color-accent: #10b981;       /* emerald-500 */
+  --color-accent-gold: #f59e0b;  /* amber-500 */
+  --border-secondary: rgba(255, 255, 255, 0.06);
+  --text-primary: #f1f5f9;       /* slate-100 */
+  --text-secondary: #cbd5e1;     /* slate-300 */
+  --text-tertiary: #94a3b8;      /* slate-400 */
+}
+
+/* Map standard Tailwind colors to CSS theme variables inside @theme */
+@theme {
+  --color-slate-950: var(--bg-dominant);
+  --color-slate-955: var(--bg-dominant-dark);
+  --color-slate-900: var(--bg-secondary);
+  --color-slate-855: var(--border-secondary);
+  --color-slate-850: var(--border-secondary);
+  --color-slate-800: var(--border-secondary);
+  
+  --color-slate-100: var(--text-primary);
+  --color-slate-200: var(--text-primary);
+  --color-slate-300: var(--text-secondary);
+  --color-slate-400: var(--text-tertiary);
+  --color-slate-405: var(--text-tertiary);
+  --color-slate-450: var(--text-tertiary);
+  --color-slate-455: var(--text-tertiary);
+  
+  --color-emerald-600: var(--color-accent);
+  --color-emerald-500: var(--color-accent);
+  --color-amber-500: var(--color-accent-gold);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-dominant);
+    color: var(--text-primary);
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+
+  /* Subtly adjusted ambient background mesh */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.04) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
+@layer utilities {
+  /* Scrollbars following 60:30:10 */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-dominant);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Strict 60:30:10 Glassmorphism cards */
+  .glass-premium {
+    background: var(--bg-secondary);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-secondary);
+  }
+
+  .accent-btn-primary {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .accent-btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px 0 rgba(16, 185, 129, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .accent-btn-secondary {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-secondary);
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .accent-btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.06);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 30px -5px rgba(245, 158, 11, 0.06);
+  }
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -26,7 +159,7 @@
 @keyframes scaleUp {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
   to {
     opacity: 1;
@@ -35,9 +168,52 @@
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.35s ease-out forwards;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-scale-up {
   animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom premium range slider inputs matching 10% Accent */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--bg-dominant-dark);
+  height: 5px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-secondary);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+  height: 14px;
+  width: 14px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.5);
+  transform: scale(1.2);
+}
+
+input[type="range"].accent-sky::-webkit-slider-thumb {
+  background-color: #0ea5e9;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
+}
+
+input[type="range"].accent-sky::-webkit-slider-thumb:hover {
+  background-color: #38bdf8;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
 }

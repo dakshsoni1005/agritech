@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import RecommendationWizard from './components/RecommendationWizard';
 import RecommendationResults from './components/RecommendationResults';
@@ -14,6 +14,18 @@ export default function App() {
   const [lang, setLang] = useState('gu'); // Default to Gujarati
   const [recommendationResult, setRecommendationResult] = useState(null);
   const [selectedModalCrop, setSelectedModalCrop] = useState(null);
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+
+  // Side effect to sync theme status with html node classes
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme]);
 
   const handleWizardSubmit = (inputs) => {
     const result = recommendCrops(inputs);
@@ -39,6 +51,8 @@ export default function App() {
         }}
         lang={lang}
         setLang={setLang}
+        theme={theme}
+        setTheme={setTheme}
       />
 
       {/* Main Content Area */}
