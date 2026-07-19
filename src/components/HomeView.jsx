@@ -92,12 +92,10 @@ export default function HomeView({ lang, onNavigate }) {
       ];
 
   return (
-    <div 
-      className="space-y-10 max-w-6xl mx-auto p-6 sm:p-8 rounded-3xl relative border border-slate-900/60 bg-slate-900/20 backdrop-blur-md shadow-2xl animate-fade-in"
-    >
+    <div className="space-y-10 max-w-6xl mx-auto animate-fade-in">
       
       {/* Premium Hero Section (30% secondary structural glass panel) */}
-      <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+      <div className="bg-slate-900/70 backdrop-blur-md border border-white/10 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl transition-all duration-300">
         
         {/* Glow Details */}
         <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none select-none" />
@@ -132,7 +130,7 @@ export default function HomeView({ lang, onNavigate }) {
             {/* Primary CTA Sowing Wizard - Accent Color (10%) */}
             <button
               onClick={() => onNavigate('recommendation')}
-              className="flex items-center space-x-2 px-6.5 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm tracking-wide shadow-lg shadow-emerald-500/15 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+              className="flex items-center space-x-2 px-6.5 py-4 rounded-2xl bg-emerald-550 hover:bg-emerald-500 text-white font-black text-sm tracking-wide shadow-lg shadow-emerald-500/20 hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
             >
               <span>{lang === 'gu' ? 'એઆઈ પાક સલાહ મેળવો' : 'Get AI Sowing Advice'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -156,7 +154,7 @@ export default function HomeView({ lang, onNavigate }) {
         {/* Left 2 Cols: Main Services Grid */}
         <div className="lg:col-span-2 space-y-5">
           <h3 className="text-base sm:text-lg font-black text-slate-100 tracking-tight flex items-center space-x-2 px-1">
-            <Sprout className="w-5 h-5 text-emerald-400" />
+            <Sprout className="w-5 h-5 text-emerald-450" />
             <span>{lang === 'gu' ? 'કૃષિ સેવાઓ અને સાધનો' : 'Available Services & Advisors'}</span>
           </h3>
  
@@ -165,35 +163,35 @@ export default function HomeView({ lang, onNavigate }) {
               <div
                 key={feat.id}
                 onClick={() => onNavigate(feat.id)}
-                className="bg-slate-900/60 backdrop-blur-md border border-white/10 hover:border-emerald-500/50 rounded-3xl p-5.5 shadow-lg cursor-pointer hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between group"
+                className="bg-slate-900/70 backdrop-blur-md border border-white/10 hover:border-emerald-500/40 rounded-3xl p-6.5 shadow-lg hover:shadow-2xl hover:scale-[1.01] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
               >
-                <div className="space-y-4">
+                <div className="space-y-4.5">
                   {/* Icon & Badge */}
                   <div className="flex items-center justify-between">
-                    <div className="p-2.5 bg-slate-950/60 rounded-xl border border-white/10 group-hover:border-emerald-500/20 transition-all duration-300">
+                    <div className="p-3 bg-emerald-500/10 text-emerald-450 rounded-2xl border border-emerald-500/20 group-hover:border-emerald-500/40 group-hover:bg-emerald-500/15 transition-all duration-300">
                       {feat.icon}
                     </div>
-                    <span className="bg-slate-950/60 text-emerald-400 border border-white/10 text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full whitespace-nowrap">
+                    <span className="bg-slate-950/60 text-emerald-405 border border-white/10 text-[9px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full whitespace-nowrap">
                       {lang === 'gu' ? feat.badgeGu : feat.badgeEn}
                     </span>
                   </div>
  
                   {/* Title & Description */}
-                  <div className="space-y-1">
-                    <h4 className="text-base font-black text-slate-100 group-hover:text-emerald-400 transition-colors duration-300">
+                  <div className="space-y-2">
+                    <h4 className="text-base sm:text-lg font-black text-slate-100 group-hover:text-emerald-400 transition-colors duration-300">
                       {lang === 'gu' ? feat.titleGu : feat.titleEn}
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-350 font-medium leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-300 font-semibold leading-relaxed">
                       {lang === 'gu' ? feat.descGu : feat.descEn}
                     </p>
                   </div>
                 </div>
  
                 {/* Arrow Go CTA - Glass Button Sub-element */}
-                <div className="pt-4 mt-4 border-t border-white/5 text-[10px] font-black text-emerald-400 uppercase tracking-widest flex items-center justify-between">
+                <div className="pt-4 mt-5 border-t border-white/5 text-[10px] font-black text-emerald-400 uppercase tracking-widest flex items-center justify-between">
                   <span>{lang === 'gu' ? 'મોડ્યુલ ઓપન કરો' : 'Launch Module'}</span>
-                  <div className="w-7 h-7 rounded-lg bg-slate-955 border border-white/10 group-hover:border-emerald-500/30 flex items-center justify-center transition-all duration-300">
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <div className="w-8 h-8 rounded-xl bg-slate-950/60 border border-white/5 group-hover:border-emerald-500/30 flex items-center justify-center transition-all duration-300">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </div>
