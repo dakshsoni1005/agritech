@@ -51,7 +51,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
                   className={`flex items-center space-x-1.5 px-4 py-2 rounded-full font-bold text-xs tracking-wide transition-all duration-200 cursor-pointer ${
                     isActive
                       ? 'bg-white text-black shadow-sm'
-                      : 'text-slate-400 hover:text-white bg-transparent'
+                      : 'text-gray-400 hover:text-white bg-transparent'
                   }`}
                 >
                   {isActive && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />}
