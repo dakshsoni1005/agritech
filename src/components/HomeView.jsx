@@ -101,7 +101,7 @@ export default function HomeView({ lang, onNavigate }) {
           <span>Top Notch Agri-Tech Platform</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] text-black dark:text-white">
+        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] text-bottlegreen">
           Bring Fresh Growth<br />To Agriculture.
         </h1>
 

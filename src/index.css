@@ -10,9 +10,9 @@
   --color-accent: #0b3c2c;       /* Bottle green primary accent */
   --color-accent-gold: #b45309;  /* amber-700 secondary accent */
   --border-secondary: rgba(0, 0, 0, 0.06);
-  --text-primary: #0b3c2c;       /* Bottle Green primary text */
-  --text-secondary: #1c4d3e;     /* Medium Bottle Green secondary text */
-  --text-tertiary: #4d7c6e;      /* Muted green-gray tertiary text */
+  --text-primary: #0b3c2c;       /* Bottle Green primary text (was white/dark gray) */
+  --text-secondary: #1e3a8a;     /* Navy Blue secondary text (was green/medium green) */
+  --text-tertiary: #2e4a8a;      /* Navy Blue tertiary text */
 }
 
 .dark {
@@ -24,13 +24,16 @@
   --color-accent: #10b981;       /* emerald-500 accent */
   --color-accent-gold: #f59e0b;  /* amber-500 accent */
   --border-secondary: rgba(255, 255, 255, 0.05);
-  --text-primary: #a7f3d0;       /* Light emerald primary text for readability */
-  --text-secondary: #34d399;     /* Legible green secondary text */
-  --text-tertiary: #059669;      /* Emerald tertiary text */
+  --text-primary: #0b3c2c;       /* Dark Bottle Green primary text (was white) */
+  --text-secondary: #1e3a8a;     /* Navy Blue secondary text (was green) */
+  --text-tertiary: #2e4a8a;      /* Navy Blue tertiary text */
 }
 
 /* Map standard Tailwind colors to CSS theme variables inside @theme */
 @theme {
+  --color-bottlegreen: #0b3c2c;
+  --color-navyblue: #1e3a8a;
+
   --color-slate-950: var(--bg-dominant);
   --color-slate-955: var(--bg-dominant-dark);
   --color-slate-900: var(--bg-secondary);
