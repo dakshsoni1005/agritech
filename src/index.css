@@ -7,10 +7,10 @@
   --bg-dominant-dark: #e5e3db;   /* Recessed inputs/elements */
   --bg-secondary: #ffffff;       /* Pure white structural cards (30%) */
   --bg-secondary-dark: #fbfbfa;  /* Inner secondary cards */
-  --color-accent: #0b3c2c;       /* Bottle green primary accent */
+  --color-accent: #3d251e;       /* Dark brown primary accent */
   --color-accent-gold: #b45309;  /* amber-700 secondary accent */
   --border-secondary: rgba(0, 0, 0, 0.06);
-  --text-primary: #0b3c2c;       /* Bottle Green primary text (was white/dark gray) */
+  --text-primary: #3d251e;       /* Dark Brown primary text (was bottle green) */
   --text-secondary: #1e3a8a;     /* Navy Blue secondary text (was green/medium green) */
   --text-tertiary: #2e4a8a;      /* Navy Blue tertiary text */
 }
