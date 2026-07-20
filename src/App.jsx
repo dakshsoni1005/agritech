@@ -39,24 +39,9 @@ export default function App() {
     setRecommendationResult(null);
   };
 
-  const bgStyle = theme === 'dark'
-    ? {
-        backgroundImage: "linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('/farmer_soil_map.jpg')",
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center'
-      }
-    : {
-        backgroundImage: "linear-gradient(to bottom, rgba(250, 249, 246, 0.35), rgba(250, 249, 246, 0.55)), url('/farmer_soil_map.jpg')",
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center'
-      };
-
   return (
     <div 
       className="min-h-screen text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
-      style={bgStyle}
     >
       
       {/* Main Column (holds header and main container layout) */}
