@@ -23,7 +23,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
           
           {/* Logo & Branding - "Cultivo" style */}
           <div className="flex items-center space-x-2.5 cursor-pointer group" onClick={() => setActiveTab('home')}>
-            <div className="w-8 h-8 flex items-center justify-center text-black dark:text-white">
+            <div className="w-8 h-8 flex items-center justify-center text-black">
               <svg className="w-6 h-6 animate-pulse" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 {/* 4 dots/leaves cluster representing Cultivo logo */}
                 <circle cx="7" cy="8" r="2.5" />
@@ -34,7 +34,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
               </svg>
             </div>
             <div>
-              <span className="font-extrabold text-xl tracking-tight text-black dark:text-white font-sans">
+              <span className="font-extrabold text-xl tracking-tight text-black font-sans">
                 KRISHI-SEVA
               </span>
             </div>
