@@ -123,7 +123,7 @@ export default function HomeView({ lang, onNavigate }) {
       {/* 2. Premium Landscape Card (with overlays) */}
       <div className="relative rounded-[32px] overflow-hidden shadow-xl aspect-[16/10] sm:aspect-[21/9] border border-black/5 dark:border-white/5 group">
         <img 
-          src="/cultivo_hero_bg.png" 
+          src="/cultivo_hero_bg.jpg" 
           alt="Lush Agricultural Hill Landscape" 
           className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
         />
