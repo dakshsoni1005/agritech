@@ -227,7 +227,7 @@ export default function HomeView({ lang, onNavigate }) {
                 </div>
 
                 <div className="space-y-1.5">
-                  <h4 className="text-base font-extrabold text-black dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  <h4 className="text-base font-extrabold text-bottlegreen transition-colors">
                     {lang === 'gu' ? feat.titleGu : feat.titleEn}
                   </h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
