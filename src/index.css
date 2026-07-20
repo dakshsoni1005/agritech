@@ -2,31 +2,31 @@
 
 /* Theme definitions mapped to variables for strict 60:30:10 ratio */
 :root {
-  /* Light theme variables (Premium Pearl White background) */
-  --bg-dominant: #faf9f6;        /* Pearl White dominant background (60%) */
-  --bg-dominant-dark: #f4f3ed;   /* Recessed inputs/elements in light mode */
+  /* Light theme variables (Premium Pearl/Warm Gray background matching reference image) */
+  --bg-dominant: #f0efe9;        /* Warm off-white/light gray (60%) */
+  --bg-dominant-dark: #e5e3db;   /* Recessed inputs/elements */
   --bg-secondary: #ffffff;       /* Pure white structural cards (30%) */
-  --bg-secondary-dark: #faf9f6;  /* Inner secondary cards */
-  --color-accent: #059669;       /* emerald-600 (10% Accent) */
-  --color-accent-gold: #b45309;  /* amber-700 (10% Secondary Accent) */
-  --border-secondary: rgba(0, 0, 0, 0.08);
-  --text-primary: #0f172a;       /* slate-900 (Primary text) */
-  --text-secondary: #334155;     /* slate-700 (Secondary text) */
-  --text-tertiary: #475569;      /* slate-600 (Tertiary text) */
+  --bg-secondary-dark: #fbfbfa;  /* Inner secondary cards */
+  --color-accent: #0b3c2c;       /* Bottle green primary accent */
+  --color-accent-gold: #b45309;  /* amber-700 secondary accent */
+  --border-secondary: rgba(0, 0, 0, 0.06);
+  --text-primary: #0b3c2c;       /* Bottle Green primary text */
+  --text-secondary: #1c4d3e;     /* Medium Bottle Green secondary text */
+  --text-tertiary: #4d7c6e;      /* Muted green-gray tertiary text */
 }
 
 .dark {
   /* Dark theme variables */
-  --bg-dominant: #020617;        /* slate-955 outer canvas (60%) */
-  --bg-dominant-dark: #080c18;   /* Recessed inputs/elements */
-  --bg-secondary: #0f172a;       /* slate-900 structural cards (30%) */
-  --bg-secondary-dark: #0b1319;  /* Deep slate-teal cards */
-  --color-accent: #10b981;       /* emerald-500 (10% Accent) */
-  --color-accent-gold: #f59e0b;  /* amber-500 (10% Secondary Accent) */
-  --border-secondary: rgba(255, 255, 255, 0.06);
-  --text-primary: #f1f5f9;       /* slate-100 (Primary text) */
-  --text-secondary: #cbd5e1;     /* slate-300 (Secondary text) */
-  --text-tertiary: #94a3b8;      /* slate-400 (Tertiary text) */
+  --bg-dominant: #0b0f19;        /* slate-955 outer canvas */
+  --bg-dominant-dark: #050810;   /* Recessed inputs/elements */
+  --bg-secondary: #121824;       /* slate-900 structural cards */
+  --bg-secondary-dark: #0e121d;  /* Deep cards */
+  --color-accent: #10b981;       /* emerald-500 accent */
+  --color-accent-gold: #f59e0b;  /* amber-500 accent */
+  --border-secondary: rgba(255, 255, 255, 0.05);
+  --text-primary: #a7f3d0;       /* Light emerald primary text for readability */
+  --text-secondary: #34d399;     /* Legible green secondary text */
+  --text-tertiary: #059669;      /* Emerald tertiary text */
 }
 
 /* Map standard Tailwind colors to CSS theme variables inside @theme */
