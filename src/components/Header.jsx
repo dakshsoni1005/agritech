@@ -35,7 +35,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
             </div>
             <div>
               <span className="font-extrabold text-xl tracking-tight text-black dark:text-white font-sans">
-                Cultivo
+                KRISHI-SEVA
               </span>
             </div>
           </div>
