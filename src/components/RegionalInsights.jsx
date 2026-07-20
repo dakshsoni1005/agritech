@@ -172,10 +172,10 @@ export default function RegionalInsights({ lang, onBack }) {
       </div>
 
       {/* Dashboard Canvas Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         {/* Left Map View */}
-        <div className="lg:col-span-2 bg-slate-900/60 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-xl relative overflow-hidden flex flex-col h-[520px]">
+        <div className="lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-xl relative overflow-hidden flex flex-col h-[520px]">
           
           {/* Controls */}
           <div className="absolute top-4 left-4 z-15 flex flex-col space-y-1.5 bg-slate-955/80 p-2 rounded-2xl border border-slate-850 backdrop-blur-md">
@@ -324,12 +324,7 @@ export default function RegionalInsights({ lang, onBack }) {
         </div>
 
         {/* Right Soil details tray */}
-        <div 
-          className="border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col h-[520px] overflow-y-auto bg-cover bg-center relative"
-          style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('/soil_intelligence_bg.jpg')`
-          }}
-        >
+        <div className="lg:col-span-5 bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col h-[520px] overflow-y-auto">
           
           <div className="pb-4 border-b border-slate-850 shrink-0 flex items-center space-x-2">
             <BarChart2 className="w-5 h-5 text-emerald-500" />
