@@ -152,19 +152,19 @@ export default function HomeView({ lang, onNavigate }) {
       {/* 3. Stats Section (4 Columns with separator lines) */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-black/5 dark:border-white/5 bg-white/40 dark:bg-slate-900/40 backdrop-blur-sm rounded-3xl px-6">
         <div className="text-center space-y-1.5 border-r border-black/5 dark:border-white/5 last:border-r-0">
-          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white">50+</div>
+          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-bottlegreen">50+</div>
           <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Year Of Experience</div>
         </div>
         <div className="text-center space-y-1.5 md:border-r border-black/5 dark:border-white/5 last:border-r-0">
-          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white">200+</div>
+          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-bottlegreen">200+</div>
           <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Field In Progress</div>
         </div>
         <div className="text-center space-y-1.5 border-r border-black/5 dark:border-white/5 last:border-r-0">
-          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white">120,000+</div>
+          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-bottlegreen">120,000+</div>
           <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Farmer Around World</div>
         </div>
         <div className="text-center space-y-1.5">
-          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white">$15 Billion</div>
+          <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-bottlegreen">$15 Billion</div>
           <div className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Agricultural Product</div>
         </div>
       </div>
