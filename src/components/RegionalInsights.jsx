@@ -147,12 +147,12 @@ export default function RegionalInsights({ lang, onBack }) {
       {/* Header Banner */}
       <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
         <h2 className="text-2xl sm:text-3xl font-black text-slate-105 tracking-tight">
-          {lang === 'gu' ? 'ગુજરાત સોઇલ ઇન્ટેલિજન્સ જીઆઈએસ મેપ' : 'Gujarat Soil Intelligence GIS Map'}
+          {lang === 'gu' ? 'ગુજરાત વૈજ્ઞાનિક જમીન માહિતી અને જીઆઈએસ મેપિંગ સિસ્ટમ' : 'Gujarat Scientific Soil Intelligence & GIS Mapping System'}
         </h2>
-        <p className="text-xs sm:text-sm text-slate-400 mt-1 font-semibold">
+        <p className="text-sm sm:text-base text-slate-400 mt-2 font-semibold leading-relaxed">
           {lang === 'gu'
             ? 'નકશા પરથી કોઈપણ જિલ્લા પર ક્લિક કરો અને તેની જમીનના પ્રકાર, ટેક્સચર, પોષક તત્વોનું સ્તર અને ખાતરની ભલામણો જુઓ.'
-            : 'Click on any district from the geographically accurate GIS map to view localized soil data, textures, and sowing advisories.'}
+            : 'Click on any district from the geographically accurate GIS map to view localized soil data, chemical textures, and sowing advisories.'}
         </p>
       </div>
 
@@ -324,7 +324,12 @@ export default function RegionalInsights({ lang, onBack }) {
         </div>
 
         {/* Right Soil details tray */}
-        <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col h-[520px] overflow-y-auto">
+        <div 
+          className="border border-slate-800 rounded-3xl p-6 shadow-xl flex flex-col h-[520px] overflow-y-auto bg-cover bg-center relative"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('/soil_intelligence_bg.jpg')`
+          }}
+        >
           
           <div className="pb-4 border-b border-slate-850 shrink-0 flex items-center space-x-2">
             <BarChart2 className="w-5 h-5 text-emerald-500" />
