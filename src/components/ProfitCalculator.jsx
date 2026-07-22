@@ -78,7 +78,7 @@ export default function ProfitCalculator({ lang, onBack }) {
               className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 font-bold text-sm cursor-pointer"
             >
               {CROP_DATABASE.map((c) => (
-                <option key={c.id} value={c.id} className="bg-slate-950">
+                <option key={c.id} value={c.id} className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">
                   {c.cropName} ({c.gujaratiName})
                 </option>
               ))}
