@@ -2,6 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { GUJARAT_REGIONS, SOIL_TYPES_LIST, MONTHS_LIST } from '../data/gujaratRegions';
 import { Sparkles, MapPin, Thermometer, CloudRain, Droplets, Ruler, RotateCcw, ArrowRight, Star } from 'lucide-react';
 
+const SOIL_DEFAULTS = {
+  'Medium Black Soil': { N: 60, P: 45, K: 50, pH: 7.2 },
+  'Deep Black Soil': { N: 70, P: 50, K: 55, pH: 7.4 },
+  'Goradu / Red Loamy Soil': { N: 50, P: 40, K: 45, pH: 6.8 },
+  'Sandy Loam Soil': { N: 45, P: 35, K: 40, pH: 6.5 },
+  'Alluvial Silt Soil': { N: 80, P: 50, K: 60, pH: 7.0 },
+  'Coastal Saline & Clay Soil': { N: 30, P: 30, K: 35, pH: 8.0 },
+  'Desert Sandy Soil': { N: 25, P: 25, K: 30, pH: 7.8 }
+};
+
+const getHumidityDefault = (month) => {
+  if (month >= 6 && month <= 9) return 80;
+  if (month >= 10 || month <= 2) return 55;
+  return 35;
+};
+
 export default function RecommendationWizard({ onSubmit, lang }) {
   const [selectedRegionId, setSelectedRegionId] = useState('saurashtra');
   const [district, setDistrict] = useState('Rajkot');
@@ -15,10 +31,32 @@ export default function RecommendationWizard({ onSubmit, lang }) {
   const [unit, setUnit] = useState('hectare');
   const [previousCrop, setPreviousCrop] = useState('Cotton');
 
+  // ML model specific parameters state
+  const [recommendationMode, setRecommendationMode] = useState('rules'); // 'rules' or 'ml'
+  const [n, setN] = useState(60);
+  const [p, setP] = useState(45);
+  const [k, setK] = useState(50);
+  const [ph, setPh] = useState(7.2);
+  const [humidity, setHumidity] = useState(80);
+
   const currentRegion = GUJARAT_REGIONS.find(r => r.id === selectedRegionId) || GUJARAT_REGIONS[3];
   const availableDistricts = currentRegion.districts || [];
   const currentDistrictObj = availableDistricts.find(d => d.name === district) || availableDistricts[0] || {};
   const availableTalukas = currentDistrictObj.talukas || [];
+
+  // Update NPK and pH whenever soilType changes
+  useEffect(() => {
+    const defaults = SOIL_DEFAULTS[soilType] || { N: 50, P: 40, K: 45, pH: 7.0 };
+    setN(defaults.N);
+    setP(defaults.P);
+    setK(defaults.K);
+    setPh(defaults.pH);
+  }, [soilType]);
+
+  // Update humidity whenever sowing month changes
+  useEffect(() => {
+    setHumidity(getHumidityDefault(currentMonth));
+  }, [currentMonth]);
 
   // Update district when region changes
   useEffect(() => {
@@ -40,6 +78,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({
+      mode: recommendationMode,
       region: currentRegion,
       district,
       taluka,
@@ -50,7 +89,12 @@ export default function RecommendationWizard({ onSubmit, lang }) {
       irrigation,
       farmSize: parseFloat(farmSize) || 1,
       unit,
-      previousCrop
+      previousCrop,
+      N: n,
+      P: p,
+      K: k,
+      ph,
+      humidity
     });
   };
 
@@ -127,6 +171,44 @@ export default function RecommendationWizard({ onSubmit, lang }) {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8 relative">
+
+          {/* Mode Switcher */}
+          <div className="bg-slate-50 dark:bg-slate-950 p-4.5 rounded-[2rem] border border-slate-100 dark:border-slate-850/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <span className="text-xs uppercase font-extrabold text-slate-500 dark:text-slate-400 block mb-0.5">
+                {lang === 'gu' ? 'પદ્ધતિ પસંદ કરો (Advisory Mode)' : 'Select Advisory Mode'}
+              </span>
+              <span className="text-[11px] text-slate-400 font-bold leading-relaxed block">
+                {lang === 'gu' 
+                  ? 'સ્ટાન્ડર્ડ રૂલ એન્જિન ગણતરી અથવા લાઈવ મશીન લર્નિંગ મોડલ પૂર્વાનુમાન પસંદ કરો.' 
+                  : 'Select between standard calculations or live Machine Learning model prediction.'}
+              </span>
+            </div>
+            <div className="flex bg-slate-200/60 dark:bg-slate-900 p-1 rounded-2xl border border-slate-350/40 dark:border-slate-850 shrink-0">
+              <button
+                type="button"
+                onClick={() => setRecommendationMode('rules')}
+                className={`px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer ${
+                  recommendationMode === 'rules'
+                    ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-sm'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-250'
+                }`}
+              >
+                {lang === 'gu' ? 'રૂલ એન્જિન' : 'Rules Engine'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setRecommendationMode('ml')}
+                className={`px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer ${
+                  recommendationMode === 'ml'
+                    ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-sm'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-250'
+                }`}
+              >
+                {lang === 'gu' ? 'લાઈવ ML મોડલ' : 'Live ML Model'}
+              </button>
+            </div>
+          </div>
           
           {/* 1. Region Selector Cards */}
           <div className="space-y-4">
@@ -366,6 +448,122 @@ export default function RecommendationWizard({ onSubmit, lang }) {
               </select>
             </div>
           </div>
+
+          {/* Advanced ML Model Input Parameters */}
+          {recommendationMode === 'ml' && (
+            <div className="bg-slate-50/50 dark:bg-slate-950/20 border border-slate-200/60 dark:border-slate-850/80 rounded-3xl p-6 space-y-6 animate-scale-up">
+              <div className="flex items-center space-x-2 pb-3 border-b border-slate-200/60 dark:border-slate-800/80">
+                <Sparkles className="w-5 h-5 text-amber-500 shrink-0 animate-pulse" />
+                <div>
+                  <h4 className="text-sm font-extrabold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
+                    {lang === 'gu' ? 'મશીન લર્નિંગ જમીન પેરામીટર્સ (ML Soil Parameters)' : 'Machine Learning Soil Parameters'}
+                  </h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold mt-0.5">
+                    {lang === 'gu' 
+                      ? 'જમીનની પ્રયોગશાળાના રીપોર્ટ મુજબ સચોટ આંકડા અથવા આપમેળે ભરેલ કિંમતો વાપરો.' 
+                      : 'Customize specific NPK, pH & Humidity values or use the pre-populated values.'}
+                  </p>
+                </div>
+              </div>
+
+              {/* NPK Inputs Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {/* Nitrogen */}
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-extrabold text-slate-650 dark:text-slate-400 pl-1 uppercase tracking-wider">
+                    {lang === 'gu' ? 'નાઇટ્રોજન (Nitrogen N)' : 'Nitrogen (N)'}
+                  </label>
+                  <div className="flex items-center space-x-3 bg-white dark:bg-slate-955 p-3 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <input
+                      type="range"
+                      min="0"
+                      max="140"
+                      value={n}
+                      onChange={(e) => setN(parseInt(e.target.value, 10))}
+                      className="w-full cursor-pointer accent-emerald-650 dark:accent-emerald-450"
+                    />
+                    <span className="text-xs font-black text-emerald-600 dark:text-emerald-500 w-16 text-right shrink-0">{n} kg/ha</span>
+                  </div>
+                </div>
+
+                {/* Phosphorus */}
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-extrabold text-slate-650 dark:text-slate-400 pl-1 uppercase tracking-wider">
+                    {lang === 'gu' ? 'ફોસ્ફરસ (Phosphorus P)' : 'Phosphorus (P)'}
+                  </label>
+                  <div className="flex items-center space-x-3 bg-white dark:bg-slate-955 p-3 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <input
+                      type="range"
+                      min="5"
+                      max="145"
+                      value={p}
+                      onChange={(e) => setP(parseInt(e.target.value, 10))}
+                      className="w-full cursor-pointer accent-emerald-650 dark:accent-emerald-450"
+                    />
+                    <span className="text-xs font-black text-emerald-600 dark:text-emerald-500 w-16 text-right shrink-0">{p} kg/ha</span>
+                  </div>
+                </div>
+
+                {/* Potassium */}
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-extrabold text-slate-650 dark:text-slate-400 pl-1 uppercase tracking-wider">
+                    {lang === 'gu' ? 'પોટાશ (Potassium K)' : 'Potassium (K)'}
+                  </label>
+                  <div className="flex items-center space-x-3 bg-white dark:bg-slate-955 p-3 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <input
+                      type="range"
+                      min="5"
+                      max="205"
+                      value={k}
+                      onChange={(e) => setK(parseInt(e.target.value, 10))}
+                      className="w-full cursor-pointer accent-emerald-650 dark:accent-emerald-450"
+                    />
+                    <span className="text-xs font-black text-emerald-600 dark:text-emerald-500 w-16 text-right shrink-0">{k} kg/ha</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* pH & Humidity */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* pH level */}
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-extrabold text-slate-650 dark:text-slate-400 pl-1 uppercase tracking-wider">
+                    {lang === 'gu' ? 'જમીન પી.એચ. આંક (Soil pH)' : 'Soil pH Level'}
+                  </label>
+                  <div className="flex items-center space-x-3 bg-white dark:bg-slate-955 p-3 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <input
+                      type="range"
+                      min="4"
+                      max="10"
+                      step="0.1"
+                      value={ph}
+                      onChange={(e) => setPh(parseFloat(e.target.value))}
+                      className="w-full cursor-pointer accent-amber-500"
+                    />
+                    <span className="text-xs font-black text-amber-600 dark:text-amber-550 w-12 text-right shrink-0">{ph}</span>
+                  </div>
+                </div>
+
+                {/* Humidity */}
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-extrabold text-slate-650 dark:text-slate-400 pl-1 uppercase tracking-wider">
+                    {lang === 'gu' ? 'હવાના ભેજનું પ્રમાણ (Humidity %)' : 'Relative Humidity (%)'}
+                  </label>
+                  <div className="flex items-center space-x-3 bg-white dark:bg-slate-955 p-3 rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <input
+                      type="range"
+                      min="15"
+                      max="100"
+                      value={humidity}
+                      onChange={(e) => setHumidity(parseInt(e.target.value, 10))}
+                      className="w-full cursor-pointer accent-sky-500"
+                    />
+                    <span className="text-xs font-black text-sky-600 dark:text-sky-400 w-12 text-right shrink-0">{humidity}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Submit CTA Button */}
           <div className="pt-6">
