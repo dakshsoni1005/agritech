@@ -60,7 +60,7 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
+      className="min-h-screen text-[#3d251e] dark:text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
     >
       
       {/* Main Column (holds header and main container layout) */}
