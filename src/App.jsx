@@ -14,7 +14,7 @@ import { recommendCrops } from './utils/recommendationEngine';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
-  const [lang, setLang] = useState('gu'); // Default to Gujarati
+  const [lang, setLang] = useState('en'); // Default to English
   const [recommendationResult, setRecommendationResult] = useState(null);
   const [selectedModalCrop, setSelectedModalCrop] = useState(null);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');

@@ -13,6 +13,7 @@ export default function AuthView({ lang, onAuthSuccess, initialMode = 'login', o
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [focusedField, setFocusedField] = useState('');
 
   const translations = {
     signInTitleEn: 'Sign In to Krishi-Seva',
@@ -145,166 +146,183 @@ export default function AuthView({ lang, onAuthSuccess, initialMode = 'login', o
   const t = (key) => translations[key] || '';
 
   return (
-    <div className="max-w-md w-full mx-auto my-8 p-8 bg-white dark:bg-slate-900/60 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-xl transition-all">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-extrabold tracking-tight text-emerald-900 dark:text-emerald-400">
-          {mode === 'login' ? (lang === 'gu' ? t('signInTitleGu') : t('signInTitleEn')) : (lang === 'gu' ? t('signUpTitleGu') : t('signUpTitleEn'))}
-        </h2>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
-          {mode === 'login' ? (
-            lang === 'gu' ? 'તમારા ફાર્મ સલાહકાર ખાતામાં પ્રવેશો' : 'Access your personalized farm advisory dashboard.'
-          ) : (
-            lang === 'gu' ? 'ઉન્નત કૃષિ સલાહ અને ગણતરીઓ માટે નોંધણી કરો' : 'Register for advanced agricultural advisory and calculation history.'
+    <div className="relative max-w-md w-full mx-auto my-8">
+      {/* Visual background glows to make UI pop in dark/light mode */}
+      <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-500/20 dark:bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-teal-500/20 dark:bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Main glassmorphic card container */}
+      <div className="relative bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl rounded-[2.5rem] border border-slate-100 dark:border-slate-800/80 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_-12px_rgba(16,185,129,0.15)] p-8 sm:p-10 transition-all duration-300">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-extrabold tracking-tight text-emerald-950 dark:text-emerald-450">
+            {mode === 'login' ? (lang === 'gu' ? t('signInTitleGu') : t('signInTitleEn')) : (lang === 'gu' ? t('signUpTitleGu') : t('signUpTitleEn'))}
+          </h2>
+          <p className="text-sm text-slate-500 dark:text-slate-450 mt-3 font-medium">
+            {mode === 'login' ? (
+              lang === 'gu' ? 'તમારા ફાર્મ સલાહકાર ખાતામાં પ્રવેશો' : 'Access your personalized farm advisory dashboard.'
+            ) : (
+              lang === 'gu' ? 'ઉન્નત કૃષિ સલાહ અને ગણતરીઓ માટે નોંધણી કરો' : 'Register for advanced agricultural advisory and calculation history.'
+            )}
+          </p>
+        </div>
+
+        {error && (
+          <div className="flex items-center space-x-3 p-4 mb-6 rounded-2xl bg-rose-500/10 dark:bg-rose-500/5 border border-rose-500/20 dark:border-rose-500/10 text-rose-600 dark:text-rose-450 text-xs font-semibold animate-shake">
+            <AlertCircle className="w-4.5 h-4.5 shrink-0 text-rose-500" />
+            <span>{error}</span>
+          </div>
+        )}
+
+        {success && (
+          <div className="flex items-center space-x-3 p-4 mb-6 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/5 border border-emerald-500/20 dark:border-emerald-500/10 text-emerald-600 dark:text-emerald-450 text-xs font-semibold">
+            <CheckCircle2 className="w-4.5 h-4.5 shrink-0 text-emerald-500" />
+            <span>{success}</span>
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-5">
+          {mode === 'signup' && (
+            <div className="space-y-1.5">
+              <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider pl-1">
+                {lang === 'gu' ? t('nameGu') : t('nameEn')}
+              </label>
+              <div className="relative group">
+                <User className={`absolute left-4 top-3.5 w-4.5 h-4.5 transition-colors duration-200 ${focusedField === 'name' ? 'text-emerald-500 dark:text-emerald-450' : 'text-slate-400 dark:text-slate-500'}`} />
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  onFocus={() => setFocusedField('name')}
+                  onBlur={() => setFocusedField('')}
+                  className="w-full bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 rounded-2xl py-3 pl-12 pr-4 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:focus:ring-emerald-500/5 focus:border-emerald-500 dark:focus:border-emerald-500/80 transition-all duration-200"
+                  placeholder=""
+                />
+              </div>
+            </div>
           )}
-        </p>
-      </div>
 
-      {error && (
-        <div className="flex items-center space-x-2.5 p-3.5 mb-5 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400 text-xs">
-          <AlertCircle className="w-4 h-4 shrink-0" />
-          <span>{error}</span>
-        </div>
-      )}
-
-      {success && (
-        <div className="flex items-center space-x-2.5 p-3.5 mb-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs">
-          <CheckCircle2 className="w-4 h-4 shrink-0" />
-          <span>{success}</span>
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        {mode === 'signup' && (
-          <div>
-            <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">
-              {lang === 'gu' ? t('nameGu') : t('nameEn')}
+          <div className="space-y-1.5">
+            <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider pl-1">
+              {lang === 'gu' ? t('emailGu') : t('emailEn')}
             </label>
-            <div className="relative">
-              <User className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
+            <div className="relative group">
+              <Mail className={`absolute left-4 top-3.5 w-4.5 h-4.5 transition-colors duration-200 ${focusedField === 'email' ? 'text-emerald-500 dark:text-emerald-450' : 'text-slate-400 dark:text-slate-500'}`} />
               <input
                 type="text"
-                name="name"
-                value={formData.name}
+                name="email"
+                value={formData.email}
                 onChange={handleInputChange}
-                className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl py-2.5 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                onFocus={() => setFocusedField('email')}
+                onBlur={() => setFocusedField('')}
+                className="w-full bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 rounded-2xl py-3 pl-12 pr-4 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:focus:ring-emerald-500/5 focus:border-emerald-500 dark:focus:border-emerald-500/80 transition-all duration-200"
                 placeholder=""
               />
             </div>
           </div>
-        )}
 
-        <div>
-          <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">
-            {lang === 'gu' ? t('emailGu') : t('emailEn')}
-          </label>
-          <div className="relative">
-            <Mail className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
-            <input
-              type="text"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl py-2.5 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-              placeholder=""
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">
-            {lang === 'gu' ? t('passwordGu') : t('passwordEn')}
-          </label>
-          <div className="relative">
-            <Lock className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl py-2.5 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-              placeholder="••••••••"
-            />
-          </div>
-        </div>
-
-        {mode === 'signup' && (
-          <>
-            <div>
-              <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">
-                {lang === 'gu' ? t('regionGu') : t('regionEn')}
-              </label>
-              <div className="relative">
-                <MapPin className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
-                <input
-                  type="text"
-                  name="region"
-                  value={formData.region}
-                  onChange={handleInputChange}
-                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl py-2.5 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                  placeholder=""
-                />
-              </div>
+          <div className="space-y-1.5">
+            <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider pl-1">
+              {lang === 'gu' ? t('passwordGu') : t('passwordEn')}
+            </label>
+            <div className="relative group">
+              <Lock className={`absolute left-4 top-3.5 w-4.5 h-4.5 transition-colors duration-200 ${focusedField === 'password' ? 'text-emerald-500 dark:text-emerald-450' : 'text-slate-400 dark:text-slate-500'}`} />
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                onFocus={() => setFocusedField('password')}
+                onBlur={() => setFocusedField('')}
+                className="w-full bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 rounded-2xl py-3 pl-12 pr-4 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:focus:ring-emerald-500/5 focus:border-emerald-500 dark:focus:border-emerald-500/80 transition-all duration-200"
+                placeholder="••••••••"
+              />
             </div>
+          </div>
 
-            <div>
-              <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">
-                {lang === 'gu' ? t('soilTypeGu') : t('soilTypeEn')}
-              </label>
-              <div className="relative">
-                <Layers className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
-                <input
-                  type="text"
-                  name="soilType"
-                  value={formData.soilType}
-                  onChange={handleInputChange}
-                  className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl py-2.5 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-                  placeholder=""
-                />
+          {mode === 'signup' && (
+            <>
+              <div className="space-y-1.5">
+                <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider pl-1">
+                  {lang === 'gu' ? t('regionGu') : t('regionEn')}
+                </label>
+                <div className="relative group">
+                  <MapPin className={`absolute left-4 top-3.5 w-4.5 h-4.5 transition-colors duration-200 ${focusedField === 'region' ? 'text-emerald-500 dark:text-emerald-450' : 'text-slate-400 dark:text-slate-500'}`} />
+                  <input
+                    type="text"
+                    name="region"
+                    value={formData.region}
+                    onChange={handleInputChange}
+                    onFocus={() => setFocusedField('region')}
+                    onBlur={() => setFocusedField('')}
+                    className="w-full bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 rounded-2xl py-3 pl-12 pr-4 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:focus:ring-emerald-500/5 focus:border-emerald-500 dark:focus:border-emerald-500/80 transition-all duration-200"
+                    placeholder=""
+                  />
+                </div>
               </div>
-            </div>
-          </>
-        )}
 
-        <button
-          type="submit"
-          className="w-full flex items-center justify-center space-x-2 bg-black dark:bg-white text-white dark:text-black py-3 px-4 rounded-2xl font-bold text-sm tracking-wide hover:bg-black/90 dark:hover:bg-white/95 transition-all shadow-md mt-6 cursor-pointer"
-        >
-          <span>{mode === 'login' ? (lang === 'gu' ? t('loginBtnGu') : t('loginBtnEn')) : (lang === 'gu' ? t('signupBtnGu') : t('signupBtnEn'))}</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </form>
-
-      <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800/80 text-center">
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          {mode === 'login' ? (
-            <>
-              {lang === 'gu' ? t('noAccountGu') : t('noAccountEn')}{' '}
-              <button
-                onClick={() => setMode('signup')}
-                className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline ml-1 cursor-pointer"
-              >
-                {lang === 'gu' ? t('switchSignupGu') : t('switchSignupEn')}
-              </button>
-            </>
-          ) : (
-            <>
-              {lang === 'gu' ? t('hasAccountGu') : t('hasAccountEn')}{' '}
-              <button
-                onClick={() => setMode('login')}
-                className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline ml-1 cursor-pointer"
-              >
-                {lang === 'gu' ? t('switchLoginGu') : t('switchLoginEn')}
-              </button>
+              <div className="space-y-1.5">
+                <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider pl-1">
+                  {lang === 'gu' ? t('soilTypeGu') : t('soilTypeEn')}
+                </label>
+                <div className="relative group">
+                  <Layers className={`absolute left-4 top-3.5 w-4.5 h-4.5 transition-colors duration-200 ${focusedField === 'soilType' ? 'text-emerald-500 dark:text-emerald-450' : 'text-slate-400 dark:text-slate-500'}`} />
+                  <input
+                    type="text"
+                    name="soilType"
+                    value={formData.soilType}
+                    onChange={handleInputChange}
+                    onFocus={() => setFocusedField('soilType')}
+                    onBlur={() => setFocusedField('')}
+                    className="w-full bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 rounded-2xl py-3 pl-12 pr-4 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:focus:ring-emerald-500/5 focus:border-emerald-500 dark:focus:border-emerald-500/80 transition-all duration-200"
+                    placeholder=""
+                  />
+                </div>
+              </div>
             </>
           )}
-        </p>
 
-        <button
-          onClick={onBack}
-          className="mt-4 text-xs font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors cursor-pointer"
-        >
-          {lang === 'gu' ? t('backHomeGu') : t('backHomeEn')}
-        </button>
+          <button
+            type="submit"
+            className="w-full flex items-center justify-center space-x-2 bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 py-3.5 px-4 rounded-2xl font-bold text-sm tracking-wide transition-all duration-200 shadow-lg hover:shadow-emerald-500/20 active:scale-[0.98] mt-6 cursor-pointer"
+          >
+            <span>{mode === 'login' ? (lang === 'gu' ? t('loginBtnGu') : t('loginBtnEn')) : (lang === 'gu' ? t('signupBtnGu') : t('signupBtnEn'))}</span>
+            <ArrowRight className="w-4.5 h-4.5" />
+          </button>
+        </form>
+
+        <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800/60 text-center">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+            {mode === 'login' ? (
+              <>
+                {lang === 'gu' ? t('noAccountGu') : t('noAccountEn')}{' '}
+                <button
+                  onClick={() => setMode('signup')}
+                  className="font-bold text-emerald-600 dark:text-emerald-450 hover:underline ml-1 cursor-pointer"
+                >
+                  {lang === 'gu' ? t('switchSignupGu') : t('switchSignupEn')}
+                </button>
+              </>
+            ) : (
+              <>
+                {lang === 'gu' ? t('hasAccountGu') : t('hasAccountEn')}{' '}
+                <button
+                  onClick={() => setMode('login')}
+                  className="font-bold text-emerald-600 dark:text-emerald-450 hover:underline ml-1 cursor-pointer"
+                >
+                  {lang === 'gu' ? t('switchLoginGu') : t('switchLoginEn')}
+                </button>
+              </>
+            )}
+          </p>
+
+          <button
+            onClick={onBack}
+            className="mt-5 text-xs font-bold text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-450 transition-colors cursor-pointer"
+          >
+            {lang === 'gu' ? t('backHomeGu') : t('backHomeEn')}
+          </button>
+        </div>
       </div>
     </div>
   );
