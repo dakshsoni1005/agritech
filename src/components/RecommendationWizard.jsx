@@ -57,64 +57,68 @@ export default function RecommendationWizard({ onSubmit, lang }) {
   return (
     <div className="space-y-10 animate-fade-in">
       
-      {/* Premium Hero Banner (60% dominant area) */}
+      {/* Premium Hero Banner */}
       <div className="relative text-center max-w-3xl mx-auto space-y-4 pt-4 pb-2">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-350 text-xs font-bold tracking-wide uppercase">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-350 text-xs font-bold tracking-wide uppercase">
           <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
           <span>{lang === 'gu' ? 'ગુજરાત કૃષિ મિશન ૨૦૨૬' : 'Gujarat Agri Mission 2026'}</span>
         </div>
         
-        <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-slate-100">
+        <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-slate-900 dark:text-slate-100">
           {lang === 'gu' ? (
             <>
-              ખેતીને બનાવો સ્માાર્ટ અને નફાકારક <br />
-              <span className="text-emerald-500">
+              ખેતીને બનાવો સ્માર્ટ અને નફાકારક <br />
+              <span className="text-emerald-600 dark:text-emerald-450">
                 એઆઈ પાક ભલામણ સાથે
               </span>
             </>
           ) : (
             <>
               Empower Your Farming with <br />
-              <span className="text-emerald-500">
+              <span className="text-emerald-700 dark:text-emerald-450">
                 AI Smart Recommendations
               </span>
             </>
           )}
         </h1>
 
-        <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto font-semibold leading-relaxed">
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
           {lang === 'gu'
             ? 'ગુજરાતના પ્રાદેશિક ભૌગોલિક હવામાન, જમીનની વિશેષતાઓ અને બજાર કિંમતોનું આધુનિક એઆઈ મોડલ દ્વારા પૃથક્કરણ કરી શ્રેષ્ઠ પાક પસંદગી મેળવો.'
             : 'Get precision crop suitability guidance using multi-regional environmental intelligence, tailored soil profiling, and yield analytics.'}
         </p>
 
         {/* Info Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-[11px] font-bold text-slate-400">
-          <span className="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-850">
+        <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-[11px] font-bold text-slate-550 dark:text-slate-450">
+          <span className="bg-slate-100 dark:bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-850">
             🌾 ૫+ કૃષિ પ્રદેશો
           </span>
-          <span className="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-850">
+          <span className="bg-slate-100 dark:bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-850">
             🧪 ૧૮+ સલાહ માર્ગદર્શિકા
           </span>
-          <span className="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-850">
+          <span className="bg-slate-100 dark:bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-850">
             📊 ચોખ્ખો નફો અંદાજ
           </span>
         </div>
       </div>
 
-      {/* Main Wizard Form Container (30% secondary structure background) */}
-      <div className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl max-w-4xl mx-auto">
+      {/* Main Wizard Form Container */}
+      <div className="relative bg-white dark:bg-slate-900/90 backdrop-blur-xl border border-slate-100 dark:border-slate-800 rounded-[2.5rem] p-6 sm:p-10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_-12px_rgba(16,185,129,0.1)] max-w-4xl mx-auto">
         
+        {/* Glowing background highlights in dark mode */}
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-teal-500/10 dark:bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+
         {/* Step Title Badge */}
-        <div className="flex items-center space-x-3.5 mb-8 pb-6 border-b border-slate-850">
-          <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 text-emerald-500">
+        <div className="flex items-center space-x-3.5 mb-8 pb-6 border-b border-slate-100 dark:border-slate-800/80">
+          <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-2xl border border-slate-100 dark:border-slate-850 text-emerald-600 dark:text-emerald-450">
             <Sparkles className="w-6 h-6 animate-pulse" />
           </div>
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-slate-100 tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
               {lang === 'gu' ? 'પાક સલાહ વિઝાર્ડ' : 'Crop Advisory Form'}
             </h2>
-            <p className="text-xs text-slate-450 mt-0.5 font-bold">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-bold">
               {lang === 'gu'
                 ? 'જમીન, સરનામું, તાપમાન અને પિયતની વિગતો સચોટ પાક પસંદગી માટે ભરો.'
                 : 'Please fill in the fields below to trigger the recommendation algorithm.'}
@@ -122,12 +126,12 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-8 relative">
           
           {/* 1. Region Selector Cards */}
           <div className="space-y-4">
-            <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-450 flex items-center space-x-1.5">
-              <MapPin className="w-3.5 h-3.5 text-emerald-500" />
+            <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 flex items-center space-x-1.5 pl-1">
+              <MapPin className="w-4 h-4 text-emerald-555" />
               <span>{lang === 'gu' ? '૧. કૃષિ ભૌગોલિક પ્રદેશ' : '1. Select Agro-Region'}</span>
             </label>
             
@@ -139,25 +143,25 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                     key={reg.id}
                     type="button"
                     onClick={() => setSelectedRegionId(reg.id)}
-                    className={`p-4 rounded-2xl border text-left transition-all duration-300 relative overflow-hidden flex flex-col justify-between h-[105px] group cursor-pointer ${
+                    className={`p-4 rounded-2xl border text-left transition-all duration-200 relative overflow-hidden flex flex-col justify-between h-[105px] group cursor-pointer ${
                       isActive
-                        ? 'border-emerald-500 bg-emerald-950/20 text-white ring-2 ring-emerald-500/20 scale-[1.02]'
-                        : 'border-slate-850 bg-slate-950/60 text-slate-400 hover:border-slate-800 hover:text-slate-200'
+                        ? 'border-emerald-500 bg-emerald-500/5 dark:bg-emerald-950/20 text-emerald-900 dark:text-white ring-2 ring-emerald-500/20 scale-[1.02]'
+                        : 'border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 text-slate-500 dark:text-slate-400 hover:border-slate-350 dark:hover:border-slate-700 hover:text-slate-700 dark:hover:text-slate-200'
                     }`}
                   >
                     {/* Circle Indicator */}
                     <div
-                      className="w-2.5 h-2.5 rounded-full mb-3 transition-transform duration-300 group-hover:scale-125"
+                      className="w-2.5 h-2.5 rounded-full mb-3 transition-transform duration-200 group-hover:scale-125"
                       style={{ 
                         backgroundColor: reg.color,
                         boxShadow: isActive ? `0 0 10px ${reg.color}80` : 'none'
                       }}
                     />
                     <div>
-                      <span className="font-extrabold text-sm sm:text-base text-slate-100 block tracking-tight leading-tight mb-0.5">
+                      <span className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-slate-100 block tracking-tight leading-tight mb-0.5">
                         {lang === 'gu' ? reg.nameGu : reg.name}
                       </span>
-                      <span className="text-[10px] opacity-75 block font-bold text-slate-450">
+                      <span className="text-[10px] opacity-75 block font-bold text-slate-500 dark:text-slate-450">
                         {reg.districts.length} {lang === 'gu' ? 'જિલ્લાઓ' : 'Districts'}
                       </span>
                     </div>
@@ -168,36 +172,35 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           </div>
 
           {/* 2. District & Taluka Cascading Select */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-450">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 pl-1">
                 {lang === 'gu' ? 'જિલ્લો (District)' : 'District'}
               </label>
-              {/* Nested Input: 60% dominant color to create recession visual structure */}
               <select
                 value={district}
                 onChange={(e) => setDistrict(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {availableDistricts.map((d) => (
-                  <option key={d.name} value={d.name} className="bg-slate-950">
+                  <option key={d.name} value={d.name} className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
                     {d.name} ({d.nameGu})
                   </option>
                 ))}
               </select>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455">
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 pl-1">
                 {lang === 'gu' ? 'તાલુકો (Taluka)' : 'Taluka'}
               </label>
               <select
                 value={taluka}
                 onChange={(e) => setTaluka(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {availableTalukas.map((t) => (
-                  <option key={t} value={t} className="bg-slate-950">
+                  <option key={t} value={t} className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
                     {t}
                   </option>
                 ))}
@@ -205,36 +208,36 @@ export default function RecommendationWizard({ onSubmit, lang }) {
             </div>
           </div>
 
-          {/* 3. Soil Type & Month */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455">
+          {/* 3. Soil Type & Sowing Month */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 pl-1">
                 {lang === 'gu' ? 'જમીનનો પ્રકાર (Soil Type)' : 'Soil Type'}
               </label>
               <select
                 value={soilType}
                 onChange={(e) => setSoilType(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {SOIL_TYPES_LIST.map((st) => (
-                  <option key={st.id} value={st.name} className="bg-slate-950">
+                  <option key={st.id} value={st.name} className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
                     {st.nameGu} ({st.name})
                   </option>
                 ))}
               </select>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455">
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 pl-1">
                 {lang === 'gu' ? 'વાવણીનો મહિનો (Sowing Month)' : 'Sowing Month'}
               </label>
               <select
                 value={currentMonth}
                 onChange={(e) => setCurrentMonth(parseInt(e.target.value, 10))}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {MONTHS_LIST.map((m) => (
-                  <option key={m.value} value={m.value} className="bg-slate-950">
+                  <option key={m.value} value={m.value} className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
                     {m.name}
                   </option>
                 ))}
@@ -243,31 +246,31 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           </div>
 
           {/* 4. Temperature, Rainfall, & Irrigation */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
-                <Thermometer className="w-3.5 h-3.5 text-amber-500" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 flex items-center space-x-1.5 pl-1">
+                <Thermometer className="w-4 h-4 text-amber-500" />
                 <span>{lang === 'gu' ? 'તાપમાન (°C)' : 'Temperature (°C)'}</span>
               </label>
-              <div className="flex items-center space-x-3 bg-slate-950 p-3 rounded-2xl border border-slate-850">
+              <div className="flex items-center space-x-3 bg-slate-50 dark:bg-slate-955 p-3 rounded-2xl border border-slate-200 dark:border-slate-800/80">
                 <input
                   type="range"
                   min="10"
                   max="45"
                   value={temperature}
                   onChange={(e) => setTemperature(parseInt(e.target.value, 10))}
-                  className="w-full cursor-pointer"
+                  className="w-full cursor-pointer accent-emerald-600 dark:accent-emerald-450"
                 />
-                <span className="text-sm font-black text-amber-500 w-12 text-right">{temperature}°C</span>
+                <span className="text-sm font-black text-amber-600 dark:text-amber-500 w-12 text-right">{temperature}°C</span>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
-                <CloudRain className="w-3.5 h-3.5 text-sky-400" />
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 flex items-center space-x-1.5 pl-1">
+                <CloudRain className="w-4 h-4 text-sky-500" />
                 <span>{lang === 'gu' ? 'વરસાદ (mm/વર્ષ)' : 'Annual Rainfall (mm)'}</span>
               </label>
-              <div className="flex items-center space-x-3 bg-slate-950 p-3 rounded-2xl border border-slate-850">
+              <div className="flex items-center space-x-3 bg-slate-50 dark:bg-slate-955 p-3 rounded-2xl border border-slate-200 dark:border-slate-800/80">
                 <input
                   type="range"
                   min="200"
@@ -275,25 +278,25 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   step="50"
                   value={rainfall}
                   onChange={(e) => setRainfall(parseInt(e.target.value, 10))}
-                  className="w-full accent-sky cursor-pointer"
+                  className="w-full cursor-pointer accent-sky-550 dark:accent-sky-400"
                 />
-                <span className="text-sm font-black text-sky-400 w-16 text-right">{rainfall}mm</span>
+                <span className="text-sm font-black text-sky-600 dark:text-sky-400 w-16 text-right">{rainfall}mm</span>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
-                <Droplets className="w-3.5 h-3.5 text-emerald-500" />
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 flex items-center space-x-1.5 pl-1">
+                <Droplets className="w-4 h-4 text-emerald-555" />
                 <span>{lang === 'gu' ? 'પિયતની સુવિધા? (Irrigation)' : 'Irrigation Facility?'}</span>
               </label>
               <div className="grid grid-cols-2 gap-2.5">
                 <button
                   type="button"
                   onClick={() => setIrrigation('yes')}
-                  className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-300 cursor-pointer ${
+                  className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-200 cursor-pointer ${
                     irrigation === 'yes'
-                      ? 'bg-emerald-600 text-white shadow-md'
-                      : 'bg-slate-950 text-slate-400 border border-slate-850 hover:text-slate-200'
+                      ? 'bg-emerald-800 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
+                      : 'bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:text-slate-700 dark:hover:text-slate-200'
                   }`}
                 >
                   {lang === 'gu' ? 'હા (Yes)' : 'Yes'}
@@ -301,10 +304,10 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                 <button
                   type="button"
                   onClick={() => setIrrigation('no')}
-                  className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-300 cursor-pointer ${
+                  className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-200 cursor-pointer ${
                     irrigation === 'no'
-                      ? 'bg-emerald-600 text-white shadow-md'
-                      : 'bg-slate-950 text-slate-400 border border-slate-850 hover:text-slate-200'
+                      ? 'bg-emerald-800 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
+                      : 'bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800/80 hover:text-slate-700 dark:hover:text-slate-200'
                   }`}
                 >
                   {lang === 'gu' ? 'ના (No)' : 'No'}
@@ -314,13 +317,13 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           </div>
 
           {/* 5. Farm Size & Previous Crop */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
-                <Ruler className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 flex items-center space-x-1.5 pl-1">
+                <Ruler className="w-4 h-4 text-indigo-500" />
                 <span>{lang === 'gu' ? 'જમીનનું ક્ષેત્રફળ (Farm Size)' : 'Farm Size'}</span>
               </label>
-              <div className="flex space-x-2">
+              <div className="flex space-x-3">
                 <input
                   type="number"
                   min="0.25"
@@ -328,49 +331,49 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   step="0.25"
                   value={farmSize}
                   onChange={(e) => setFarmSize(e.target.value)}
-                  className="w-full bg-slate-955 border border-slate-850 rounded-2xl px-4.5 py-3 text-slate-100 font-extrabold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 text-sm"
+                  className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-900 dark:text-slate-100 font-extrabold focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 text-sm"
                 />
                 <select
                   value={unit}
                   onChange={(e) => setUnit(e.target.value)}
-                  className="bg-slate-950 border border-slate-850 rounded-2xl px-4 py-3 text-emerald-400 font-extrabold text-xs uppercase focus:outline-none focus:border-emerald-500 cursor-pointer"
+                  className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl px-4 py-3 text-emerald-700 dark:text-emerald-450 font-extrabold text-xs uppercase focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 cursor-pointer"
                 >
-                  <option value="hectare">{lang === 'gu' ? 'હેક્ટર (Ha)' : 'Hectare'}</option>
-                  <option value="bigha">{lang === 'gu' ? 'વીઘા (Bigha)' : 'Bigha'}</option>
+                  <option value="hectare" className="bg-white dark:bg-slate-950">{lang === 'gu' ? 'હેક્ટર (Ha)' : 'Hectare'}</option>
+                  <option value="bigha" className="bg-white dark:bg-slate-950">{lang === 'gu' ? 'વીઘા (Bigha)' : 'Bigha'}</option>
                 </select>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-455 flex items-center space-x-1.5">
-                <RotateCcw className="w-3.5 h-3.5 text-amber-500" />
+            <div className="space-y-1.5">
+              <label className="block text-xs uppercase tracking-wider font-extrabold text-slate-600 dark:text-slate-400 flex items-center space-x-1.5 pl-1">
+                <RotateCcw className="w-4 h-4 text-amber-550" />
                 <span>{lang === 'gu' ? 'અગાઉ લીધેલ પાક (Previous Crop)' : 'Previous Crop'}</span>
               </label>
               <select
                 value={previousCrop}
                 onChange={(e) => setPreviousCrop(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-850 rounded-2xl px-4.5 py-3.5 text-slate-100 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-300 font-bold text-sm cursor-pointer"
+                className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
-                <option value="Cotton" className="bg-slate-950">Cotton (કપાસ)</option>
-                <option value="Groundnut" className="bg-slate-950">Groundnut (મગફળી)</option>
-                <option value="Wheat" className="bg-slate-950">Wheat (ઘઉં)</option>
-                <option value="Cumin" className="bg-slate-950">Cumin (જીરું)</option>
-                <option value="Bajra" className="bg-slate-950">Bajra (બાજરી)</option>
-                <option value="Castor" className="bg-slate-950">Castor (એરંડા)</option>
-                <option value="Mustard" className="bg-slate-950">Mustard (રાયડો)</option>
-                <option value="Paddy" className="bg-slate-950">Paddy (ડાંગર)</option>
-                <option value="fallow" className="bg-slate-950">Fallow / પડતર (કોઈ નહીં)</option>
+                <option value="Cotton" className="bg-white dark:bg-slate-950">Cotton (કપાસ)</option>
+                <option value="Groundnut" className="bg-white dark:bg-slate-950">Groundnut (મગફળી)</option>
+                <option value="Wheat" className="bg-white dark:bg-slate-950">Wheat (ઘઉં)</option>
+                <option value="Cumin" className="bg-white dark:bg-slate-950">Cumin (જીરું)</option>
+                <option value="Bajra" className="bg-white dark:bg-slate-950">Bajra (બાજરી)</option>
+                <option value="Castor" className="bg-white dark:bg-slate-950">Castor (એરંડા)</option>
+                <option value="Mustard" className="bg-white dark:bg-slate-950">Mustard (રાયડો)</option>
+                <option value="Paddy" className="bg-white dark:bg-slate-950">Paddy (ડાંગર)</option>
+                <option value="fallow" className="bg-white dark:bg-slate-950">Fallow / પડતર (કોઈ નહીં)</option>
               </select>
             </div>
           </div>
 
-          {/* Submit CTA Button (10% Accent pop) */}
-          <div className="pt-4">
+          {/* Submit CTA Button */}
+          <div className="pt-6">
             <button
               type="submit"
-              className="w-full py-4.5 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-555 text-white font-black text-base sm:text-lg tracking-wide shadow-lg hover:shadow-emerald-950/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center space-x-3 group cursor-pointer"
+              className="w-full py-4 px-6 rounded-2xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-black text-base sm:text-lg tracking-wide shadow-lg hover:shadow-emerald-500/10 active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-3 group cursor-pointer"
             >
-              <Sparkles className="w-5.5 h-5.5 text-white group-hover:rotate-12 transition-transform duration-300" />
+              <Sparkles className="w-5.5 h-5.5 text-white dark:text-slate-950 group-hover:rotate-12 transition-transform duration-300" />
               <span>
                 {lang === 'gu' ? 'એઆઈ પાક ભલામણ અને અંદાજ મેળવો' : 'Generate AI Crop Recommendation'}
               </span>
