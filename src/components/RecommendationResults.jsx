@@ -41,7 +41,7 @@ export default function RecommendationResults({ result, onReset, onViewCropDetai
 
         <button
           onClick={handlePrint}
-          className="flex items-center space-x-2 text-sm font-bold text-white bg-emerald-800 hover:bg-emerald-950 dark:bg-emerald-600 dark:hover:bg-emerald-500 px-4 py-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md"
+          className="flex items-center space-x-2 text-sm font-bold text-white bg-[#0b3c2c] hover:bg-[#062017] dark:bg-emerald-600 dark:hover:bg-emerald-500 px-4 py-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md"
         >
           <Printer className="w-4 h-4 text-white" />
           <span>{lang === 'gu' ? 'સલાહ પ્રિન્ટ કરો' : 'Print / Save PDF'}</span>

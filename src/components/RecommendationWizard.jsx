@@ -295,7 +295,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   onClick={() => setIrrigation('yes')}
                   className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-200 cursor-pointer ${
                     irrigation === 'yes'
-                      ? 'bg-emerald-800 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
+                      ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
                       : 'bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:text-slate-700 dark:hover:text-slate-200'
                   }`}
                 >
@@ -306,7 +306,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   onClick={() => setIrrigation('no')}
                   className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-200 cursor-pointer ${
                     irrigation === 'no'
-                      ? 'bg-emerald-800 dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
+                      ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
                       : 'bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800/80 hover:text-slate-700 dark:hover:text-slate-200'
                   }`}
                 >
@@ -371,7 +371,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           <div className="pt-6">
             <button
               type="submit"
-              className="w-full py-4 px-6 rounded-2xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-black text-base sm:text-lg tracking-wide shadow-lg hover:shadow-emerald-500/10 active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-3 group cursor-pointer"
+              className="w-full py-4 px-6 rounded-2xl bg-[#0b3c2c] hover:bg-[#062017] dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-black text-base sm:text-lg tracking-wide shadow-lg hover:shadow-emerald-500/10 active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-3 group cursor-pointer"
             >
               <Sparkles className="w-5.5 h-5.5 text-white dark:text-slate-950 group-hover:rotate-12 transition-transform duration-300" />
               <span>

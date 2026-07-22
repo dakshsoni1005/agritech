@@ -284,7 +284,7 @@ export default function AuthView({ lang, onAuthSuccess, initialMode = 'login', o
 
           <button
             type="submit"
-            className="w-full flex items-center justify-center space-x-2 bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 py-3.5 px-4 rounded-2xl font-bold text-sm tracking-wide transition-all duration-200 shadow-lg hover:shadow-emerald-500/20 active:scale-[0.98] mt-6 cursor-pointer"
+            className="w-full flex items-center justify-center space-x-2 bg-[#0b3c2c] hover:bg-[#062017] dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 py-3.5 px-4 rounded-2xl font-bold text-sm tracking-wide transition-all duration-200 shadow-lg hover:shadow-emerald-500/20 active:scale-[0.98] mt-6 cursor-pointer"
           >
             <span>{mode === 'login' ? (lang === 'gu' ? t('loginBtnGu') : t('loginBtnEn')) : (lang === 'gu' ? t('signupBtnGu') : t('signupBtnEn'))}</span>
             <ArrowRight className="w-4.5 h-4.5" />
