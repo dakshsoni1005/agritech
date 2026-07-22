@@ -8,6 +8,7 @@ import RegionalInsights from './components/RegionalInsights';
 import ProfitCalculator from './components/ProfitCalculator';
 import GovLinksView from './components/GovLinksView';
 import HomeView from './components/HomeView';
+import AuthView from './components/AuthView';
 import Footer from './components/Footer';
 import { recommendCrops } from './utils/recommendationEngine';
 
@@ -17,6 +18,13 @@ export default function App() {
   const [recommendationResult, setRecommendationResult] = useState(null);
   const [selectedModalCrop, setSelectedModalCrop] = useState(null);
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
+  
+  // Auth state
+  const [user, setUser] = useState(() => {
+    const saved = localStorage.getItem('ks_current_user');
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [authMode, setAuthMode] = useState('login');
 
   // Side effect to sync theme status with html node classes
   useEffect(() => {
@@ -39,6 +47,17 @@ export default function App() {
     setRecommendationResult(null);
   };
 
+  const handleAuthSuccess = (authenticatedUser) => {
+    setUser(authenticatedUser);
+    setActiveTab('home');
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('ks_current_user');
+    setUser(null);
+    setActiveTab('home');
+  };
+
   return (
     <div 
       className="min-h-screen text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
@@ -55,6 +74,9 @@ export default function App() {
           setLang={setLang}
           theme={theme}
           setTheme={setTheme}
+          user={user}
+          onLogout={handleLogout}
+          setAuthMode={setAuthMode}
         />
 
         {/* Main Content Area */}
@@ -115,6 +137,15 @@ export default function App() {
           {activeTab === 'gov' && (
             <GovLinksView 
               lang={lang} 
+              onBack={() => setActiveTab('home')}
+            />
+          )}
+
+          {activeTab === 'auth' && (
+            <AuthView
+              lang={lang}
+              initialMode={authMode}
+              onAuthSuccess={handleAuthSuccess}
               onBack={() => setActiveTab('home')}
             />
           )}

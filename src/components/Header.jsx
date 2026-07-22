@@ -4,7 +4,7 @@ import {
   Home, Sparkles, Database, MapPin, Calculator, Link2 
 } from 'lucide-react';
 
-export default function Header({ activeTab, setActiveTab, lang, setLang, theme, setTheme }) {
+export default function Header({ activeTab, setActiveTab, lang, setLang, theme, setTheme, user, onLogout, setAuthMode }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -50,8 +50,8 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
                   onClick={() => setActiveTab(item.id)}
                   className={`flex items-center space-x-1.5 px-4 py-2 rounded-full font-bold text-xs tracking-wide transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? 'bg-white text-black shadow-sm'
-                      : 'text-gray-400 hover:text-white bg-transparent'
+                       ? 'bg-white text-black shadow-sm'
+                       : 'text-gray-400 hover:text-white bg-transparent'
                   }`}
                 >
                   {isActive && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />}
@@ -91,15 +91,40 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
 
             {/* Auth Buttons matching the reference image ("Sign In", "Sign up Free") */}
             <div className="hidden sm:flex items-center space-x-3 text-xs font-semibold">
-              <button className="text-slate-600 dark:text-slate-350 hover:text-black dark:hover:text-white transition-colors cursor-pointer">
-                Sign In
-              </button>
-              <button 
-                onClick={() => setActiveTab('recommendation')}
-                className="bg-black dark:bg-white text-white dark:text-black border border-black dark:border-white px-4 py-2 rounded-full hover:bg-black/80 dark:hover:bg-white/90 transition-all shadow-sm cursor-pointer"
-              >
-                Sign up Free
-              </button>
+              {user ? (
+                <>
+                  <span className="text-slate-700 dark:text-slate-300 font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-500/20">
+                    {lang === 'gu' ? `નમસ્તે, ${user.name}` : `Hi, ${user.name}`}
+                  </span>
+                  <button 
+                    onClick={onLogout}
+                    className="text-rose-500 hover:text-rose-600 hover:underline transition-all cursor-pointer"
+                  >
+                    {lang === 'gu' ? 'લોગ આઉટ' : 'Sign Out'}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button 
+                    onClick={() => {
+                      setAuthMode('login');
+                      setActiveTab('auth');
+                    }}
+                    className="text-slate-600 dark:text-slate-350 hover:text-black dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    {lang === 'gu' ? 'લોગ ઈન' : 'Sign In'}
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setAuthMode('signup');
+                      setActiveTab('auth');
+                    }}
+                    className="bg-black dark:bg-white text-white dark:text-black border border-black dark:border-white px-4 py-2 rounded-full hover:bg-black/80 dark:hover:bg-white/90 transition-all shadow-sm cursor-pointer"
+                  >
+                    {lang === 'gu' ? 'ફ્રી સાઇન અપ' : 'Sign up Free'}
+                  </button>
+                </>
+              )}
             </div>
 
             {/* Mobile Hamburger Toggle */}
@@ -141,6 +166,48 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
               </button>
             );
           })}
+          
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-col space-y-2">
+            {user ? (
+              <div className="px-4 py-2 flex flex-col space-y-2">
+                <span className="text-slate-700 dark:text-slate-300 font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-500/20 text-xs text-center">
+                  {lang === 'gu' ? `નમસ્તે, ${user.name}` : `Hi, ${user.name}`}
+                </span>
+                <button 
+                  onClick={() => {
+                    onLogout();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full text-center py-2 text-xs font-bold text-rose-500 hover:text-rose-600 cursor-pointer"
+                >
+                  {lang === 'gu' ? 'લોગ આઉટ' : 'Sign Out'}
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-col space-y-2 px-2">
+                <button 
+                  onClick={() => {
+                    setAuthMode('login');
+                    setActiveTab('auth');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full text-center py-2.5 text-xs font-bold text-slate-700 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/5 rounded-full cursor-pointer"
+                >
+                  {lang === 'gu' ? 'લોગ ઈન' : 'Sign In'}
+                </button>
+                <button 
+                  onClick={() => {
+                    setAuthMode('signup');
+                    setActiveTab('auth');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full text-center py-2.5 text-xs font-bold bg-black dark:bg-white text-white dark:text-black rounded-full cursor-pointer"
+                >
+                  {lang === 'gu' ? 'ફ્રી સાઇન અપ' : 'Sign up Free'}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </header>
