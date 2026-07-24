@@ -10,7 +10,7 @@ import GovLinksView from './components/GovLinksView';
 import HomeView from './components/HomeView';
 import AuthView from './components/AuthView';
 import Footer from './components/Footer';
-import { recommendCrops, recommendCropsML } from './utils/recommendationEngine';
+import { recommendCropsML } from './utils/recommendationEngine';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -45,37 +45,21 @@ export default function App() {
   const handleWizardSubmit = async (inputs) => {
     setApiError(null);
     setRecommendationResult(null);
-    if (inputs.mode === 'ml') {
-      setIsLoading(true);
-      setPendingInputs(inputs);
-      try {
-        const result = await recommendCropsML(inputs);
-        setRecommendationResult(result);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } catch (err) {
-        setApiError({
-          message: lang === 'gu' 
-            ? 'કનેક્શન નિષ્ફળ! પાયથોન ML API સર્વર ચાલુ નથી.' 
-            : 'Connection Failed! The Python ML API server is not running.',
-          details: err.message
-        });
-      } finally {
-        setIsLoading(false);
-      }
-    } else {
-      const result = recommendCrops(inputs);
+    setIsLoading(true);
+    setPendingInputs(inputs);
+    try {
+      const result = await recommendCropsML(inputs);
       setRecommendationResult(result);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const handleFallbackToRules = () => {
-    if (pendingInputs) {
-      const fallbackInputs = { ...pendingInputs, mode: 'rules' };
-      const result = recommendCrops(fallbackInputs);
-      setRecommendationResult(result);
-      setApiError(null);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      setApiError({
+        message: lang === 'gu' 
+          ? 'કનેક્શન નિષ્ફળ! પાયથોન ML API સર્વર ચાલુ નથી.' 
+          : 'Connection Failed! The Python ML API server is not running.',
+        details: err.message
+      });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -180,12 +164,6 @@ export default function App() {
                       className="px-6 py-3 rounded-2xl bg-[#0b3c2c] hover:bg-[#062017] dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-black text-xs tracking-wider uppercase cursor-pointer transition-all shadow-md active:scale-95"
                     >
                       {lang === 'gu' ? 'ફરીથી પ્રયાસ કરો (Retry)' : 'Retry'}
-                    </button>
-                    <button
-                      onClick={handleFallbackToRules}
-                      className="px-6 py-3 rounded-2xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-950 dark:hover:bg-slate-850 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-850 font-black text-xs tracking-wider uppercase cursor-pointer transition-all shadow-sm active:scale-95"
-                    >
-                      {lang === 'gu' ? 'રૂલ એન્જિન વાપરો (Use Rules)' : 'Use Rules Engine'}
                     </button>
                   </div>
                 </div>

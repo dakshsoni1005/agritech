@@ -32,7 +32,6 @@ export default function RecommendationWizard({ onSubmit, lang }) {
   const [previousCrop, setPreviousCrop] = useState('Cotton');
 
   // ML model specific parameters state
-  const [recommendationMode, setRecommendationMode] = useState('rules'); // 'rules' or 'ml'
   const [n, setN] = useState(60);
   const [p, setP] = useState(45);
   const [k, setK] = useState(50);
@@ -78,7 +77,6 @@ export default function RecommendationWizard({ onSubmit, lang }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({
-      mode: recommendationMode,
       region: currentRegion,
       district,
       taluka,
@@ -172,43 +170,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
 
         <form onSubmit={handleSubmit} className="space-y-8 relative">
 
-          {/* Mode Switcher */}
-          <div className="bg-slate-50 dark:bg-slate-950 p-4.5 rounded-[2rem] border border-slate-100 dark:border-slate-850/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <span className="text-xs uppercase font-extrabold text-slate-500 dark:text-slate-400 block mb-0.5">
-                {lang === 'gu' ? 'પદ્ધતિ પસંદ કરો (Advisory Mode)' : 'Select Advisory Mode'}
-              </span>
-              <span className="text-[11px] text-slate-400 font-bold leading-relaxed block">
-                {lang === 'gu' 
-                  ? 'સ્ટાન્ડર્ડ રૂલ એન્જિન ગણતરી અથવા લાઈવ મશીન લર્નિંગ મોડલ પૂર્વાનુમાન પસંદ કરો.' 
-                  : 'Select between standard calculations or live Machine Learning model prediction.'}
-              </span>
-            </div>
-            <div className="flex bg-slate-200/60 dark:bg-slate-900 p-1 rounded-2xl border border-slate-350/40 dark:border-slate-850 shrink-0">
-              <button
-                type="button"
-                onClick={() => setRecommendationMode('rules')}
-                className={`px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer ${
-                  recommendationMode === 'rules'
-                    ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-sm'
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-250'
-                }`}
-              >
-                {lang === 'gu' ? 'રૂલ એન્જિન' : 'Rules Engine'}
-              </button>
-              <button
-                type="button"
-                onClick={() => setRecommendationMode('ml')}
-                className={`px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer ${
-                  recommendationMode === 'ml'
-                    ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-sm'
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-250'
-                }`}
-              >
-                {lang === 'gu' ? 'લાઈવ ML મોડલ' : 'Live ML Model'}
-              </button>
-            </div>
-          </div>
+
           
           {/* 1. Region Selector Cards */}
           <div className="space-y-4">
@@ -450,8 +412,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           </div>
 
           {/* Advanced ML Model Input Parameters */}
-          {recommendationMode === 'ml' && (
-            <div className="bg-slate-50/50 dark:bg-slate-950/20 border border-slate-200/60 dark:border-slate-850/80 rounded-3xl p-6 space-y-6 animate-scale-up">
+          <div className="bg-slate-50/50 dark:bg-slate-950/20 border border-slate-200/60 dark:border-slate-850/80 rounded-3xl p-6 space-y-6">
               <div className="flex items-center space-x-2 pb-3 border-b border-slate-200/60 dark:border-slate-800/80">
                 <Sparkles className="w-5 h-5 text-amber-500 shrink-0 animate-pulse" />
                 <div>
@@ -563,7 +524,6 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                 </div>
               </div>
             </div>
-          )}
 
           {/* Submit CTA Button */}
           <div className="pt-6">
