@@ -101,7 +101,7 @@ export default function HomeView({ lang, onNavigate }) {
           <span>Top Notch Agri-Tech Platform</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] text-[#3d251e] dark:text-slate-100">
+        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-100">
           Bring Fresh Growth<br />To Agriculture.
         </h1>
 
@@ -112,7 +112,7 @@ export default function HomeView({ lang, onNavigate }) {
         <div className="pt-2">
           <button
             onClick={() => onNavigate('recommendation')}
-            className="inline-flex items-center space-x-2 px-7 py-3.5 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold text-xs tracking-wider uppercase hover:bg-black/90 dark:hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 shadow-md cursor-pointer"
+            className="inline-flex items-center space-x-2 px-7 py-3.5 rounded-full bg-bottlegreen hover:bg-bottlegreen-hover dark:bg-white text-white dark:text-black font-bold text-xs tracking-wider uppercase hover:scale-[1.02] transition-all duration-300 shadow-md cursor-pointer"
           >
             <span>Get Started</span>
             <ArrowRight className="w-3.5 h-3.5" />

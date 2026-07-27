@@ -2,37 +2,52 @@
 
 /* Theme definitions mapped to variables for strict 60:30:10 ratio */
 :root {
-  /* Light theme variables (Premium Pearl/Warm Gray background matching reference image) */
-  --bg-dominant: #f0efe9;        /* Warm off-white/light gray (60%) */
-  --bg-dominant-dark: #e5e3db;   /* Recessed inputs/elements */
+  /* Light theme variables (Premium Botanical Mint/Sage matching reference image) */
+  --bg-dominant: #F2F9F5;        /* Very soft light mint pearl canvas (60%) */
+  --bg-dominant-dark: #E1EFE6;   /* Deeper recessed background for inputs/accents */
   --bg-secondary: #ffffff;       /* Pure white structural cards (30%) */
-  --bg-secondary-dark: #fbfbfa;  /* Inner secondary cards */
-  --color-accent: #0b3c2c;       /* Professional bottle green primary accent */
+  --bg-secondary-dark: #F0F7F3;  /* Inner secondary cards */
+  --color-accent: #163832;       /* Premium dark forest green primary accent (10%) */
+  --color-accent-hover: #0B2B26; /* Hover state for primary buttons */
   --color-accent-gold: #b45309;  /* amber-700 secondary accent */
-  --border-secondary: rgba(0, 0, 0, 0.06);
-  --text-primary: #3d251e;       /* Dark Brown primary text */
-  --text-secondary: #1e3a8a;     /* Navy Blue secondary text */
-  --text-tertiary: #2e4a8a;      /* Navy Blue tertiary text */
+  --border-secondary: rgba(22, 56, 50, 0.08);
+  --text-primary: #051F20;       /* Darkest forest green primary text (very readable, high contrast) */
+  --text-secondary: #235347;     /* Mid forest green secondary text */
+  --text-tertiary: #8EB69B;      /* Sage green tertiary text */
+
+  /* Navigation pill variables */
+  --bg-nav-pill: #0B2B26;
+  --text-nav-pill: #DAF1DE;
+  --bg-nav-pill-active: #ffffff;
+  --text-nav-pill-active: #0B2B26;
 }
 
 .dark {
   /* Dark theme variables */
-  --bg-dominant: #0b0f19;        /* slate-955 outer canvas */
-  --bg-dominant-dark: #050810;   /* Recessed inputs/elements */
-  --bg-secondary: #121824;       /* slate-900 structural cards */
-  --bg-secondary-dark: #0e121d;  /* Deep cards */
-  --color-accent: #10b981;       /* emerald-500 accent */
-  --color-accent-gold: #f59e0b;  /* amber-500 accent */
-  --border-secondary: rgba(255, 255, 255, 0.05);
-  --text-primary: #0b3c2c;       /* Dark Bottle Green primary text (was white) */
-  --text-secondary: #1e3a8a;     /* Navy Blue secondary text (was green) */
-  --text-tertiary: #2e4a8a;      /* Navy Blue tertiary text */
+  --bg-dominant: #051F20;        /* Darkest deep forest green canvas (60%) */
+  --bg-dominant-dark: #031415;   /* Deepest base for recessed inputs/elements */
+  --bg-secondary: #0B2B26;       /* Very dark green structural cards (30%) */
+  --bg-secondary-dark: #163832;  /* Subcard/inner sections */
+  --color-accent: #8EB69B;       /* Light sage green primary accent (10%) */
+  --color-accent-hover: #DAF1DE; /* Hover state for primary buttons */
+  --color-accent-gold: #f59e0b;  /* amber-500 secondary accent */
+  --border-secondary: rgba(218, 241, 222, 0.1);
+  --text-primary: #DAF1DE;       /* Very light mint primary text */
+  --text-secondary: #8EB69B;     /* Light sage secondary text */
+  --text-tertiary: #235347;      /* Mid forest green tertiary text */
+
+  /* Navigation pill variables */
+  --bg-nav-pill: #0B2B26;
+  --text-nav-pill: #8EB69B;
+  --bg-nav-pill-active: #DAF1DE;
+  --text-nav-pill-active: #051F20;
 }
 
 /* Map standard Tailwind colors to CSS theme variables inside @theme */
 @theme {
-  --color-bottlegreen: #0b3c2c;
-  --color-navyblue: #1e3a8a;
+  --color-bottlegreen: var(--color-accent);
+  --color-bottlegreen-hover: var(--color-accent-hover);
+  --color-navyblue: var(--text-secondary);
 
   --color-slate-950: var(--bg-dominant);
   --color-slate-955: var(--bg-dominant-dark);
@@ -43,7 +58,7 @@
   
   --color-slate-100: var(--text-primary);
   --color-slate-200: var(--text-primary);
-  --color-slate-305: var(--text-secondary); /* map typos */
+  --color-slate-305: var(--text-secondary);
   --color-slate-300: var(--text-secondary);
   --color-slate-350: var(--text-secondary);
   --color-slate-400: var(--text-tertiary);
@@ -51,33 +66,29 @@
   --color-slate-450: var(--text-tertiary);
   --color-slate-455: var(--text-tertiary);
   
-  --color-emerald-600: var(--color-accent);
+  --color-emerald-400: var(--color-accent);
+  --color-emerald-450: var(--color-accent);
   --color-emerald-500: var(--color-accent);
+  --color-emerald-550: var(--color-accent);
+  --color-emerald-555: var(--color-accent);
+  --color-emerald-600: var(--color-accent);
+  --color-emerald-700: var(--color-accent);
+  
   --color-amber-500: var(--color-accent-gold);
+
+  --color-nav-bg: var(--bg-nav-pill);
+  --color-nav-text: var(--text-nav-pill);
+  --color-nav-active-bg: var(--bg-nav-pill-active);
+  --color-nav-active-text: var(--text-nav-pill-active);
 }
 
 @layer base {
   body {
-    background-color: var(--bg-dominant);
+    background: linear-gradient(135deg, var(--bg-dominant) 0%, var(--bg-dominant-dark) 100%) fixed;
     color: var(--text-primary);
     position: relative;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  /* Subtly adjusted ambient background mesh */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
-      radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.04) 0%, transparent 40%);
-    pointer-events: none;
-    z-index: -1;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 }
 

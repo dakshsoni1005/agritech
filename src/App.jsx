@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen text-[#3d251e] dark:text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
+      className="min-h-screen text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white antialiased transition-colors duration-300"
     >
       
       {/* Main Column (holds header and main container layout) */}
@@ -161,7 +161,7 @@ export default function App() {
                   <div className="flex flex-wrap items-center gap-3 justify-end pt-4.5 border-t border-slate-100 dark:border-slate-800/80">
                     <button
                       onClick={() => handleWizardSubmit(pendingInputs)}
-                      className="px-6 py-3 rounded-2xl bg-[#0b3c2c] hover:bg-[#062017] dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-black text-xs tracking-wider uppercase cursor-pointer transition-all shadow-md active:scale-95"
+                      className="px-6 py-3 rounded-2xl bg-bottlegreen hover:bg-bottlegreen-hover text-white dark:text-slate-950 font-black text-xs tracking-wider uppercase cursor-pointer transition-all shadow-md active:scale-95"
                     >
                       {lang === 'gu' ? 'ફરીથી પ્રયાસ કરો (Retry)' : 'Retry'}
                     </button>

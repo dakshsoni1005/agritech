@@ -40,8 +40,8 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
             </div>
           </div>
 
-          {/* Centered Pill Navigation (matches the black pill nav in reference image) */}
-          <nav className="hidden lg:flex items-center bg-black dark:bg-slate-900 rounded-full p-1.5 border border-white/10 shadow-lg">
+          {/* Centered Pill Navigation (matches the botanical pill nav in reference image) */}
+          <nav className="hidden lg:flex items-center bg-nav-bg rounded-full p-1.5 border border-white/10 shadow-lg">
             {navItems.map((item) => {
               const isActive = activeTab === item.id;
               return (
@@ -50,8 +50,8 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
                   onClick={() => setActiveTab(item.id)}
                   className={`flex items-center space-x-1.5 px-4 py-2 rounded-full font-bold text-xs tracking-wide transition-all duration-200 cursor-pointer ${
                     isActive
-                       ? 'bg-white text-black shadow-sm'
-                       : 'text-gray-400 hover:text-white bg-transparent'
+                       ? 'bg-nav-active-bg text-nav-active-text shadow-sm'
+                       : 'text-nav-text hover:text-white bg-transparent'
                   }`}
                 >
                   {isActive && <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />}
@@ -119,7 +119,7 @@ export default function Header({ activeTab, setActiveTab, lang, setLang, theme, 
                       setAuthMode('signup');
                       setActiveTab('auth');
                     }}
-                    className="bg-black dark:bg-white text-white dark:text-black border border-black dark:border-white px-4 py-2 rounded-full hover:bg-black/80 dark:hover:bg-white/90 transition-all shadow-sm cursor-pointer"
+                    className="bg-bottlegreen hover:bg-bottlegreen-hover dark:bg-white text-white dark:text-black border border-bottlegreen dark:border-white px-4 py-2 rounded-full transition-all shadow-sm cursor-pointer"
                   >
                     {lang === 'gu' ? 'ફ્રી સાઇન અપ' : 'Sign up Free'}
                   </button>

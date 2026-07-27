@@ -227,7 +227,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                 className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {availableDistricts.map((d) => (
-                  <option key={d.name} value={d.name} className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">
+                  <option key={d.name} value={d.name} className="bg-white dark:bg-slate-950 text-bottlegreen dark:text-emerald-500">
                     {d.name} ({d.nameGu})
                   </option>
                 ))}
@@ -244,7 +244,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                 className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {availableTalukas.map((t) => (
-                  <option key={t} value={t} className="bg-white dark:bg-slate-955 text-[#0b3c2c] dark:text-[#10b981]">
+                  <option key={t} value={t} className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">
                     {t}
                   </option>
                 ))}
@@ -264,7 +264,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                 className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {SOIL_TYPES_LIST.map((st) => (
-                  <option key={st.id} value={st.name} className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">
+                  <option key={st.id} value={st.name} className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">
                     {st.nameGu} ({st.name})
                   </option>
                 ))}
@@ -281,7 +281,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                 className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
                 {MONTHS_LIST.map((m) => (
-                  <option key={m.value} value={m.value} className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">
+                  <option key={m.value} value={m.value} className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">
                     {m.name}
                   </option>
                 ))}
@@ -339,7 +339,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   onClick={() => setIrrigation('yes')}
                   className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-200 cursor-pointer ${
                     irrigation === 'yes'
-                      ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
+                      ? 'bg-bottlegreen dark:bg-emerald-500 text-white dark:text-slate-955 shadow-md font-extrabold'
                       : 'bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:text-slate-700 dark:hover:text-slate-200'
                   }`}
                 >
@@ -350,7 +350,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   onClick={() => setIrrigation('no')}
                   className={`py-3.5 rounded-2xl font-black text-xs transition-all duration-200 cursor-pointer ${
                     irrigation === 'no'
-                      ? 'bg-[#0b3c2c] dark:bg-emerald-500 text-white dark:text-slate-950 shadow-md font-extrabold'
+                      ? 'bg-bottlegreen dark:bg-emerald-500 text-white dark:text-slate-955 shadow-md font-extrabold'
                       : 'bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800/80 hover:text-slate-700 dark:hover:text-slate-200'
                   }`}
                 >
@@ -382,8 +382,8 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                   onChange={(e) => setUnit(e.target.value)}
                   className="bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl px-4 py-3 text-emerald-700 dark:text-emerald-450 font-extrabold text-xs uppercase focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 cursor-pointer"
                 >
-                  <option value="hectare" className="bg-white dark:bg-slate-955 text-[#0b3c2c] dark:text-[#10b981]">{lang === 'gu' ? 'હેક્ટર (Ha)' : 'Hectare'}</option>
-                  <option value="bigha" className="bg-white dark:bg-slate-955 text-[#0b3c2c] dark:text-[#10b981]">{lang === 'gu' ? 'વીઘા (Bigha)' : 'Bigha'}</option>
+                  <option value="hectare" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">{lang === 'gu' ? 'હેક્ટર (Ha)' : 'Hectare'}</option>
+                  <option value="bigha" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">{lang === 'gu' ? 'વીઘા (Bigha)' : 'Bigha'}</option>
                 </select>
               </div>
             </div>
@@ -398,15 +398,15 @@ export default function RecommendationWizard({ onSubmit, lang }) {
                 onChange={(e) => setPreviousCrop(e.target.value)}
                 className="w-full bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-4 py-3 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all duration-200 font-bold text-sm cursor-pointer"
               >
-                <option value="Cotton" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Cotton (કપાસ)</option>
-                <option value="Groundnut" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Groundnut (મગફળી)</option>
-                <option value="Wheat" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Wheat (ઘઉં)</option>
-                <option value="Cumin" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Cumin (જીરું)</option>
-                <option value="Bajra" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Bajra (બાજરી)</option>
-                <option value="Castor" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Castor (એરંડા)</option>
-                <option value="Mustard" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Mustard (રાયડો)</option>
-                <option value="Paddy" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Paddy (ડાંગર)</option>
-                <option value="fallow" className="bg-white dark:bg-slate-950 text-[#0b3c2c] dark:text-[#10b981]">Fallow / પડતર (કોઈ નહીં)</option>
+                <option value="Cotton" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Cotton (કપાસ)</option>
+                <option value="Groundnut" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Groundnut (મગફળી)</option>
+                <option value="Wheat" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Wheat (ઘઉં)</option>
+                <option value="Cumin" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Cumin (જીરું)</option>
+                <option value="Bajra" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Bajra (બાજરી)</option>
+                <option value="Castor" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Castor (એરંડા)</option>
+                <option value="Mustard" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Mustard (રાયડો)</option>
+                <option value="Paddy" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Paddy (ડાંગર)</option>
+                <option value="fallow" className="bg-white dark:bg-slate-955 text-bottlegreen dark:text-emerald-500">Fallow / પડતર (કોઈ નહીં)</option>
               </select>
             </div>
           </div>
@@ -529,7 +529,7 @@ export default function RecommendationWizard({ onSubmit, lang }) {
           <div className="pt-6">
             <button
               type="submit"
-              className="w-full py-4 px-6 rounded-2xl bg-[#0b3c2c] hover:bg-[#062017] dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white dark:text-slate-950 font-black text-base sm:text-lg tracking-wide shadow-lg hover:shadow-emerald-500/10 active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-3 group cursor-pointer"
+              className="w-full py-4 px-6 rounded-2xl bg-bottlegreen hover:bg-bottlegreen-hover dark:bg-white text-white dark:text-slate-950 font-black text-base sm:text-lg tracking-wide shadow-lg hover:shadow-emerald-500/10 active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-3 group cursor-pointer"
             >
               <Sparkles className="w-5.5 h-5.5 text-white dark:text-slate-950 group-hover:rotate-12 transition-transform duration-300" />
               <span>
